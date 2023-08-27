@@ -3,3 +3,4 @@ packages:
   - docs
   - ​service
   - play
+  - templates/*

@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "workspaces": [
+    "packages/*",
+    "play",
+    "docs",
+    "​service",
+    "templates/*"
+  ],
   "scripts": {
     "dev": "pnpm -C play dev",
     "docs:dev": "pnpm run -C docs dev",
