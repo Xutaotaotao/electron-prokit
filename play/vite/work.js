@@ -1,12 +1,13 @@
 import { builtinModules } from 'module'
 import { fileURLToPath } from 'url';
 import path from "path";
+import { cwd } from 'node:process';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 const config = {
   root: path.resolve(__dirname, '../src/work'),
-  envDir:process.cwd(),
+  envDir:cwd(),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "../src"),

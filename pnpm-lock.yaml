@@ -46,6 +46,9 @@ importers:
         specifier: ^18.2.0
         version: registry.npmmirror.com/react-dom@18.2.0(react@18.2.0)
     devDependencies:
+      '@electron-prokit/create-vite-electron-service':
+        specifier: workspace:^1.0.0
+        version: link:../packages/create-vite-electron-service
       '@types/node':
         specifier: ^20.5.7
         version: 20.5.7
@@ -64,9 +67,6 @@ importers:
       '@vitejs/plugin-react-swc':
         specifier: ^3.3.2
         version: registry.npmmirror.com/@vitejs/plugin-react-swc@3.3.2(vite@4.4.9)
-      create-vite-electron-service:
-        specifier: workspace:^1.0.0
-        version: link:../packages/create-vite-electron-service
       electron:
         specifier: ^26.1.0
         version: 26.1.0

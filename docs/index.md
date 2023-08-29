@@ -3,16 +3,19 @@
 layout: home
 
 hero:
-  name: "Electron Prokit"
-  text: <span style="font-size:40px"> Use electron like a pro <span>
-  tagline: My great project tagline
+  name: "Electron-Prokit"
+  text: <span style="font-size:30px"> 一款基于Electron的桌面软件开发框架 <span>
+  tagline: 为桌面开发提供极致的体验
+  image:
+    src: /logo.svg
+    alt: logo
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 开始使用
+      link: /guide/
+    # - theme: alt
+    #   text: API Examples
+    #   link: /api-examples
 
 features:
   - title: Feature A
