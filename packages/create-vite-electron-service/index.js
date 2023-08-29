@@ -1,21 +1,12 @@
 #!/usr/bin/node
 import electronPath from "electron";
 import { spawn } from "child_process";
-import { createServer, build, ViteDevServer } from "vite";
+import { createServer, build } from "vite";
 
-interface createServerOptions {
-  configFile:string,
-  sharedOptions: SharedOptions
-}
+let spawnProcess = null;
 
-interface RenderDev {
-  server?: ViteDevServer;
-  createRenderServer(serverOptions:createServerOptions): Promise<ViteDevServer>;
-}
-
-
-const renderDev:RenderDev = {
-  async createRenderServer(serverOptions:createServerOptions) {
+const renderDev = {
+  async createRenderServer(serverOptions) {
     const {sharedOptions,configFile} = serverOptions
     process.env.VITE_CURRENT_RUN_MODE = "render";
     const options = {
@@ -30,7 +21,7 @@ const renderDev:RenderDev = {
 };
 
 const preloadDev = {
-  async createRenderServer(viteDevServer:ViteDevServer,serverOptions:createServerOptions) {
+  async createRenderServer(viteDevServer,serverOptions) {
     const {sharedOptions,configFile} = serverOptions
     process.env.VITE_CURRENT_RUN_MODE = "preload";
     const options = {
@@ -55,7 +46,7 @@ const preloadDev = {
 
 
 const workDev = {
-  async createRenderServer(viteDevServer:ViteDevServer,serverOptions:createServerOptions) {
+  async createRenderServer(viteDevServer,serverOptions) {
     process.env.VITE_CURRENT_RUN_MODE = "work";
     const {sharedOptions,configFile} = serverOptions
     const options = {
@@ -78,10 +69,8 @@ const workDev = {
   },
 };
 
-let spawnProcess:any = null;
-
 const mainDev = {
-  async createMainServer(renderDevServer:ViteDevServer,serverOptions:createServerOptions) {
+  async createMainServer(renderDevServer,serverOptions) {
     const {sharedOptions,configFile} = serverOptions
     const protocol = `http${renderDevServer.config.server.https ? "s" : ""}:`;
     const host = renderDevServer.config.server.host || "localhost";
@@ -105,13 +94,13 @@ const mainDev = {
 
             spawnProcess = spawn(String(electronPath), ["."]);
 
-            spawnProcess.stdout.on("data", (d:any) => {
+            spawnProcess.stdout.on("data", (d) => {
               const data = d.toString().trim();
               console.log(data);
             });
 
-            spawnProcess.stderr.on("data", (data:any) => {
-              console.error(`stderr: ${data}`);
+            spawnProcess.stderr.on("data", (err) => {
+              console.error(`stderr: ${err}`);
             });
 
             process.on('SIGINT', () => {
@@ -128,23 +117,8 @@ const mainDev = {
   },
 };
 
-interface SharedOptions {
-  mode: 'dev' | 'prod';
-  build: {
-    watch?: any; 
-  }
-}
 
-interface CreateViteElectronServiceOptions {
-  renderConfigFile:string;
-  preloadConfigFile:string;
-  workConfigFile:string;
-  mainConfigFile:string;
-  sharedOptions?:SharedOptions
-}
-
-
-const createViteElectronService = async (options:CreateViteElectronServiceOptions) => {
+const createViteElectronService = async (options) => {
   const {
     renderConfigFile,
     preloadConfigFile,

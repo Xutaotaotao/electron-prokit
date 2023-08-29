@@ -1,11 +1,9 @@
 {
-  "name": "electron-prokit",
+  "name": "create-vite-electron-service",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
-  "module": "index.ts",
-  "unpkg": "index.js",
-  "jsdelivr": "index.js",
+  "type": "module",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,8 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.5.7",
     "electron": "^26.1.0",
-    "typescript": "^5.0.2"
+    "vite": "^4.4.5"
   }
 }

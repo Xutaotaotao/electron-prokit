@@ -1,11 +1,13 @@
 import { builtinModules } from "module";
 import { fileURLToPath } from "url";
+import { cwd } from 'node:process';
 import path from "path";
+
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 const config = {
-  root: process.cwd(),
+  root: cwd(),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "../src"),
@@ -19,7 +21,7 @@ const config = {
       formats: ["cjs"],
     },
     rollupOptions: {
-      external: ["electron", "koffi", "log4js", ...builtinModules],
+      external: ["electron", ...builtinModules],
       output: {
         entryFileNames: "[name].cjs",
       },

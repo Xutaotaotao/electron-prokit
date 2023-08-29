@@ -16,7 +16,7 @@ importers:
 
   packages/creat-​​electron-prokit: {}
 
-  packages/electron-prokit:
+  packages/create-vite-electron-service:
     devDependencies:
       electron:
         specifier: ^26.1.0
@@ -24,6 +24,18 @@ importers:
       vite:
         specifier: ^4.4.5
         version: 4.4.9
+
+  packages/electron-prokit:
+    devDependencies:
+      '@types/node':
+        specifier: ^20.5.7
+        version: 20.5.7
+      electron:
+        specifier: ^26.1.0
+        version: 26.1.0
+      typescript:
+        specifier: ^5.0.2
+        version: 5.2.2
 
   play:
     dependencies:
@@ -52,6 +64,12 @@ importers:
       '@vitejs/plugin-react-swc':
         specifier: ^3.3.2
         version: registry.npmmirror.com/@vitejs/plugin-react-swc@3.3.2(vite@4.4.9)
+      create-vite-electron-service:
+        specifier: workspace:^1.0.0
+        version: link:../packages/create-vite-electron-service
+      electron:
+        specifier: ^26.1.0
+        version: 26.1.0
       electron-prokit:
         specifier: workspace:^1.0.0
         version: link:../packages/electron-prokit
@@ -439,7 +457,7 @@ packages:
     dependencies:
       '@types/http-cache-semantics': 4.0.1
       '@types/keyv': 3.1.4
-      '@types/node': 18.17.12
+      '@types/node': 20.5.7
       '@types/responselike': 1.0.0
     dev: true
 
@@ -450,7 +468,7 @@ packages:
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 18.17.12
+      '@types/node': 20.5.7
     dev: true
 
   /@types/node@18.17.12:
@@ -464,14 +482,14 @@ packages:
   /@types/responselike@1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 18.17.12
+      '@types/node': 20.5.7
     dev: true
 
   /@types/yauzl@2.10.0:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 18.17.12
+      '@types/node': 20.5.7
     dev: true
     optional: true
 
@@ -1011,6 +1029,12 @@ packages:
     engines: {node: '>=10'}
     dev: true
     optional: true
+
+  /typescript@5.2.2:
+    resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: true
 
   /universalify@0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
