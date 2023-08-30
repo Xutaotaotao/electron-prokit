@@ -16,5 +16,9 @@
     "@types/node": "^20.5.7",
     "electron": "^26.1.0",
     "typescript": "^5.0.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

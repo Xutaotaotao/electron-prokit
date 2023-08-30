@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "allowJs": true,
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "downlevelIteration": true,
+    "declaration": true
+  },
+  "include": ["src"],
+}
