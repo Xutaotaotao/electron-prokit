@@ -9,7 +9,7 @@ function getBuildConfig(name,inputPath="src/index.ts") {
     input: path.resolve(packageDir, inputPath),
     output: [
       {
-        file: path.resolve(packageDir, `dist/${name}.esm-bundler.js`),
+        file: path.resolve(packageDir, `dist/${name}.esm.js`),
         format: "es",
       },
       {

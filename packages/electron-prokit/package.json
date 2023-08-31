@@ -1,11 +1,11 @@
 {
   "name": "electron-prokit",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
-  "main": "index.ts",
-  "module": "index.ts",
-  "unpkg": "index.js",
-  "jsdelivr": "index.js",
+  "main": "dist/electron-prokit.cjs.js",
+  "module": "dist/electron-prokit.esm.js",
+  "browser": "dist/electron-prokit.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
