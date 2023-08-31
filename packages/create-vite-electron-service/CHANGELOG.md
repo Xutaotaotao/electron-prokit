@@ -1,5 +1,11 @@
 # @electron-prokit/create-vite-electron-service
 
+## 4.0.0
+
+### Major Changes
+
+- feat: publishConfig
+
 ## 3.0.0
 
 ### Major Changes

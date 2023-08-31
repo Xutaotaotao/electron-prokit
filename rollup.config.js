@@ -9,7 +9,7 @@ function getBuildConfig(name,inputPath="src/index.ts") {
     input: path.resolve(packageDir, inputPath),
     output: [
       {
-        file: path.resolve(packageDir, `dist/${name}.esm.js`),
+        dir: path.resolve(packageDir, `dist/${name}.esm.js`),
         format: "es",
       },
       {
@@ -23,13 +23,15 @@ function getBuildConfig(name,inputPath="src/index.ts") {
       },
     ],
     plugins: [
-      inputPath.includes('ts') ? ts({
+      ts({
         tsconfig: path.resolve(packageDir, "./tsconfig.json"),
-      }) : '',
+      }),
       resolvePlugin(),
     ],
     external:[
-       'electron' 
+       'electron',
+       'esbuild',
+       'postcss'
     ]
   };
 }
@@ -37,7 +39,6 @@ function getBuildConfig(name,inputPath="src/index.ts") {
 module.exports = () => {
   return [
     getBuildConfig('create-electron-prokit'),
-    // getBuildConfig('create-vite-electron-service','index.js'),
     getBuildConfig('electron-prokit','index.ts')
   ];
 };
