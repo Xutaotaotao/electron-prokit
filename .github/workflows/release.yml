@@ -1,0 +1,37 @@
+# https://docs.github.com/en/actions/using-workflows/about-workflows
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      # https://github.com/actions/checkout
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      # https://github.com/actions/setup-node
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      # https://github.com/pnpm/action-setup
+      - name: Setup Pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.x
+      # https://pnpm.io/zh/cli/install#--frozen-lockfile
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      # https://github.com/changesets/action
+      - name: Create Release Pull Request or Publish to npm
+        uses: changesets/action@v1
+        with:
+          publish: pnpm release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

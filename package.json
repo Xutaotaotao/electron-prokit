@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "play",
+    "docs",
+    "​service",
+    "templates/*"
+  ],
+  "scripts": {
+    "preinstall": "npx only-allow pnpm", 
+    "dev": "pnpm -C play dev",
+    "docs:dev": "pnpm run -C docs dev",
+    "docs:build": "pnpm run -C docs build",
+    "docs:preview": "pnpm run -C docs preview",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup --config",
+    "release": "pnpm run build && pnpm changeset publish"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@types/node": "^20.5.7",
+    "execa": "5.1.1",
+    "rollup": "^3.28.1",
+    "rollup-plugin-typescript2": "^0.35.0",
+    "typescript": "^5.2.2"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "vite",
+        "react",
+        "react-dom"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

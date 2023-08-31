@@ -1,0 +1,26 @@
+{
+  "name": "@electron-prokit/create-electron-prokit",
+  "version": "4.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "main": "dist/create-electron-prokit.cjs.js",
+    "module": "dist/create-electron-prokit.esm.js",
+    "browser": "dist/create-electron-prokit.js",
+    "types": "types/index.d.ts",
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "es",
+    "lib",
+    "dist",
+    "global.d.ts"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
