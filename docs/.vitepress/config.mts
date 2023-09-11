@@ -60,7 +60,7 @@ export default defineConfig({
               link: '/tutorials/',
             },
             {
-              text: '如何在Vite项目中快速构建一个Electron的项目',
+              text: ' 如何用Vite快速构建一个Electron项目',
               link: '/tutorials/create-vite-electron-service',
             }
           ]
