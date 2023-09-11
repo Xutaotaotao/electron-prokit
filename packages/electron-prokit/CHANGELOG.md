@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 4.0.0
+
+### Major Changes
+
+- fix: change eletron path
+
 ## 3.0.0
 
 ### Major Changes

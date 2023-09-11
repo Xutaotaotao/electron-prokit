@@ -9,17 +9,8 @@ function getBuildConfig(name,inputPath="src/index.ts") {
     input: path.resolve(packageDir, inputPath),
     output: [
       {
-        dir: path.resolve(packageDir, `dist/${name}.esm.js`),
-        format: "es",
-      },
-      {
         file: path.resolve(packageDir, `dist/${name}.cjs.js`),
         format: "cjs",
-      },
-      {
-        file: path.resolve(packageDir, `dist/${name}.js`),
-        name,
-        format: "umd",
       },
     ],
     plugins: [
@@ -39,6 +30,6 @@ function getBuildConfig(name,inputPath="src/index.ts") {
 module.exports = () => {
   return [
     getBuildConfig('create-electron-prokit'),
-    getBuildConfig('electron-prokit','index.ts')
+    getBuildConfig('electron-prokit')
   ];
 };

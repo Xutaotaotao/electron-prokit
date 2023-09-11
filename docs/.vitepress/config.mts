@@ -4,6 +4,15 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Electron-Prokit",
   description: "Use electron like a pro",
+  head: [
+    ['link', 
+      { rel: 'icon', href: '/favicon.ico' }
+    ],
+    [
+      'meta',
+      {name: 'referrer',content: 'no-referrer'}
+    ]
+  ],
   themeConfig: {
     logo: '/headlogo.svg',
     // https://vitepress.dev/reference/default-theme-config

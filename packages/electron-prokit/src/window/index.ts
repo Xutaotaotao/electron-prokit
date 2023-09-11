@@ -1,8 +1,8 @@
-import { BrowserWindow } from 'electron';
+import { BrowserWindow } from 'electron'
 
 const windows = new Map<string, BrowserWindow>();
 
-export function createWindow(name: string, options: Electron.BrowserWindowConstructorOptions):Electron.CrossProcessExports.BrowserWindow {
+export function createWindow(name: string, options: Electron.BrowserWindowConstructorOptions):Electron.CrossProcessExports.BrowserWindow | undefined{
   if (hasWindow(name)) {
     console.warn('has same name window')
     return getWindow(name);

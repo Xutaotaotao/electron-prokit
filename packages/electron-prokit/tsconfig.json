@@ -9,5 +9,5 @@
     "moduleResolution": "node",
     "downlevelIteration": true
   },
-  "include": ["window"],
+  "include": ["src"],
 }

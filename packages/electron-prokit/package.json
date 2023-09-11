@@ -1,12 +1,10 @@
 {
   "name": "electron-prokit",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "publishConfig": {
     "main": "dist/electron-prokit.cjs.js",
-    "module": "dist/electron-prokit.esm.js",
-    "browser": "dist/electron-prokit.js",
     "types": "types/index.d.ts",
     "access": "public",
     "registry": "https://registry.npmjs.org/"
@@ -15,6 +13,7 @@
     "es",
     "lib",
     "dist",
+    "dist/electron-prokit.cjs.js",
     "global.d.ts"
   ],
   "scripts": {

@@ -18,11 +18,11 @@ hero:
     #   link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 快捷
+    details: 一站式开发Electron桌面端应用
+  - title: 方便
+    details: 去除繁琐的工程搭建步骤
+  - title: 丰富
+    details: 丰富的Electron基建物料
 ---
 

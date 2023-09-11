@@ -1,5 +1,11 @@
 # @electron-prokit/create-vite-electron-service
 
+## 5.0.0
+
+### Major Changes
+
+- fix: change eletron path
+
 ## 4.0.0
 
 ### Major Changes

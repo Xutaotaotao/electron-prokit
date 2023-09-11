@@ -1,5 +1,5 @@
 #!/usr/bin/node
-import electronPath from "electron";
+// import electronPath from "electron";
 import { spawn } from "child_process";
 import { createServer, build } from "vite";
 
@@ -70,7 +70,7 @@ const workDev = {
 };
 
 const mainDev = {
-  async createMainServer(renderDevServer,serverOptions) {
+  async createMainServer(renderDevServer,serverOptions,electronPath) {
     const {sharedOptions,configFile} = serverOptions
     const protocol = `http${renderDevServer.config.server.https ? "s" : ""}:`;
     const host = renderDevServer.config.server.host || "localhost";
@@ -124,6 +124,7 @@ const createViteElectronService = async (options) => {
     preloadConfigFile,
     workConfigFile,
     mainConfigFile,
+    electronPath,
     sharedOptions = {
       mode: "dev",
       build: {
@@ -135,7 +136,7 @@ const createViteElectronService = async (options) => {
     const renderDevServer = await renderDev.createRenderServer({configFile:renderConfigFile,sharedOptions});
     await preloadDev.createRenderServer(renderDevServer,{configFile:preloadConfigFile,sharedOptions});
     await workDev.createRenderServer(renderDevServer,{configFile:workConfigFile,sharedOptions});
-    await mainDev.createMainServer(renderDevServer,{configFile:mainConfigFile,sharedOptions});
+    await mainDev.createMainServer(renderDevServer,{configFile:mainConfigFile,sharedOptions},electronPath);
   } catch (err) {
     console.error(err);
   }
