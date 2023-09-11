@@ -9,5 +9,5 @@
     "moduleResolution": "node",
     "downlevelIteration": true
   },
-  "include": ["src"],
+  "include": ["src", "types/index.d.ts"],
 }
