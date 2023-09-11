@@ -1,10 +1,12 @@
 {
   "name": "electron-prokit",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "description": "",
   "main": "src/index.ts",
   "publishConfig": {
     "main": "dist/electron-prokit.cjs.js",
+    "module": "dist/electron-prokit.mjs",
+    "umd:main": "dist/electron-prokit.umd.js",
     "types": "types/index.d.ts",
     "access": "public",
     "registry": "https://registry.npmjs.org/"

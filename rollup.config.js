@@ -12,6 +12,15 @@ function getBuildConfig(name,inputPath="src/index.ts") {
         file: path.resolve(packageDir, `dist/${name}.cjs.js`),
         format: "cjs",
       },
+      {
+        file: path.resolve(packageDir, `dist/${name}.mjs`),
+        format: 'es',
+      },
+      {
+        file: path.resolve(packageDir, `dist/${name}.umd.js`),
+        format: 'umd',
+        name,
+      },
     ],
     plugins: [
       ts({
