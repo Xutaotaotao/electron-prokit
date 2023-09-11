@@ -23,7 +23,7 @@
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "electron": "^26.1.0",
-    "electron-prokit": "workspace:^4.0.0",
+    "electron-prokit": "workspace:^5.0.0",
     "esbuild": "^0.19.2",
     "esbuild-plugin-polyfill-node": "^0.3.0",
     "eslint": "^8.45.0",
