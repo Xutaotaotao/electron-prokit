@@ -25,17 +25,24 @@ jobs:
           version: 7.x
       # https://pnpm.io/zh/cli/install#--frozen-lockfile
       - name: Install Dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build docs
-        run: pnpm -F docs build
+        run: pnpm docs:build
+      
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: docs/.vitepress/dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # https://github.com/changesets/action
       - name: Create Release Pull Request or Publish to npm
         uses: changesets/action@v1
         with:
           publish: pnpm release
-          folder: docs/.vitepress/dist
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
