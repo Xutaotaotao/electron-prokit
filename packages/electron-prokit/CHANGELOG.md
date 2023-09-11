@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 8.0.0
+
+### Major Changes
+
+- fix:declaration files
+
 ## 7.0.0
 
 ### Major Changes

@@ -9,7 +9,6 @@
     "moduleResolution": "node",
     "downlevelIteration": true,
     "declaration": true,
-    "declarationDir": "./types"
   },
-  "include": ["src", "types/index.d.ts"],
+  "include": ["src"],
 }
