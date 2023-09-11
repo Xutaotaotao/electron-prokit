@@ -1,6 +1,6 @@
 {
   "name": "@electron-prokit/create-electron-prokit",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "",
   "main": "src/index.ts",
   "publishConfig": {

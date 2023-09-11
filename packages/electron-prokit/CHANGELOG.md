@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 5.0.0
+
+### Major Changes
+
+- 429634d: fix: electron-prokit type
+
 ## 4.0.0
 
 ### Major Changes

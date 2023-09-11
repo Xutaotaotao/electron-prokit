@@ -1,5 +1,11 @@
 # @electron-prokit/create-electron-prokit
 
+## 5.0.0
+
+### Major Changes
+
+- fix: type
+
 ## 4.0.0
 
 ### Major Changes
