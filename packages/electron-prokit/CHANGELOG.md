@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 6.0.0
+
+### Major Changes
+
+- doc: electron-prokit
+
 ## 5.0.0
 
 ### Major Changes
