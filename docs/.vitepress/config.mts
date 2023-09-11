@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/electron-prokit/',
   title: "Electron-Prokit",
   description: "Use electron like a pro",
   head: [
