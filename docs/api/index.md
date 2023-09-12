@@ -6,4 +6,5 @@
 
 ::: tip electron-prokit
 electron-prokit核心框架API
+- [window](/api/electron-prokit/window)
 :::

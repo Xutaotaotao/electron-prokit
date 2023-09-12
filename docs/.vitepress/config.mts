@@ -47,6 +47,15 @@ export default defineConfig({
             {
               text: 'create-vite-electron-service',
               link: '/api/create-vite-electron-service',
+            },
+            {
+              text: 'electron-prokit',
+              items: [
+                {
+                  text: 'window',
+                  link: '/api/electron-prokit/window',
+                }
+              ]
             }
           ]
         },
@@ -60,7 +69,7 @@ export default defineConfig({
               link: '/tutorials/',
             },
             {
-              text: ' 如何用Vite快速构建一个Electron项目',
+              text: ' 用Vite快速构建一个Electron项目',
               link: '/tutorials/create-vite-electron-service',
             }
           ]
