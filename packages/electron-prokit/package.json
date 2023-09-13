@@ -2,6 +2,7 @@
   "name": "electron-prokit",
   "version": "8.0.0",
   "description": "",
+  "type": "module",
   "main": "src/index.ts",
   "publishConfig": {
     "main": "dist/electron-prokit.cjs.js",

@@ -31,7 +31,4 @@ const initWindowsAction = () => {
 
 app.whenReady().then(() => {
   initWindowsAction()
-  // recivedMsgFormRender((e:Electron.IpcMainEvent,args:unknown) => {
-  //   console.log(e,args)
-  // })
 })
