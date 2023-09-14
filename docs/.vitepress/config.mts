@@ -11,8 +11,9 @@ export default defineConfig({
     ],
     [
       'meta',
-      {name: 'referrer',content: 'no-referrer'}
-    ]
+      {name: 'referrer',content: 'no-referrer'},
+    ],
+    ['meta', { name: 'cache-control', content:'max-age=0, s-maxage=3600'}]
   ],
   themeConfig: {
     logo: '/headlogo.svg',
