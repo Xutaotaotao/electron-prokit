@@ -1,8 +1,8 @@
 import { join,resolve } from "path";
 import {
-  app,
+  app,Menu
 } from "electron";
-import {createWindow, onMsgFormRender} from 'electron-prokit';
+import {createWindow, mainMsgToRender, onMsgFormRender} from 'electron-prokit';
 
 const initWindowsAction = () => {
   const mainWindow = createWindow('main',{
@@ -15,6 +15,20 @@ const initWindowsAction = () => {
       preload: join(__dirname, "../preload/index.cjs"),
     },
   })
+
+  const menu = Menu.buildFromTemplate([
+    {
+      label: app.name,
+      submenu: [
+        {
+          click: () => mainMsgToRender('main','msg from main'),
+          label: '发送消息给render'
+        }
+      ]
+    }
+  ])
+
+  Menu.setApplicationMenu(menu)
 
   if (mainWindow) {
     if (import.meta.env.MODE === "dev") {

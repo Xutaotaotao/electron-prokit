@@ -25,25 +25,44 @@ creactDefaultExposeInMainWorld();
 - 渲染进程
 
 ```tsx
-import {Button} from 'antd'
+import { Button } from "antd";
 
 const Ipc = () => {
-  const renderMsgToMain = (msg:string) => {
-    window.electronProkit.renderMsgToMain(msg).then(result => {
-      console.log(result)
-    })
-  }
-  return <div>
-    <Button onClick={() => renderMsgToMain ('sendMsgToMain Hello')}>发送信息到主进程</Button>
-  </div>
-}
+  const renderMsgToMain = (msg: string) => {
+    window.electronProkit.renderMsgToMain(msg).then((result) => {
+      console.log(result);
+    });
+  };
+  return (
+    <div>
+      <Button onClick={() => renderMsgToMain("sendMsgToMain Hello")}>
+        发送信息到主进程
+      </Button>
+    </div>
+  );
+};
 
-export default Ipc
+export default Ipc;
 ```
 
 ## mainMsgToRender
 
 主进程发送信息到渲染进程
+
+- 主进程
+
+```ts
+import { mainMsgToRender } from "electron-prokit";
+mainMsgToRender("main", "msg from main");
+```
+
+- 渲染进程
+
+```ts
+window.electronProkit.onMsgFormMain((_event: unknown, args: string) => {
+  console.log(args);
+});
+```
 
 ## renderMsgToRender
 
