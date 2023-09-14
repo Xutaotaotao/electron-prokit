@@ -2,7 +2,7 @@ import { join,resolve } from "path";
 import {
   app,
 } from "electron";
-import {createWindow} from 'electron-prokit';
+import {createWindow, onMsgFormRender} from 'electron-prokit';
 
 const initWindowsAction = () => {
   const mainWindow = createWindow('main',{
@@ -31,7 +31,7 @@ const initWindowsAction = () => {
 
 app.whenReady().then(() => {
   initWindowsAction()
-  // recivedMsgFormRender((e:Electron.IpcMainEvent,args:unknown) => {
-  //   console.log(e,args)
-  // })
+  onMsgFormRender((_e:Electron.IpcMainEvent,args:unknown) => {
+    return `Main have get data is ${args}`
+  })
 })

@@ -1,12 +1,13 @@
-import {sendMsgToMain} from 'electron-prokit'
 import {Button} from 'antd'
 
-console.log(sendMsgToMain)
-
 const Ipc = () => {
-  const sendMsgTo = (s) => {}
+  const renderMsgToMain = (msg:string) => {
+    window.electronProkit.renderMsgToMain(msg).then(result => {
+      console.log(result)
+    })
+  }
   return <div>
-    <Button onClick={() => sendMsgTo ('sendMsgToMain Hello')}>发送信息到主进程</Button>
+    <Button onClick={() => renderMsgToMain ('sendMsgToMain Hello')}>发送信息到主进程</Button>
   </div>
 }
 

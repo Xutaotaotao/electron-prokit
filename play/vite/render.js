@@ -22,7 +22,7 @@ const config = {
     brotliSize: false,
     chunkSizeWarningLimit: 2048,
     rollupOptions: {
-      external: [...builtinModules],
+      external: [...builtinModules,'electron'],
     },
   },
   plugins: [react()],

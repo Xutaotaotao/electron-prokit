@@ -6,5 +6,6 @@
 
 ::: tip electron-prokit
 electron-prokit核心框架API
-- [window](/api/electron-prokit/window)
+- [window 窗口](/api/electron-prokit/window)
+- [ipc 进程通信](/api/electron-prokit/ipc)
 :::

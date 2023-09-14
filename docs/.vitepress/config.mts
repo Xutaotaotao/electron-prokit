@@ -52,8 +52,12 @@ export default defineConfig({
               text: 'electron-prokit',
               items: [
                 {
-                  text: 'window',
+                  text: 'window 窗口',
                   link: '/api/electron-prokit/window',
+                },
+                {
+                  text: 'ipc 进程通信',
+                  link: '/api/electron-prokit/ipc',
                 }
               ]
             }
