@@ -4,7 +4,7 @@ import {
   initIpc,
   createWindow,
   mainMsgToRender,
-  onMsgFormRender,
+  onMsgFromRender,
 } from "electron-prokit";
 
 const initWindowsAction = () => {
@@ -65,7 +65,7 @@ const initWindowsAction = () => {
 app.whenReady().then(() => {
   initWindowsAction();
   initIpc();
-  onMsgFormRender((_e: Electron.IpcMainEvent, args: unknown) => {
+  onMsgFromRender((_e: Electron.IpcMainEvent, args: unknown) => {
     return `Main have get data is ${args}`;
   });
 });

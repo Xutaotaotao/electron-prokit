@@ -3,7 +3,7 @@ export {};
 
 interface WindowElectronProkit {
   renderMsgToMain<T, U>(msg: T): Promise<U>;
-  onMsgFormMain(callBack): void;
+  onMsgFromMain(callBack): void;
   onRenderMsgToRender(callBack): void;
   renderMsgToRender(windowName:string,msg:unknown):void
 }

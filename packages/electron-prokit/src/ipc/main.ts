@@ -3,7 +3,7 @@ import { getWindow } from "../window"
 
 type Callback = (event: Electron.IpcMainEvent, args: any) => void
 
-export function onMsgFormRender(callBack:Callback):void {
+export function onMsgFromRender(callBack:Callback):void {
   ipcMain.handle('EPrenderMsgToMain',(event: Electron.IpcMainEvent, args:any) => {
     return callBack(event,args)
   })

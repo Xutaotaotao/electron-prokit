@@ -1,3 +1,3 @@
-import {creactDefaultExposeInMainWorld} from 'electron-prokit'
+import {initExposeInMainWorld} from 'electron-prokit'
 
-creactDefaultExposeInMainWorld()
+initExposeInMainWorld()

@@ -32,13 +32,13 @@ initExposeInMainWorld();
 
 ## 渲染进程发送信息到主进程
 
-### onMsgFormRender
+### onMsgFromRender
 
 - 主进程
 
 ```ts
-import { onMsgFormRender } from "electron-prokit";
-onMsgFormRender((_e: Electron.IpcMainEvent, args: unknown) => {
+import { onMsgFromRender } from "electron-prokit";
+onMsgFromRender((_e: Electron.IpcMainEvent, args: unknown) => {
   return `Main have get data is ${args}`;
 });
 ```
@@ -75,11 +75,11 @@ export default Ipc;
 import { mainMsgToRender } from "electron-prokit";
 mainMsgToRender("main", "msg from main");
 ```
-### onMsgFormMain
+### onMsgFromMain
 - 渲染进程
 
 ```ts
-window.electronProkit.onMsgFormMain((_event: unknown, args: string) => {
+window.electronProkit.onMsgFromMain((_event: unknown, args: string) => {
   console.log(args);
 });
 ```

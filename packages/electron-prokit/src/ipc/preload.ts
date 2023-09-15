@@ -7,7 +7,7 @@ const renderMsgToMain = (msg:any) => {
   return ipcRenderer.invoke('EPrenderMsgToMain',msg)
 }
 
-const onMsgFormMain = (callback:Callback):void => {
+const onMsgFromMain = (callback:Callback):void => {
   ipcRenderer.on("EPmainMsgToRender", (event: IpcRendererEvent, args: any) => {
     callback(event, args);
   });
@@ -29,7 +29,7 @@ export const onRenderMsgToRender = (callback:Callback):void => {
 export function initExposeInMainWorld():void {
   contextBridge.exposeInMainWorld('electronProkit', {
     renderMsgToMain,
-    onMsgFormMain,
+    onMsgFromMain,
     renderMsgToRender,
     onRenderMsgToRender
   })
