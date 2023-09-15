@@ -29,6 +29,6 @@ export function initOnRenderMsgToRender ():void {
  })
 }
 
-export function initIpc () {
+export function initIpc ():void {
   initOnRenderMsgToRender()
 }

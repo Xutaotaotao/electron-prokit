@@ -1,6 +1,7 @@
-import { IpcRendererEvent, contextBridge, ipcRenderer } from "electron";
+import type { IpcRendererEvent} from "electron";
+import { contextBridge, ipcRenderer } from "electron";
 
-type Callback = (event: IpcRendererEvent, ...args: any[]) => void
+type Callback = (event: IpcRendererEvent, args: any) => void
 
 
 const renderMsgToMain = (msg:any) => {
