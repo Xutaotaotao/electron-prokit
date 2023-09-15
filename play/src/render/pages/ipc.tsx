@@ -18,6 +18,11 @@ const Ipc = () => {
       setMsgFormRenderMsgToMain(result)
     })
   }
+
+  const renderMsgToRender = (windowName:string,msg:string) => {
+    window.electronProkit.renderMsgToRender(windowName,msg)
+  }
+
   return <div>
     <Divider>发送信息到主进程</Divider>
     <Space direction="vertical">
@@ -27,6 +32,10 @@ const Ipc = () => {
     
     <Divider>从主进程接收消息</Divider>
     <div>这里是主进程传过来的信息：{msgFormMain}</div>
+
+    <Divider>渲染进程间发送消息</Divider>
+    <Button type='primary' onClick={() => renderMsgToRender ('work','Hello Work')}>发送信息到work进程</Button>
+
   </div>
 }
 

@@ -4,18 +4,33 @@ type Callback = (event: IpcRendererEvent, ...args: any[]) => void
 
 
 const renderMsgToMain = (msg:any) => {
-  return ipcRenderer.invoke('renderMsgToMain',msg)
+  return ipcRenderer.invoke('EPrenderMsgToMain',msg)
 }
 
-const onMsgFormMain = (callback:Callback) => {
-  ipcRenderer.on("mainMsgToRender", (event: IpcRendererEvent, args: any) => {
+const onMsgFormMain = (callback:Callback):void => {
+  ipcRenderer.on("EPmainMsgToRender", (event: IpcRendererEvent, args: any) => {
     callback(event, args);
   });
 }
 
-export function creactDefaultExposeInMainWorld():void {
+const renderMsgToRender = (windowName:string,msg:any):void => {
+  ipcRenderer.send('EPrenderMsgToRender',{
+    windowName,
+    msg
+  })
+}
+
+export const onRenderMsgToRender = (callback:Callback):void => {
+  ipcRenderer.on("EPrenderMsgToRender", (event: IpcRendererEvent, args: any) => {
+    callback(event, args);
+  });
+}
+
+export function initExposeInMainWorld():void {
   contextBridge.exposeInMainWorld('electronProkit', {
     renderMsgToMain,
     onMsgFormMain,
+    renderMsgToRender,
+    onRenderMsgToRender
   })
 }

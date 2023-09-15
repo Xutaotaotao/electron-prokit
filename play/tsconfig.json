@@ -22,5 +22,5 @@
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": false
   },
-  "include": ["src"],
+  "include": ["src", "vendor.d.ts"],
 }

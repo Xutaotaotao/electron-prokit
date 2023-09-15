@@ -1,11 +1,14 @@
-import { join,resolve } from "path";
+import { join, resolve } from "path";
+import { app, Menu } from "electron";
 import {
-  app,Menu
-} from "electron";
-import {createWindow, mainMsgToRender, onMsgFormRender} from 'electron-prokit';
+  initIpc,
+  createWindow,
+  mainMsgToRender,
+  onMsgFormRender,
+} from "electron-prokit";
 
 const initWindowsAction = () => {
-  const mainWindow = createWindow('main',{
+  const mainWindow = createWindow("main", {
     width: 960,
     height: 720,
     webPreferences: {
@@ -14,21 +17,21 @@ const initWindowsAction = () => {
       webSecurity: false,
       preload: join(__dirname, "../preload/index.cjs"),
     },
-  })
+  });
 
   const menu = Menu.buildFromTemplate([
     {
       label: app.name,
       submenu: [
         {
-          click: () => mainMsgToRender('main','msg from main'),
-          label: '发送消息给render'
-        }
-      ]
-    }
-  ])
+          click: () => mainMsgToRender("main", "msg from main"),
+          label: "发送消息给render",
+        },
+      ],
+    },
+  ]);
 
-  Menu.setApplicationMenu(menu)
+  Menu.setApplicationMenu(menu);
 
   if (mainWindow) {
     if (import.meta.env.MODE === "dev") {
@@ -40,12 +43,29 @@ const initWindowsAction = () => {
       mainWindow.loadFile(resolve(__dirname, "../render/index.html"));
     }
   }
-}
 
+  const workWindow = createWindow("work", {
+    show: false,
+    webPreferences: {
+      nodeIntegration: true,
+      webSecurity: false,
+      preload: join(__dirname, "../work/index.cjs"),
+    },
+  });
+
+  workWindow.hide();
+
+  if (import.meta.env.MODE === "dev") {
+    workWindow.webContents.openDevTools();
+  }
+
+  workWindow.loadFile(resolve(__dirname, "../work/index.html"));
+};
 
 app.whenReady().then(() => {
-  initWindowsAction()
-  onMsgFormRender((_e:Electron.IpcMainEvent,args:unknown) => {
-    return `Main have get data is ${args}`
-  })
-})
+  initWindowsAction();
+  initIpc();
+  onMsgFormRender((_e: Electron.IpcMainEvent, args: unknown) => {
+    return `Main have get data is ${args}`;
+  });
+});
