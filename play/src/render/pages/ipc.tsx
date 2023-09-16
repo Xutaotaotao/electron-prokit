@@ -36,7 +36,10 @@ const Ipc = () => {
       <div>这里是主进程传过来的信息：{msgFromMain}</div>
     </Space>
     <Divider>渲染进程间发送消息</Divider>
-    <Button type='primary' onClick={() => renderMsgToRender ('work','Hello Work')}>发送信息到work进程</Button>
+    <Space direction="vertical">
+      <Button type='primary' onClick={() => renderMsgToRender ('work','Hello Work')}>发送信息到work进程</Button>
+      <div>可以通过work进程的控制台查看渲染进程发送的消息</div>
+    </Space>
 
   </div>
 }

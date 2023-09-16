@@ -21,17 +21,22 @@ const renderMsgToRender = (windowName:string,msg:any):void => {
   })
 }
 
-export const onRenderMsgToRender = (callback:Callback):void => {
+ const onRenderMsgToRender = (callback:Callback):void => {
   ipcRenderer.on("EPrenderMsgToRender", (event: IpcRendererEvent, args: any) => {
     callback(event, args);
   });
 }
 
-export function initExposeInMainWorld():void {
+ function initExposeInMainWorld():void {
   contextBridge.exposeInMainWorld('electronProkit', {
     renderMsgToMain,
     onMsgFromMain,
     renderMsgToRender,
     onRenderMsgToRender
   })
+}
+
+export {
+  onRenderMsgToRender,
+  initExposeInMainWorld
 }

@@ -5,6 +5,7 @@ import Root from "../layout";
 import ErrorPage from "../pages/error-page";
 import Ipc from "../pages/ipc";
 import Home from "../pages/home";
+import Http from "../pages/http";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "ipc",
         element: <Ipc />,
+      },
+      {
+        path: "http",
+        element: <Http />,
       },
     ],
   },

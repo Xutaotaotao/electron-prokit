@@ -1,7 +1,6 @@
-#!/usr/bin/node
 // import electronPath from "electron";
 import { spawn } from "child_process";
-import { createServer, build } from "vite";
+import { build, createServer } from "vite";
 
 let spawnProcess = null;
 
