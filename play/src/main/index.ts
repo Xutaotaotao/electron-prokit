@@ -5,7 +5,10 @@ import {
   createWindow,
   mainMsgToRender,
   onMsgFromRender,
+  http
 } from "electron-prokit";
+
+
 
 const initWindowsAction = () => {
   const mainWindow = createWindow("main", {
@@ -47,6 +50,7 @@ const initWindowsAction = () => {
   const workWindow = createWindow("work", {
     show: false,
     webPreferences: {
+      contextIsolation: true,
       nodeIntegration: true,
       webSecurity: false,
       preload: join(__dirname, "../work/index.cjs"),
@@ -68,4 +72,8 @@ app.whenReady().then(() => {
   onMsgFromRender((_e: Electron.IpcMainEvent, args: unknown) => {
     return `Main have get data is ${args}`;
   });
+  http({
+    url:'https://jsonplaceholder.typicode.com/posts/1',
+    method:'get'
+  })
 });

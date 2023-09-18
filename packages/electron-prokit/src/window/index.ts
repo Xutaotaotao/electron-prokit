@@ -1,23 +1,26 @@
-import { BrowserWindow } from 'electron'
+import { useBrowserWindow } from "../hooks";
 
-const windows = new Map<string, BrowserWindow>();
+const windows = new Map<string, Electron.BrowserWindow>();
 
-export function createWindow(name: string, options: Electron.BrowserWindowConstructorOptions):Electron.CrossProcessExports.BrowserWindow{
+function createWindow(
+  name: string,
+  options: Electron.BrowserWindowConstructorOptions
+): Electron.CrossProcessExports.BrowserWindow {
   if (hasWindow(name)) {
-    console.warn('has same name window')
+    console.warn("has same name window");
     return getWindow(name);
   } else {
-    const win = new BrowserWindow(options);
+    const win = useBrowserWindow(options);
     windows.set(name, win);
     return win;
   }
 }
 
-export function getWindow(name: string):Electron.CrossProcessExports.BrowserWindow {
+function getWindow(name: string): Electron.CrossProcessExports.BrowserWindow {
   return windows.get(name);
-} 
+}
 
-export function destroyWindow(name: string):void {
+function destroyWindow(name: string): void {
   const win = getWindow(name);
   if (win) {
     win.destroy();
@@ -25,14 +28,23 @@ export function destroyWindow(name: string):void {
   }
 }
 
-export function getAllWindows():Array<Electron.CrossProcessExports.BrowserWindow> {
+function getAllWindows(): Array<Electron.CrossProcessExports.BrowserWindow> {
   return Array.from(windows.values());
 }
 
-export function hasWindow(name: string):boolean {
-  return windows.has(name); 
+function hasWindow(name: string): boolean {
+  return windows.has(name);
 }
 
-export function clearWindows():void {
+function clearWindows(): void {
   windows.clear();
 }
+
+export {
+  createWindow,
+  getWindow,
+  destroyWindow,
+  getAllWindows,
+  hasWindow,
+  clearWindows,
+};

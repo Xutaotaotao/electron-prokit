@@ -1,7 +1,6 @@
-#!/usr/bin/node
-// import electronPath from "electron";
+// eslint-disable-next-line import/no-nodejs-modules
 import { spawn } from "child_process";
-import { createServer, build } from "vite";
+import { build, createServer } from "vite";
 
 let spawnProcess = null;
 
@@ -118,6 +117,7 @@ const mainDev = {
 };
 
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const createViteElectronService = async (options) => {
   const {
     renderConfigFile,

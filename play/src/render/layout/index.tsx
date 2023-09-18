@@ -1,6 +1,6 @@
 import React, { ComponentClass, FunctionComponent, useState } from 'react';
 import type { MenuProps } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined,WifiOutlined } from '@ant-design/icons';
 import { Layout, Menu, theme } from 'antd';
 import { Outlet,Link } from "react-router-dom";
 
@@ -21,7 +21,8 @@ const Root: React.FC = () => {
   const [currentMenuKey,setCurrentMenuKey] = useState('Electron Prokit')
 
   const menus:Array<Menu> = [
-    {path:'ipc',icon: UploadOutlined,name:'跨进程通信' }
+    {path:'ipc',icon: UploadOutlined,name:'跨进程通信' },
+    {path:'http',icon: WifiOutlined,name:'网络请求' }
   ]
 
   const menuOnSelect:MenuProps['onSelect'] = (a) => {

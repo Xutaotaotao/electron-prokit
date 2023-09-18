@@ -10,5 +10,5 @@
     "downlevelIteration": true,
     "declaration": true,
   },
-  "include": ["src","vendor.d.ts"],
+  "include": ["src","vendor.d.ts","typings.d.ts"],
 }

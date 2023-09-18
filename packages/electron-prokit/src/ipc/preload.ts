@@ -1,11 +1,14 @@
 import type { IpcRendererEvent} from "electron";
-import { contextBridge, ipcRenderer } from "electron";
+import { useContextBridge, useIpcRenderer } from "../hooks";
+const ipcRenderer = useIpcRenderer()
+const contextBridge = useContextBridge()
+
 
 type Callback = (event: IpcRendererEvent, args: any) => void
 
 
 const renderMsgToMain = (msg:any) => {
-  return ipcRenderer.invoke('EPrenderMsgToMain',msg)
+    return ipcRenderer.invoke('EPrenderMsgToMain',msg)  
 }
 
 const onMsgFromMain = (callback:Callback):void => {
@@ -21,17 +24,22 @@ const renderMsgToRender = (windowName:string,msg:any):void => {
   })
 }
 
-export const onRenderMsgToRender = (callback:Callback):void => {
+ const onRenderMsgToRender = (callback:Callback):void => {
   ipcRenderer.on("EPrenderMsgToRender", (event: IpcRendererEvent, args: any) => {
     callback(event, args);
   });
 }
 
-export function initExposeInMainWorld():void {
+ function initExposeInMainWorld():void {
   contextBridge.exposeInMainWorld('electronProkit', {
     renderMsgToMain,
     onMsgFromMain,
     renderMsgToRender,
     onRenderMsgToRender
   })
+}
+
+export {
+  onRenderMsgToRender,
+  initExposeInMainWorld
 }

@@ -1,34 +1,44 @@
-import { ipcMain } from "electron";
-import { getWindow } from "../window"
+import { useIpcMain } from "../hooks";
+import { getWindow } from "../window";
 
-type Callback = (event: Electron.IpcMainEvent, args: any) => void
+const ipcMain = useIpcMain();
 
-export function onMsgFromRender(callBack:Callback):void {
-  ipcMain.handle('EPrenderMsgToMain',(event: Electron.IpcMainEvent, args:any) => {
-    return callBack(event,args)
-  })
+type Callback = (event: Electron.IpcMainEvent, args: any) => void;
+
+function onMsgFromRender(callBack: Callback): void {
+  ipcMain.handle(
+    "EPrenderMsgToMain",
+    (event: Electron.IpcMainEvent, args: any) => {
+      return callBack(event, args);
+    }
+  );
 }
 
-export function mainMsgToRender(name:string,msg:unknown):void {
-  const windowInstance = getWindow(name)
+function mainMsgToRender(name: string, msg: unknown): void {
+  const windowInstance = getWindow(name);
   if (windowInstance) {
-    windowInstance.webContents.send('EPmainMsgToRender',msg)
+    windowInstance.webContents.send("EPmainMsgToRender", msg);
   } else {
-    throw new Error('not find windowInstance')
+    throw new Error("not find windowInstance");
   }
 }
 
-export function initOnRenderMsgToRender ():void {
-  ipcMain.on('EPrenderMsgToRender',(event:Electron.IpcMainEvent,args:any) => {
-    const windowInstance = getWindow(args.windowName)
-    if (windowInstance) {
-      windowInstance.webContents.send('EPrenderMsgToRender',args.msg)
-    } else {
-      throw new Error('not find windowInstance')
+function initOnRenderMsgToRender(): void {
+  ipcMain.on(
+    "EPrenderMsgToRender",
+    (event: Electron.IpcMainEvent, args: any) => {
+      const windowInstance = getWindow(args.windowName);
+      if (windowInstance) {
+        windowInstance.webContents.send("EPrenderMsgToRender", args.msg);
+      } else {
+        throw new Error("not find windowInstance");
+      }
     }
- })
+  );
 }
 
-export function initIpc ():void {
-  initOnRenderMsgToRender()
+function initIpc(): void {
+  initOnRenderMsgToRender();
 }
+
+export { onMsgFromRender, mainMsgToRender, initOnRenderMsgToRender, initIpc };
