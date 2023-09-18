@@ -19,3 +19,21 @@ Prokit涵盖了Electron应用开发的全流程。
 :::
 
 不管是开发初学者还是经验丰富的开发者,都可以利用Prokit提升生产力,快速交付高质量的Electron应用。
+
+## 安装
+
+使用 NPM:
+
+```bash
+$ npm i electron-prokit
+```
+使用 Yarn:
+
+```bash
+$ yarn i electron-prokit
+```
+使用 PNPM:
+
+```bash
+$ pnpm i electron-prokit
+```
