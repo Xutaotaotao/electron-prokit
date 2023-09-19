@@ -62,7 +62,7 @@ export default defineConfig({
                 },
                 {
                   text: 'http 网络',
-                  link: '/api/electron-prokit/ipc',
+                  link: '/api/electron-prokit/http',
                 }
               ]
             }
