@@ -59,6 +59,10 @@ export default defineConfig({
                 {
                   text: 'ipc 进程通信',
                   link: '/api/electron-prokit/ipc',
+                },
+                {
+                  text: 'http 网络',
+                  link: '/api/electron-prokit/ipc',
                 }
               ]
             }

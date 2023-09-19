@@ -74,6 +74,7 @@ app.whenReady().then(() => {
   });
   http({
     url:'https://jsonplaceholder.typicode.com/posts/1',
-    method:'get'
+    method:'get',
+    log:true
   })
 });

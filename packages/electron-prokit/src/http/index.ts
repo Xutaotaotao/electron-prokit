@@ -2,22 +2,18 @@ import axios from "axios";
 interface Options {
   url: string;
   method: string;
-  log?:boolean;
   data?: any;
   params?: any;
   headers?: any;
   timeout?: number;
-  cancelToken?: any;
   handleError?: (error: any) => void;
+  log?: boolean | ((data: any) => void)
 }
 
-// 请求拦截器类型
 type RequestInterceptor = (config: Options) => Options;
 
-// 响应拦截器类型
 type ResponseInterceptor<T> = (response: T) => T;
 
-// 创建请求和响应拦截器管理器
 class InterceptorManager<T> {
   private interceptors: Array<T | null> = [];
 
@@ -41,11 +37,9 @@ class InterceptorManager<T> {
   }
 }
 
-// 创建请求和响应拦截器管理器实例
 const requestInterceptors = new InterceptorManager<RequestInterceptor>();
 const responseInterceptors = new InterceptorManager<ResponseInterceptor<any>>();
 
-// 添加请求拦截器
 function addRequestInterceptor(
   onFulfilled: RequestInterceptor,
   onRejected?: RequestInterceptor
@@ -53,7 +47,6 @@ function addRequestInterceptor(
   return requestInterceptors.use(onFulfilled);
 }
 
-// 添加响应拦截器
 function addResponseInterceptor(
   onFulfilled: ResponseInterceptor<any>,
   onRejected?: ResponseInterceptor<any>
@@ -61,66 +54,100 @@ function addResponseInterceptor(
   return responseInterceptors.use(onFulfilled);
 }
 
-// 移除请求拦截器
 function removeRequestInterceptor(id: number): void {
   requestInterceptors.eject(id);
 }
 
-// 移除响应拦截器
 function removeResponseInterceptor(id: number): void {
   responseInterceptors.eject(id);
 }
 
-
-const electronRequest = (electronAdaptedOptions:Options) => {
-  const { net } = require("electron");
+const timeoutPromise = <T>(promise: Promise<T>, ms: number): Promise<T> => {
   return new Promise((resolve, reject) => {
+    const timeoutId = setTimeout(() => {
+      reject(new Error('Timeout!'))
+    }, ms);
+
+    promise.then((res) => {
+      clearTimeout(timeoutId);
+      resolve(res);
+    })
+    .catch((err) => {
+      clearTimeout(timeoutId);
+      reject(err);
+    });
+  });
+}
+
+const electronRequest = (electronAdaptedOptions: Options) => {
+  const { net } = require("electron");
+  const netPromise = new Promise((resolve, reject) => {
     const request = net.request(electronAdaptedOptions);
 
-    request.on('response', (response) => {
-      let responseData = '';
+    // header 
+    if (electronAdaptedOptions.headers && Object.keys(electronAdaptedOptions.headers).length) {
+      Object.keys(electronAdaptedOptions.headers).map((key:string) => {
+        request.setHeader(key,electronAdaptedOptions.headers[key])
+      })
+    }
 
-      response.on('data', (chunk) => {
+    // timeout 
+
+    request.on("response", (response) => {
+      let responseData = "";
+
+      response.on("data", (chunk) => {
         responseData += chunk;
       });
 
-      response.on('end', () => {
+      response.on("end", () => {
         const result = {
           data: responseData,
           status: response.statusCode,
           headers: response.headers,
         };
         if (electronAdaptedOptions.log) {
-          console.log(result)
+          if (typeof electronAdaptedOptions.log === "function") {
+            electronAdaptedOptions.log(result);
+          } else {
+            console.log(result);
+          }
         }
         resolve(result);
       });
 
-      response.on('error', (error) => {
+      response.on("error", (error) => {
         reject(error);
       });
     });
 
-    request.on('error', (error) => {
+    request.on("error", (error) => {
       reject(error);
     });
 
-    // 发送请求
     if (electronAdaptedOptions.data) {
       request.write(electronAdaptedOptions.data);
     }
     request.end();
   });
+  if (electronAdaptedOptions.timeout) {
+    return Promise.race([
+      netPromise,
+      timeoutPromise
+    ])
+  }
+  return netPromise
 };
 
-const axiosRequest = (axiosAdaptedOptions:Options) => {
-  // 实现 Axios 请求逻辑
+const axiosRequest = (axiosAdaptedOptions: Options) => {
   return axios(axiosAdaptedOptions);
 };
 
 export async function http<T>(options: Options): Promise<T> {
+  if (!options.method) {
+    options.method = 'get'
+  }
   try {
-    // 执行请求拦截器
     requestInterceptors.forEach((interceptor) => {
       if (interceptor) {
         options = interceptor(options);
@@ -131,10 +158,9 @@ export async function http<T>(options: Options): Promise<T> {
     if (import.meta.env.VITE_CURRENT_RUN_MODE === "main") {
       result = await electronRequest(options);
     } else {
-      result = await  axiosRequest(options);
+      result = await axiosRequest(options);
     }
 
-    // 执行响应拦截器
     responseInterceptors.forEach((interceptor) => {
       if (interceptor) {
         result = interceptor(result);
@@ -145,14 +171,11 @@ export async function http<T>(options: Options): Promise<T> {
   } catch (error) {
     if (options.handleError) {
       options.handleError(error);
-    } else {
-      console.error(error);
     }
     throw error;
   }
 }
 
-// 导出添加和移除拦截器的函数
 http.interceptors = {
   request: {
     use: addRequestInterceptor,
