@@ -28,5 +28,8 @@
     "electron": "^26.1.0",
     "js-beautify": "^1.14.9",
     "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "koffi": "^2.6.1"
   }
 }

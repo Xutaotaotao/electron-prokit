@@ -63,6 +63,10 @@ export default defineConfig({
                 {
                   text: 'http 网络',
                   link: '/api/electron-prokit/http',
+                },
+                {
+                  text: 'ffi 跨语言调用',
+                  link: '/api/electron-prokit/ffi',
                 }
               ]
             }

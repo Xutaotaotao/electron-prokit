@@ -30,3 +30,9 @@ export function useContextBridge(): Electron.ContextBridge | undefined {
     return require("electron").contextBridge;
   }
 }
+
+export function useKoffi ():any {
+  if (isMain) {
+    return require("koffi")
+  }
+}

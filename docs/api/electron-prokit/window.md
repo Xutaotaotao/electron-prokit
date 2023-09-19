@@ -1,6 +1,6 @@
 # window
 
-窗口相关的API接口
+窗口相关的API接口。
 
 ## createWindow
 

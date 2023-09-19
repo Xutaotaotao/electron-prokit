@@ -3,7 +3,7 @@ outline: deep
 ---
 # ipc
 
-进程间通信相关的 API 接口
+进程间通信相关的 API 接口。
 
 ## 准备
 
