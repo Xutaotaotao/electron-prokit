@@ -7,6 +7,7 @@ import Ipc from "../pages/ipc";
 import Home from "../pages/home";
 import Http from "../pages/http";
 import Ffi from "../pages/ffi";
+import Schedule from "../pages/schedule";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "ffi",
         element: <Ffi />,
+      },
+      {
+        path: "schedule",
+        element: <Schedule />,
       },
     ],
   },

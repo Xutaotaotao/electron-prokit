@@ -6,8 +6,8 @@ const Ffi = () => {
   const [msgFromFfiMul, setMsgFromFfiMul] = useState<number>();
   const [msgFromFfiDiv, setMsgFromFfiDiv] = useState<number>();
 
-  const renderMsgToMain = (msg: any) => {
-    window.electronProkit.renderMsgToMain<any, number>(msg).then((result) => {
+  const renderMsgToMain = (msg: Msg) => {
+    window.electronProkit.renderMsgToMain<Msg, number>(msg).then((result) => {
       if (msg.key === "nativeSum") {
         setMsgFromFfiSum(result);
       }

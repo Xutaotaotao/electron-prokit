@@ -2,9 +2,7 @@
 
 ## 总览
 
-Electron-Prokit是一个Electron应用开发框架。
-
-Prokit涵盖了Electron应用开发的全流程。
+Electron-Prokit是一个Electron应用开发框架，其中涵盖了Electron应用开发的全流程。
 
 ::: tip 项目初始化
 提供配置化的项目模板、多种UI框架选择和代码规范预设。

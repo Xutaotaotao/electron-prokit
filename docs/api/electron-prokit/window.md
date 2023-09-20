@@ -1,6 +1,6 @@
 # window
 
-窗口相关的API接口。
+窗口相关的API接口。管理整个窗口的生命周期，从创建到销毁。
 
 ## createWindow
 
@@ -70,7 +70,4 @@ app.whenReady().then(() => {
 - name: 窗口名称，类型`string`
 
 ## clearWindows
-是否有某个窗口。
-
-参数：
-- name: 窗口名称，类型`string`
+清除所有的窗口。

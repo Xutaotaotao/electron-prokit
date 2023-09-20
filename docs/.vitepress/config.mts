@@ -22,6 +22,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '指引', link: '/guide/', activeMatch: '/guide/' },
       { text: 'API', link: '/api/', activeMatch: '/api/' },
+      { text: '插件', link: '/plugin/', activeMatch: '/plugin/' },
       { text: '教程', link: '/tutorials/', activeMatch: '/tutorials/'}
     ],
 
@@ -46,32 +47,42 @@ export default defineConfig({
               link: '/api/',
             },
             {
-              text: 'create-vite-electron-service',
-              link: '/api/create-vite-electron-service',
+              text: 'window 窗口',
+              link: '/api/electron-prokit/window',
             },
             {
-              text: 'electron-prokit',
-              items: [
-                {
-                  text: 'window 窗口',
-                  link: '/api/electron-prokit/window',
-                },
-                {
-                  text: 'ipc 进程通信',
-                  link: '/api/electron-prokit/ipc',
-                },
-                {
-                  text: 'http 网络',
-                  link: '/api/electron-prokit/http',
-                },
-                {
-                  text: 'ffi 跨语言调用',
-                  link: '/api/electron-prokit/ffi',
-                }
-              ]
+              text: 'ipc 进程通信',
+              link: '/api/electron-prokit/ipc',
+            },
+            {
+              text: 'http 网络',
+              link: '/api/electron-prokit/http',
+            },
+            {
+              text: 'ffi 跨语言调用',
+              link: '/api/electron-prokit/ffi',
+            },
+            {
+              text: 'schedule 任务管理',
+              link: '/api/electron-prokit/schedule',
             }
           ]
         },
+      ],
+      '/plugin/':[
+        {
+          text: '插件',
+          items: [
+            {
+              text: '插件 总览',
+              link: '/plugin/',
+            },
+            {
+              text: 'create-vite-electron-service',
+              link: '/plugin/create-vite-electron-service',
+            },
+          ]
+        }
       ],
       '/tutorials/': [
         {
