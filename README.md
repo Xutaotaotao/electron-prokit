@@ -1,4 +1,6 @@
-# electron-prokit
+# Electron Prokit
+
+This development project is currently in progress.
 
 https://xutaotaotao.github.io/electron-prokit/
 
