@@ -2,6 +2,7 @@ interface RegisterScheduleOption {
   name:string;
   fun: Function;
   interval: number;
+  [key: string]: any;
 }
 
 interface Schedule extends RegisterScheduleOption {
@@ -78,7 +79,7 @@ function stopSchedule(name:string):void {
   }
 }
 
-function celarSchedule(name:string):void {
+function clearSchedule(name:string):void {
   if (!hasSchedule(name)) {
     return
   } else {
@@ -104,12 +105,24 @@ function EpSetInterval(callback:any, delay:number) {
   };
 }
 
+function clearAllSchedule ():void {
+  const schedulesArray = Array.from(schedules.values());
+  schedulesArray.forEach(schedule => {
+    if (schedule.instance) {
+      schedule.instance.clear(); 
+    }
+  })
+  schedules.clear()
+}
+
 export {
   registerSchedule,
   runSchedule,
   stopSchedule,
-  celarSchedule,
+  clearSchedule,
   hasSchedule,
   getSchedule,
-  isRunningSchedule
+  isRunningSchedule,
+  schedules,
+  clearAllSchedule
 }

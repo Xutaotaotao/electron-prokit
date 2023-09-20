@@ -64,7 +64,7 @@ import { stopSchedule } from "electron-prokit";
 stopSchedule("runScheduleTest");
 ```
 
-## celarSchedule
+## clearSchedule
 
 清除任务。
 
@@ -75,9 +75,9 @@ stopSchedule("runScheduleTest");
 例子：
 
 ```ts
-import { celarSchedule } from "electron-prokit";
+import { clearSchedule } from "electron-prokit";
 
-celarSchedule("runScheduleTest");
+clearSchedule("runScheduleTest");
 ```
 
 ## getSchedule
@@ -138,4 +138,16 @@ hasSchedule("runScheduleTest");
 import { isRunningSchedule } from "electron-prokit";
 
 isRunningSchedule("runScheduleTest");
+```
+
+## clearAllSchedule
+
+清除所有任务。
+
+例子：
+
+```ts
+import { clearAllSchedule } from "electron-prokit";
+
+clearAllSchedule();
 ```

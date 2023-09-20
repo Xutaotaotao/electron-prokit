@@ -10,5 +10,8 @@
     "downlevelIteration": true,
     "declaration": true,
   },
+  "types": [
+    "jest"
+  ],
   "include": ["src","vendor.d.ts","typings.d.ts"],
 }
