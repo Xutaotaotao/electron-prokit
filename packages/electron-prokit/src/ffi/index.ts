@@ -13,7 +13,7 @@ interface InitFfiOptions {
 
 export const epffi = useKoffi()
 
-export const initEpffi= (options:InitFfiOptions):Record<string, Function> => {
+export const createEpffi= (options:InitFfiOptions):Record<string, Function> => {
   const functions: Record<string, Function> = {};
   const lib = epffi.load(options.path)
   if (Array.isArray(options.function)) {

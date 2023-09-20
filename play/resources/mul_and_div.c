@@ -9,3 +9,11 @@
 EXPORT uint64_t mul(int a,int b) {
   return a * b;
 }
+
+EXPORT double divide(int a, int b) {
+  if (b == 0) {
+    // 避免除以零的情况
+    return 0.0;
+  }
+  return (double)a / b;
+}

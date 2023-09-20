@@ -1,6 +1,6 @@
 import React, { ComponentClass, FunctionComponent, useState } from 'react';
 import type { MenuProps } from 'antd';
-import { UploadOutlined,WifiOutlined } from '@ant-design/icons';
+import { UploadOutlined,WifiOutlined,UsbOutlined } from '@ant-design/icons';
 import { Layout, Menu, theme } from 'antd';
 import { Outlet,Link } from "react-router-dom";
 
@@ -22,7 +22,8 @@ const Root: React.FC = () => {
 
   const menus:Array<Menu> = [
     {path:'ipc',icon: UploadOutlined,name:'跨进程通信' },
-    {path:'http',icon: WifiOutlined,name:'网络请求' }
+    {path:'http',icon: WifiOutlined,name:'网络请求' },
+    {path:'ffi',icon: UsbOutlined,name:'跨语言调用' },
   ]
 
   const menuOnSelect:MenuProps['onSelect'] = (a) => {

@@ -30,6 +30,6 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "koffi": "^2.6.1"
+    "koffi": "2.3.20"
   }
 }

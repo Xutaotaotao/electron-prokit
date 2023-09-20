@@ -6,6 +6,7 @@ import ErrorPage from "../pages/error-page";
 import Ipc from "../pages/ipc";
 import Home from "../pages/home";
 import Http from "../pages/http";
+import Ffi from "../pages/ffi";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "http",
         element: <Http />,
+      },
+      {
+        path: "ffi",
+        element: <Ffi />,
       },
     ],
   },
