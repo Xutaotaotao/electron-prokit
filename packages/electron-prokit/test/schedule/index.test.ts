@@ -10,7 +10,6 @@ import {
 import {
   clearAllSchedule,
   clearSchedule,
-  getSchedule,
   hasSchedule,
   isRunningSchedule,
   registerSchedule,
