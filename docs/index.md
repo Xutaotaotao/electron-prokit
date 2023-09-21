@@ -4,25 +4,25 @@ layout: home
 
 hero:
   name: "Electron-Prokit"
-  text: <span style="font-size:30px"> 一款基于Electron的桌面软件开发框架 <span>
-  tagline: 为桌面开发提供极致的体验
+  text: <span style="font-size:30px"> Use Electron like a Pro! <span>
+  tagline: Ultimate Desktop Development Experience.
   image:
     src: /logo.svg
     alt: logo
   actions:
     - theme: brand
-      text: 开始使用
+      text: Start
       link: /guide/
     # - theme: alt
     #   text: API Examples
     #   link: /api-examples
 
 features:
-  - title: 快捷
-    details: 一站式开发Electron桌面端应用
-  - title: 方便
-    details: 去除繁琐的工程搭建步骤
-  - title: 丰富
-    details: 丰富的Electron基建物料
+  - title: Efficient
+    details: All-in-One Development of Electron.
+  - title: Convenient
+    details: Eliminate Tedious Project Setup Steps.
+  - title: Abundant
+    details: A Wealth of Electron Infrastructure Materials.
 ---
 
