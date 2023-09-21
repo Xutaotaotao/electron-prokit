@@ -1,6 +1,10 @@
 # Electron ProKit
 
-<img src="https://github.com/Xutaotaotao/electron-prokit/blob/main/docs/public/logo.svg">
+<p align="center">
+  <img style="width:500px" src="https://github.com/Xutaotaotao/electron-prokit/blob/main/docs/public/logo.svg" alt="logo">
+</p>
+
+
 
 Electron ProKit is a collection of development tools and resources for building applications with Electron. Whether you're new to Electron or an experienced developer, Electron ProKit provides a set of utilities, templates, and best practices to streamline your Electron application development.
 
