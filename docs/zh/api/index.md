@@ -4,3 +4,6 @@
 - [ipc 进程通信](/zh/api/electron-prokit/ipc)
 - [http 网络](/zh/api/electron-prokit/http)
 - [ffi 跨语言调用](/zh/api/electron-prokit/ffi)
+- [schedule 任务管理](/zh/api/electron-prokit/schedule)
+- [db 数据库管理](/zh/api/electron-prokit/db)
+

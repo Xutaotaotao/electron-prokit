@@ -4,6 +4,8 @@
 
 ## createEpffi
 
+创建注册方法。
+
 ```ts
 import { createEpffi } from "electron-prokit";
 import path from "path";

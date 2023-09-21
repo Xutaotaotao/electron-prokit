@@ -49,6 +49,10 @@ const zhThemeConfig: DefaultTheme.Config | undefined = {
             text: "schedule 任务管理",
             link: "/zh/api/electron-prokit/schedule",
           },
+          {
+            text: "db 数据库管理",
+            link: "/zh/api/electron-prokit/db",
+          },
         ],
       },
     ],
