@@ -76,3 +76,7 @@ Thank you to all the developers who have made these projects possible.
 
 ## Contact
 If you have any questions or feedback, you can reach us at [xutaotao1108@outlook.com].
+
+
+## Stargazers
+[![Stargazers repo roster for electron-prokit](https://reporoster.com/stars/Xutaotaotao/electron-prokit)](https://github.com/Xutaotaotao/electron-prokit/stargazers)
