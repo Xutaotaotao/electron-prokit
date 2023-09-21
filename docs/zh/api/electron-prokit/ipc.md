@@ -111,7 +111,7 @@ onRenderMsgToRender((e,arg) => {
 ```
 
 :::warning 注意
-这里的另外一个渲染进程是一个隐藏的渲染进程。如果你需要一个显示的渲染进程，可以像主渲染进程创建的模式去[创建一个主渲染进程窗口](/api/electron-prokit/window.html#createwindow)
+这里的另外一个渲染进程是一个隐藏的渲染进程。如果你需要一个显示的渲染进程，可以像主渲染进程创建的模式去[创建一个主渲染进程窗口](/zh/api/electron-prokit/window.html#createwindow)
 :::
 
 隐藏渲染进程创建方式如下：
