@@ -13,7 +13,7 @@
     "docs:dev": "pnpm run -C docs dev",
     "docs:build": "pnpm run -C docs build",
     "docs:preview": "pnpm run -C docs preview",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "pnpm run -C packages/electron-prokit test",
     "build": "rollup --config",
     "release": "pnpm run build && pnpm changeset publish"
   },

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { isMain } from "../env";
 interface Options {
   url: string;
   method: string;
@@ -155,7 +156,7 @@ export async function http<T>(options: Options): Promise<T> {
     });
 
     let result;
-    if (import.meta.env.VITE_CURRENT_RUN_MODE === "main") {
+    if (isMain) {
       result = await electronRequest(options);
     } else {
       result = await axiosRequest(options);

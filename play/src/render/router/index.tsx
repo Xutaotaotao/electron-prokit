@@ -8,6 +8,7 @@ import Home from "../pages/home";
 import Http from "../pages/http";
 import Ffi from "../pages/ffi";
 import Schedule from "../pages/schedule";
+import Db from "../pages/db";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "schedule",
         element: <Schedule />,
+      },
+      {
+        path: "db",
+        element: <Db />,
       },
     ],
   },
