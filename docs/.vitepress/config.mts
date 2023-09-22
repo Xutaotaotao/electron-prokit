@@ -30,12 +30,12 @@ const zhThemeConfig: DefaultTheme.Config | undefined = {
             link: "/zh/api/",
           },
           {
-            text: "window 窗口",
-            link: "/zh/api/electron-prokit/window",
-          },
-          {
             text: "ipc 进程通信",
             link: "/zh/api/electron-prokit/ipc",
+          },
+          {
+            text: "window 窗口",
+            link: "/zh/api/electron-prokit/window",
           },
           {
             text: "http 网络",

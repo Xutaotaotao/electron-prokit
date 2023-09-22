@@ -14,8 +14,8 @@ function onMsgFromRender(callBack: Callback): void {
   );
 }
 
-function mainMsgToRender(name: string, msg: unknown): void {
-  const windowInstance = getWindow(name);
+function sendMsgToRender(windowName: string, msg: any): void {
+  const windowInstance = getWindow(windowName);
   if (windowInstance) {
     windowInstance.webContents.send("EPmainMsgToRender", msg);
   } else {
@@ -41,4 +41,4 @@ function initIpc(): void {
   initOnRenderMsgToRender();
 }
 
-export { onMsgFromRender, mainMsgToRender, initOnRenderMsgToRender, initIpc };
+export { onMsgFromRender, sendMsgToRender, initIpc };

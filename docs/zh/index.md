@@ -13,9 +13,9 @@ hero:
     - theme: brand
       text: 开始使用
       link: /guide/
-    # - theme: alt
-    #   text: API Examples
-    #   link: /api-examples
+    - theme: alt
+      text: 在GitHub上查看
+      link: https://github.com/Xutaotaotao/electron-prokit
 
 features:
   - title: 快捷
@@ -25,4 +25,3 @@ features:
   - title: 丰富
     details: 非常多的Electron基建物料和工具
 ---
-

@@ -7,7 +7,7 @@ const contextBridge = useContextBridge()
 type Callback = (event: IpcRendererEvent, args: any) => void
 
 
-const renderMsgToMain = (msg:any) => {
+const renderMsgToMain = <T, U>(msg: T): Promise<U> => {
     return ipcRenderer.invoke('EPrenderMsgToMain',msg)  
 }
 
@@ -40,6 +40,9 @@ const renderMsgToRender = (windowName:string,msg:any):void => {
 }
 
 export {
+  renderMsgToMain,
+  onMsgFromMain,
+  renderMsgToRender,
   onRenderMsgToRender,
   initExposeInMainWorld
 }

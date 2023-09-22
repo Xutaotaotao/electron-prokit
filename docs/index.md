@@ -11,11 +11,11 @@ hero:
     alt: logo
   actions:
     - theme: brand
-      text: Start
+      text: Get Started
       link: /guide/
-    # - theme: alt
-    #   text: API Examples
-    #   link: /api-examples
+    - theme: alt
+      text: View on GitHub
+      link: https://github.com/Xutaotaotao/electron-prokit
 
 features:
   - title: Efficient
