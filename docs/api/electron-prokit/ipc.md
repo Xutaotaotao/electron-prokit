@@ -1,55 +1,51 @@
 ---
 outline: deep
 ---
-# ipc
+# IPC
 
-进程间通信相关的 API 接口。主要包括渲染进程发送信息到主进程、主进程发送信息到渲染进程、不同渲染进程间发送信息几种消息通信模式。
+API Interfaces for Inter-Process Communication (IPC). This includes various messaging modes for communication, such as sending messages from the render process to the main process, sending messages from the main process to render processes, and intercommunication between different render processes.
 
-## 准备
+## Preparation
 
-在这里我们需要做一些IPC初始化工作。
+We need to perform some IPC initialization tasks here.
 
 ### initIpc
 
-初始化 IPC，如果需要使用相应的通信服务，需要初始化。
+Initialize IPC. If you need to use the corresponding communication service, it needs to be initialized.
 
-- 主进程
+- Main Process
 
 ```ts
 import { initIpc } from "electron-prokit";
 initIpc();
 ```
-
 ### initExposeInMainWorld
 
-主要是需要在`contextBridge`注册对应的方法，不然无法在渲染进程使用相应的回调方法。
+This is mainly about registering corresponding methods in contextBridge. Otherwise, you won't be able to use the respective callback methods in the render process.
 
-- preload 脚本
-
+- Preload Script
 ```ts
 import { initExposeInMainWorld } from "electron-prokit";
-
 initExposeInMainWorld();
 ```
-
-## 渲染进程发送信息到主进程
+## Sending Messages from Render Process to Main Process
 
 ### onMsgFromRender
 
-- 主进程
+- Main Process
 
 ```ts
 import { onMsgFromRender } from "electron-prokit";
 onMsgFromRender((_e: Electron.IpcMainEvent, args: unknown) => {
-  return `Main have get data is ${args}`;
+  return `Main has received data: ${args}`;
 });
 ```
-### renderMsgToMain
-- 渲染进程
 
+### renderMsgToMain
+- Render Process
 ```tsx
 import { Button } from "antd";
-import {renderMsgToMain} from 'electron-prokit'
+import { renderMsgToMain } from "electron-prokit";
 
 const Ipc = () => {
   const renderMsgToMainHandle = (msg: string) => {
@@ -60,27 +56,28 @@ const Ipc = () => {
   return (
     <div>
       <Button onClick={() => renderMsgToMainHandle("sendMsgToMain Hello")}>
-        发送信息到主进程
+        Send Message to Main Process
       </Button>
     </div>
   );
 };
 
 export default Ipc;
+
 ```
 
-## 主进程发送信息到渲染进程
+## Sending Messages from Main Process to Render Process
 
 ### mainMsgToRender
-- 主进程
 
 ```ts
 import { mainMsgToRender } from "electron-prokit";
-mainMsgToRender("main", "msg from main");
+mainMsgToRender("main", "Message from Main Process");
 ```
-### onMsgFromMain
-- 渲染进程
 
+### onMsgFromMain
+
+- Render Process
 ```ts
 import {onMsgFromMain} from 'electron-prokit'
 
@@ -89,10 +86,9 @@ onMsgFromMain((_event: unknown, args: string) => {
 });
 ```
 
-## 不同渲染进程间发送信息
+## Sending Messages Between Different Render Processes
 
-### renderMsgToRender
-- 渲染进程
+- Render Process
 
 ```tsx
 import {renderMsgToRender} from 'electron-prokit'
@@ -102,12 +98,12 @@ const renderMsgToRenderHandle = (windowName: string, msg: string) => {
 };
 
 <Button type="primary" onClick={() => renderMsgToRenderHandle("work", "Hello Work")}>
-  发送信息到work进程
+  Send Message to Work Process
 </Button>;
 ```
 
 ### onRenderMsgToRender
-- 另外一个渲染进程
+- Another Render Process
 
 ```ts
 import {onRenderMsgToRender} from 'electron-prokit'
@@ -117,11 +113,11 @@ onRenderMsgToRender((e,arg) => {
 })
 ```
 
-:::warning 注意
-这里的另外一个渲染进程是一个隐藏的渲染进程。如果你需要一个显示的渲染进程，可以像主渲染进程创建的模式去[创建一个主渲染进程窗口](/zh/api/electron-prokit/window.html#createwindow)
+:::warning  Note
+The other render process mentioned here is a hidden render process. If you need a visible render process, you can create one like creating a main render process window[Create a Main Render Process Window](/api/electron-prokit/window.html#createwindow)
 :::
 
-隐藏渲染进程创建方式如下：
+Here's how to create a hidden render process:
 
 ```ts
 const workWindow = createWindow("work", {
@@ -129,7 +125,7 @@ const workWindow = createWindow("work", {
     webPreferences: {
       nodeIntegration: true,
       webSecurity: false,
-      preload: join(__dirname, "../work/index.cjs"), // 注意这里的preload
+      preload: join(__dirname, "../work/index.cjs"), // Note the preload here
     },
   });
 

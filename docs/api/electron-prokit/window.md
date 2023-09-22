@@ -1,16 +1,15 @@
-# window
+# Window
 
-窗口相关的 API 接口。管理整个窗口的生命周期，从创建到销毁。
+Window-related API interfaces. Managing the entire window lifecycle, from creation to destruction.
+
 ## createWindow
 
-创建窗口。
+arguments：
 
-参数：
+- name: Window name, type `string`, unique identifier; if the window name is duplicated, a new window cannot be created.
+- options: window options, type `Electron.BrowserWindowConstructorOptions`
 
-- name: 窗口名称，类型`string`，唯一标志，如果窗口名称重复就无法创建新的窗口
-- options: 窗口选项，类型`Electron.BrowserWindowConstructorOptions`
-
-例子：
+example：
 
 ```ts
 import { join, resolve } from "path";
@@ -48,32 +47,32 @@ app.whenReady().then(() => {
 
 ## getWindow
 
-获取窗口实例。
+Get the window instance.
 
-参数：
+arguments：
 
-- name: 窗口名称，类型`string`
+- name: Window name, type `string`.
 
 ## destroyWindow
 
-销毁窗口实例。
+Destroy the window instance.
 
-参数：
+arguments：
 
-- name: 窗口名称，类型`string`
+- name: Window name, type `string`.
 
 ## getAllWindows
 
-获取所有窗口实例。
+Retrieve all window instances.
 
 ## hasWindow
 
-是否有某个窗口。
+Does a particular window exist.
 
-参数：
+arguments：
 
-- name: 窗口名称，类型`string`
+- name: Window name, type `string`.
 
 ## clearWindows
 
-清除所有的窗口。
+Clear all windows.

@@ -1,5 +1,6 @@
 import {Button,Divider,Space,Tag} from 'antd'
 import { useEffect, useState } from 'react'
+import {renderMsgToMain,renderMsgToRender,onMsgFromMain} from 'electron-prokit'
 
 
 const Ipc = () => {
@@ -8,25 +9,25 @@ const Ipc = () => {
   const [msgFromMain,setMsgFromMain] = useState('')
 
   useEffect(() => {
-    window.electronProkit.onMsgFromMain((_event:unknown, args:string) => {
+    onMsgFromMain((_event:unknown, args:string) => {
       setMsgFromMain(args)
     })
   },[])
 
-  const renderMsgToMain = (msg:string) => {
-    window.electronProkit.renderMsgToMain<string,string>(msg).then(result => {
+  const renderMsgToMainHandle = (msg:string) => {
+    renderMsgToMain<string,string>(msg).then(result => {
       setMsgFromRenderMsgToMain(result)
     })
   }
 
-  const renderMsgToRender = (windowName:string,msg:string) => {
-    window.electronProkit.renderMsgToRender(windowName,msg)
+  const renderMsgToRenderHandle = (windowName:string,msg:string) => {
+    renderMsgToRender(windowName,msg)
   }
 
   return <div>
     <Divider>发送信息到主进程</Divider>
     <Space direction="vertical">
-    <Button type='primary' onClick={() => renderMsgToMain ('sendMsgToMain Hello')}>发送信息到主进程</Button>
+    <Button type='primary' onClick={() => renderMsgToMainHandle ('sendMsgToMain Hello')}>发送信息到主进程</Button>
     <div>这里是主进程的应答信息：{msgFromRenderMsgToMain}</div>
     </Space>
     
@@ -37,7 +38,7 @@ const Ipc = () => {
     </Space>
     <Divider>渲染进程间发送消息</Divider>
     <Space direction="vertical">
-      <Button type='primary' onClick={() => renderMsgToRender ('work','Hello Work')}>发送信息到work进程</Button>
+      <Button type='primary' onClick={() => renderMsgToRenderHandle ('work','Hello Work')}>发送信息到work进程</Button>
       <div>可以通过work进程的控制台查看渲染进程发送的消息</div>
     </Space>
 

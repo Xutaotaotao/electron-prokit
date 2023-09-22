@@ -1,4 +1,5 @@
-import { isMain, isPreload, isWork } from "../env";
+import { isMain, isPreload, isWork,  } from "../env";
+
 
 export function useBrowserWindow(
   options: Electron.BrowserWindowConstructorOptions

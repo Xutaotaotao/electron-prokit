@@ -1,5 +1,6 @@
 import axios from "axios";
 import { isMain } from "../env";
+
 interface Options {
   url: string;
   method: string;
