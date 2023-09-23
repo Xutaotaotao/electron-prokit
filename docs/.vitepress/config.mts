@@ -196,12 +196,20 @@ export default defineConfig({
     ["link", { rel: "icon", href: "/favicon.ico" }],
     ["meta", { name: "referrer", content: "no-referrer" }],
     ["meta", { name: "cache-control", content: "max-age=0, s-maxage=3600" }],
+    [
+      "meta",
+      {
+        name: "keywords",
+        content:
+          "electron-prokit,Electron-Prokit,Electron Prokit,electron prokit,electron,prokit,electron tool, electron 开发,electron 工具",
+      },
+    ],
   ],
   locales: {
     root: {
       label: "English",
       lang: "en",
-      themeConfig
+      themeConfig,
     },
     zh: {
       label: "简体中文",

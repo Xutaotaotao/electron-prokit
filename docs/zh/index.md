@@ -1,5 +1,7 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
+title: Electron-Prokit
+description: Electron-Prokit 首页
 layout: home
 
 hero:
