@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /zh/guide/
+      link: /guide/
     - theme: alt
       text: View on GitHub
       link: https://github.com/Xutaotaotao/electron-prokit
