@@ -4,132 +4,195 @@ outline: deep
 
 # ipc
 
-## 介绍
+IPC(Inter-Process Communication)是 Electron 的一个重要特性,它允许主进程与渲染进程之间,以及不同渲染进程之间的消息通信。框架在这个模块做了一些 IPC 相关的封装，让使用者更加方便使用相关的通信方法。
 
-进程间通信相关的 API 接口。主要包括渲染进程发送信息到主进程、主进程发送信息到渲染进程、不同渲染进程间发送信息几种消息通信模式。
+## 作用
+
+IPC 的主要作用是在主进程和渲染进程之间传递数据和消息,实现不同进程间的通信。常见的使用场景包括:
+
+- 主进程需要控制渲染进程
+- 渲染进程需要调用主进程的方法
+- 不同页面的渲染进程间需要通信
+
+## 初始化
+
+为了正常使用 IPC 模块相关的 API,需要做一些初始化工作。
 
 ::: danger 重要！！！
-为了让很多 API 可以在主进程、渲染进程、preload 预加载脚本中无差别的使用，框架抹平了相应的很多差异，所以如果要顺利的使用框架里面的 API，IPC 初始化非常重要。
+为了让尽可能多的 API 可以在主进程、渲染进程、preload 预加载脚本中无差别的使用，框架抹平了很多差异，所以如果要顺利的使用框架里面的 API，IPC 初始化非常重要。
 :::
 
-## 准备
-
-在这里我们需要做一些 IPC 初始化工作。如果不做下面两步，无法顺利的使用相应的 API。
-
-### 初始化
-
-初始化 IPC，如果需要使用相应的通信服务，需要初始化。
-
-- 主进程
+**主进程**
 
 ```ts
+// 初始化
 import { initIpc } from "electron-prokit";
 initIpc();
 ```
 
-### 暴露注册函数
-
-主要是需要在`contextBridge`注册对应的方法，不然无法在渲染进程使用相应的回调方法。
-
-- preload 脚本
+**preload 脚本**
 
 ```ts
+// 暴露注册函数
 import { initExposeInMainWorld } from "electron-prokit";
-
 initExposeInMainWorld();
 ```
 
-## API 列表
+## API 概览
+
+| 函数名                |     使用环境     |                   描述 |
+| --------------------- | :--------------: | ---------------------: |
+| initIpc               |      主进程      |             初始化 IPC |
+| onMsgFromRender       |      主进程      |       接收渲染进程消息 |
+| sendMsgToRender       |      主进程      |     发送消息给渲染进程 |
+| initExposeInMainWorld |     Preload      |           暴露注册函数 |
+| onMsgFromMain         | 渲染进程/Preload |         接收主进程消息 |
+| sendMsgToMain         | 渲染进程/Preload |       发送消息给主进程 |
+| onMsgFromOtherRender  | 渲染进程/Preload |   接收其他渲染进程消息 |
+| sendMsgToOtherRender  | 渲染进程/Preload | 发送消息给其他渲染进程 |
+
+## API 使用
 
 ### initIpc
 
-初始化 IPC。
-
-#### 支持环境
-
-- 主进程
-
-#### 使用
+初始化 IPC,需要在主进程中调用。
 
 ```ts
+// 主进程
 import { initIpc } from "electron-prokit";
 initIpc();
 ```
 
-
 ### onMsgFromRender
 
-主进程监听渲染进程发过来的消息。
-
-#### 支持环境
-- 主进程
-
-#### 使用
+在主进程中监听渲染进程发送来的消息。
 
 ```ts
+// 主进程
 import { onMsgFromRender } from "electron-prokit";
-onMsgFromRender((event,args) => {
-  console.log(event,args)
+onMsgFromRender((event, args) => {
+  console.log(event, args);
 });
 ```
-#### 参数
-- callBack: 回调方法
+
+**:speech_balloon: 参数**
+
 ```ts
-type Callback = (event: Electron.IpcMainEvent, args: any) => void;
+onMsgFromRender(callback: (event: Electron.IpcMainEvent, args: any) => void)
 ```
+
+- callback:回调函数,包含两个参数
+
+  - event: ipcMain 事件对象
+  - args: 渲染进程发送来的参数
 
 ### sendMsgToRender
 
 主进程发送消息给渲染进程。
 
-#### 支持环境
-- 主进程
-
-#### 使用
-
 ```ts
+// 主进程
 import { sendMsgToRender } from "electron-prokit";
-sendMsgToRender('test','hello test');
+sendMsgToRender("mainWin", "Hello");
 ```
 
-#### 参数
-- windowName: 发送消息的窗口名， `string`
-- msg:消息内容， `any`
+**:speech_balloon: 参数**
+
+```ts
+sendMsgToRender(windowName: string, msg: any)
+```
+
+- windowName: 发送消息的目标窗口名称
+- msg: 发送的消息内容
 
 ### initExposeInMainWorld
 
-暴露注册函数。
+在 Preload 脚本中暴露注册函数。
 
-#### 支持环境
-- preload
+```ts
+// Preload 脚本
+import { initExposeInMainWorld } from "electron-prokit";
+initExposeInMainWorld();
+```
 
 ### onMsgFromMain
-监听主进程传递过来的消息。
 
-####  支持环境
-- 渲染进程
-- preload
-### onMsgFormOtherRender
+监听主进程发送过来的消息。
 
-监听其他渲染进程传递过来的消息。
+```ts
+// 渲染进程或 Preload 脚本
+import { onMsgFromMain } from "electron-prokit";
+onMsgFromMain((event, args) => {
+  console.log(event, args);
+});
+```
 
-####  支持环境
-- 渲染进程
-- preload
+**:speech_balloon: 参数**
+
+```ts
+onMsgFromMain(callback: (event: Electron.IpcRendererEvent, args: any) => void)
+```
+
+- callback:回调函数,包含两个参数
+  - event: ipcRenderer 事件对象
+  - args: 主进程发送来的参数
 
 ### sendMsgToMain
 
 发送消息给主进程。
 
-####  支持环境
-- 渲染进程
-- preload
+```ts
+// 渲染进程或 Preload 脚本
+import { sendMsgToMain } from "electron-prokit";
+sendMsgToMain("Hello main").then((res) => {
+  console.log(res);
+});
+```
+
+**:speech_balloon: 参数**
+
+```ts
+sendMsgToMain(msg: any)
+```
+
+- msg: 发送的消息内容
+
+### onMsgFromOtherRender
+
+监听其他渲染进程发送的消息。
+
+```ts
+// 渲染进程或 Preload 脚本
+import { onMsgFromOtherRender } from "electron-prokit";
+onMsgFromMain((event, args) => {
+  console.log(event, args);
+});
+```
+
+**:speech_balloon: 参数**
+
+```ts
+onMsgFromOtherRender(callback: (event: Electron.IpcRendererEvent, args: any) => void)
+```
+
+- callback:回调函数,包含两个参数
+  - event: ipcRenderer 事件对象
+  - args: 主进程发送来的参数
 
 ### sendMsgToOtherRender
 
-发送消息给目标渲染进程。
+发送消息给其他渲染进程。
 
-####  支持环境
-- 渲染进程
-- preload
+```ts
+// 渲染进程或 Preload 脚本
+import { sendMsgToOtherRender } from "electron-prokit";
+sendMsgToOtherRender("work", "Hello work");
+```
+**:speech_balloon: 参数**
 
+```ts
+sendMsgToOtherRender(windowName:string,msg:any)
+```
+
+- windowName: 发送消息的目标窗口名称
+- msg: 发送的消息内容
