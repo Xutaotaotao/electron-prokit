@@ -1,6 +1,6 @@
 import {Button,Divider,Space,Tag} from 'antd'
 import { useEffect, useState } from 'react'
-import {renderMsgToMain,renderMsgToRender,onMsgFromMain} from 'electron-prokit'
+import {sendMsgToMain,sendMsgToOtherRender,onMsgFromMain} from 'electron-prokit'
 
 
 const Ipc = () => {
@@ -15,13 +15,13 @@ const Ipc = () => {
   },[])
 
   const renderMsgToMainHandle = (msg:string) => {
-    renderMsgToMain<string,string>(msg).then(result => {
+    sendMsgToMain<string,string>(msg).then(result => {
       setMsgFromRenderMsgToMain(result)
     })
   }
 
   const renderMsgToRenderHandle = (windowName:string,msg:string) => {
-    renderMsgToRender(windowName,msg)
+    sendMsgToOtherRender(windowName,msg)
   }
 
   return <div>

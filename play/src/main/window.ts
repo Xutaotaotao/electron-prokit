@@ -2,7 +2,7 @@ import { join, resolve } from "path";
 import { app, Menu } from "electron";
 import {
   createWindow,
-  mainMsgToRender,
+  sendMsgToRender,
 } from "electron-prokit";
 
 const main = () => {
@@ -22,7 +22,7 @@ const main = () => {
       label: app.name,
       submenu: [
         {
-          click: () => mainMsgToRender("main", "msg from main"),
+          click: () => sendMsgToRender("main", "msg from main"),
           label: "发送消息给render",
         },
       ],

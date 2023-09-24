@@ -1,5 +1,5 @@
-import {onRenderMsgToRender} from 'electron-prokit'
+import {onMsgFormOtherRender} from 'electron-prokit'
 
-onRenderMsgToRender((e,arg) => {
+onMsgFormOtherRender((e,arg) => {
   console.log(e,arg)
 })
