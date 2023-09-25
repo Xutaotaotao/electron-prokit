@@ -1,5 +1,11 @@
 # @electron-prokit/create-electron-prokit
 
+## 6.0.0
+
+### Major Changes
+
+- feat: add http ffi schedule db module.
+
 ## 5.0.0
 
 ### Major Changes
