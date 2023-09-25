@@ -1,6 +1,6 @@
 import path from "node:path";
-import * as handlebars from "handlebars";
-import * as inquirer from "inquirer";
+import handlebars from "handlebars";
+import inquirer from "inquirer";
 import {
   chalk,
   execa,

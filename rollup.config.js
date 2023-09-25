@@ -1,6 +1,6 @@
+const path = require("node:path");
 const ts = require("rollup-plugin-typescript2");
 const resolvePlugin = require("@rollup/plugin-node-resolve");
-const path = require("path");
 const packagesDir = path.resolve(__dirname, "./packages");
 
 function getBuildConfig(name,inputPath="src/index.ts") {
@@ -31,8 +31,17 @@ function getBuildConfig(name,inputPath="src/index.ts") {
     external:[
        'electron',
        'esbuild',
-       'postcss'
-    ]
+       'postcss',
+       'koffi',
+       'globby',
+       'commander',
+       'restore-cursor',
+       'string-width',
+       'stdin-discarder',
+       'ora',
+       'pacote',
+       'axios'
+    ],
   };
 }
 

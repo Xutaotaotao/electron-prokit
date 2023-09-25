@@ -1,7 +1,7 @@
 import path from 'node:path'
-import * as globby from 'globby'
-import * as commander from 'commander'
-import * as pacote from 'pacote'
+import globby from 'globby'
+import commander from 'commander'
+import pacote from 'pacote'
 import { chalk, error, fs, info } from './lib'
 const { program } = commander
 
