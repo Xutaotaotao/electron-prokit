@@ -1,8 +1,10 @@
 {
-  "name": "electron-prokit-start",
+  "name": "{{name}}",
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
   "main": "dist/main/index.cjs",
   "scripts": {
     "dev": "node ./.ep/scripts/dev.js",

@@ -8,7 +8,8 @@
     "skipLibCheck": true,
     "moduleResolution": "node",
     "downlevelIteration": true,
-    "declaration": true
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
   },
   "include": ["src"],
 }
