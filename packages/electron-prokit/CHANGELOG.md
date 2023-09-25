@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 9.0.0
+
+### Major Changes
+
+- fix: axios and koffi dependencies
+
 ## 8.0.3
 
 ### Patch Changes

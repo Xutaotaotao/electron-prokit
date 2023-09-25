@@ -2,7 +2,6 @@ const path = require("node:path");
 const ts = require("rollup-plugin-typescript2");
 const resolvePlugin = require("@rollup/plugin-node-resolve");
 const packagesDir = path.resolve(__dirname, "./packages");
-const peerDepsExternal = require("rollup-plugin-peer-deps-external")
 
 function getBuildConfig(name,inputPath="src/index.ts") {
   const packageDir = path.resolve(packagesDir, name);
@@ -28,9 +27,6 @@ function getBuildConfig(name,inputPath="src/index.ts") {
         tsconfig: path.resolve(packageDir, "./tsconfig.json"),
       }),
       resolvePlugin(),
-      peerDepsExternal({
-        autoInstall: true
-      })
     ],
     external:[
        'electron',
