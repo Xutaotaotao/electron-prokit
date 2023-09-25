@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 8.0.1
+
+### Patch Changes
+
+- feat: db schedule ffi http
+
 ## 8.0.0
 
 ### Major Changes
