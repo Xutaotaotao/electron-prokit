@@ -1,10 +1,10 @@
 ---
 outline: deep
-title: IPC
+title: Ipc
 description: electron-prokit ipc api
 ---
 
-# IPC
+# Ipc
 
 IPC(Inter-Process Communication)是 Electron 的一个重要特性,它允许主进程与渲染进程之间,以及不同渲染进程之间的消息通信。框架在这个模块做了一些 IPC 相关的封装，让使用者更加方便使用相关的通信方法。
 

@@ -1,6 +1,16 @@
-# ffi
+---
+outline: deep
+title: FFI
+description: electron-prokit ffi api
+---
 
-跨语言调用相关的 API 接口。接入成本非常低，快捷、方便、速度快。
+# Ffi
+
+跨语言调用相关的 API 接口，`主进程`中使用。接入成本非常低，快捷、方便、速度快。
+
+## 作用
+
+主要是在Electron应用中调用`dll`或者`dylib`，使你可以跨语言调用一些底层插件。
 
 ## createEpffi
 
@@ -11,7 +21,7 @@ import { createEpffi } from "electron-prokit";
 import path from "path";
 
 // 当个方法/即dylib/dll中只有暴露一个方法
-export const { sum } = createEpffi({
+const { sum } = createEpffi({
   path: path.join(__dirname, "../../resources/dll/sum.dylib"),
   function: {
     functionName: "sum",
@@ -20,22 +30,28 @@ export const { sum } = createEpffi({
   },
 });
 
+sum(100, 22)
+
 // 多个方法/即dylib/dll中暴露了多个方法
-export const { mul,div } = createEpffi({
+const { mul,div } = createEpffi({
   path: path.join(__dirname, "../../resources/dll/mul_and_div.dylib"),
   function: [
     {
-      functionName: "sub",
+      functionName: "mul",
       returnType: "int",
       inputs: ["int", "int"],
     },
     {
-      functionName: "mul",
-      returnType: "double",
+      functionName: "div",
+      returnType: "int",
       inputs: ["int", "int"],
     },
   ],
 });
+
+mul(100, 22);
+
+div(100, 2);
 ```
 
 ## 数据类型

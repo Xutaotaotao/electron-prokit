@@ -1,10 +1,16 @@
 ---
 outline: deep
+title: Http
+description: electron-prokit http api
 ---
 
-# http
+# Http
 
-网络通信相关的 API 接口。支持渲染进程、主进程、任务进程，可以随处调用。
+网络通信相关的 API 接口。支持`渲染进程`、`主进程`、`任务进程`，可以随处调用。
+
+## 作用
+
+Http的主要作用是发起网络请求，实现与服务端接口的交互。
 
 ## 用例
 
@@ -62,7 +68,7 @@ http({
   }
 
   // 日志处理 / boolean类型 或者 function 或者 空
-  // boolean 就是打印console, function 可以指自己定义函数
+  // boolean 就是打印console, function 可以用自己的自定义函数
   log: true
 }
 ```
