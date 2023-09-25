@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 9.0.1
+
+### Patch Changes
+
+- 098f56f: fix:koffi
+
 ## 9.0.0
 
 ### Major Changes
