@@ -1,0 +1,6 @@
+packages:
+  - packages/*
+  - docs
+  - ​service
+  - play
+  - templates/*
