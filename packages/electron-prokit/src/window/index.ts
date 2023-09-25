@@ -37,6 +37,9 @@ function hasWindow(name: string): boolean {
 }
 
 function clearWindows(): void {
+  for (const key in windows) {
+    destroyWindow(key)
+  }
   windows.clear();
 }
 

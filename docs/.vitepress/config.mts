@@ -218,4 +218,9 @@ export default defineConfig({
       themeConfig: zhThemeConfig,
     },
   },
+  vite: {
+    server: {
+      port:8090
+    }
+  }
 });
