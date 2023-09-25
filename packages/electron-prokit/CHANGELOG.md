@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 9.0.2
+
+### Patch Changes
+
+- fix: moduleDirectories add .pnpm
+
 ## 9.0.1
 
 ### Patch Changes
