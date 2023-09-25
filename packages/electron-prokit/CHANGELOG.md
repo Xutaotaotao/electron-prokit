@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 8.0.3
+
+### Patch Changes
+
+- fix: rollupconfig
+
 ## 8.0.2
 
 ### Patch Changes
