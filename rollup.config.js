@@ -28,7 +28,9 @@ function getBuildConfig(name,inputPath="src/index.ts") {
         tsconfig: path.resolve(packageDir, "./tsconfig.json"),
       }),
       resolvePlugin(),
-      peerDepsExternal()
+      peerDepsExternal({
+        autoInstall: true
+      })
     ],
     external:[
        'electron',
