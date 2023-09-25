@@ -198,3 +198,9 @@ sendMsgToOtherRender(windowName:string,msg:any)
 
 - windowName: 发送消息的目标窗口名称
 - msg: 发送的消息内容
+
+## 示例
+
+[点击查看示例源码](https://github.com/Xutaotaotao/electron-prokit/blob/main/play/src/render/pages/ipc.tsx)
+
+![alt ipc](/api/ipc-demo.png)
