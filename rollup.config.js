@@ -32,7 +32,6 @@ function getBuildConfig(name,inputPath="src/index.ts") {
        'electron',
        'esbuild',
        'postcss',
-       'koffi',
        'globby',
        'commander',
        'restore-cursor',
