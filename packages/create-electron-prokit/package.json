@@ -1,45 +1,38 @@
 {
-  "name": "@electron-prokit/create-electron-prokit",
-  "version": "6.0.0",
+  "name": "create-electron-prokit",
+  "version": "2.0.0",
   "description": "",
+  "main": "dist/index.js",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "create-electron-prokit": "dist/index.js"
+  },
+  "scripts": {
+    "dev": "node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts",
+    "build": "tsc",
+    "start": "node --experimental-specifier-resolution=node lib/index.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "main": "src/index.ts",
-  "publishConfig": {
-    "main": "dist/create-electron-prokit.cjs.js",
-    "module": "dist/create-electron-prokit.esm.js",
-    "browser": "dist/create-electron-prokit.js",
-    "types": "types/index.d.ts",
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "scripts": {
-    "clear": "rimraf build",
-    "build": "npm run clear && tsc"
-  },
-  "bin": {
-    "privatify": "./bin.js",
-    "privatify-local": "./bin-local.js"
-  },
-  "files": [
-    "dist",
-    "bin.js"
-  ],
   "devDependencies": {
-    "@types/node": "*",
-    "chalk": "^5.3.0",
+    "@types/node": "^20.5.7",
     "commander": "^11.0.0",
-    "execa": "^8.0.1",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "@types/fs-extra": "^11.0.2",
+    "@types/git-clone": "^0.2.1",
+    "@types/inquirer": "^9.0.3",
     "fs-extra": "^11.1.1",
-    "globby": "^13.2.2",
-    "handlebars": "^4.7.8",
+    "git-clone": "^0.2.0",
     "inquirer": "^9.2.11",
     "ora": "^7.0.1",
-    "pacote": "^17.0.4",
-    "rimraf": "^5.0.1",
-    "ts-node": "^10.9.1",
-    "tslint": "^6.1.3",
-    "typescript": "^5.2.2"
+    "handlebars": "^4.7.8"
   }
 }

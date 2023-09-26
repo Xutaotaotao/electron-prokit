@@ -36,7 +36,7 @@ export function useKoffi ():any {
 
 export function useDbFile ():string {
   if (isMain) {
-    const { join } = require('node:path');
+    const { join } = require('path');
     const {app} = require('electron')
     const defaultFile = join(app.getPath("appData"), "db.json");
     return defaultFile

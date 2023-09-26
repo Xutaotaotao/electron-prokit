@@ -1,6 +1,8 @@
-const path = require("node:path");
+const path = require("path");
 const ts = require("rollup-plugin-typescript2");
 const resolvePlugin = require("@rollup/plugin-node-resolve");
+const commonjs = require('@rollup/plugin-commonjs');
+const json = require('@rollup/plugin-json');
 const packagesDir = path.resolve(__dirname, "./packages");
 
 const globals = {
@@ -43,21 +45,45 @@ function getBuildConfig(name, inputPath = "src/index.ts") {
       "esbuild",
       "postcss",
       "koffi",
-      "globby",
-      "commander",
-      "restore-cursor",
-      "string-width",
-      "stdin-discarder",
-      "ora",
-      "pacote",
       "axios",
     ],
   };
 }
 
+function getCreateElectronProkitBuildConfig(name, inputPath = "src/index.ts") {
+  const packageDir = path.resolve(packagesDir, name);
+  return {
+    input: path.resolve(packageDir, inputPath),
+    output: {
+      file: path.resolve(packageDir, `dist/index.js`),
+      format: 'cjs'
+    },
+    external: [
+      'inquirer',
+      'ora',
+      'fs-extra',
+      'git-clone/promise',
+      'handlebars'
+    ],
+    plugins: [
+      ts({
+        tsconfig: path.resolve(packageDir, "./tsconfig.json"),
+      }),
+      resolvePlugin({
+        extensions:['.js', '.ts'],
+        mainFields: ['main'],
+        modulesOnly: true,
+        preferredBuiltins :false
+      }),
+      commonjs(),
+      json(),
+    ],
+  }
+}
+
 module.exports = () => {
   return [
-    getBuildConfig("create-electron-prokit"),
-    getBuildConfig("electron-prokit"),
+    getBuildConfig('electron-prokit'),
+    getCreateElectronProkitBuildConfig("create-electron-prokit"),
   ];
 };

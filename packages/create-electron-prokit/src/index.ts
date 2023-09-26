@@ -1,65 +1,57 @@
-import path from 'node:path'
-import globby from 'globby'
-import commander from 'commander'
-import pacote from 'pacote'
-import { chalk, error, fs, info } from './lib'
-const { program } = commander
+#!/usr/bin/env node --experimental-specifier-resolution=node
 
-let commandsPath = []
-let pkgVersion = ''
-let pkgName = ''
+import * as tslib from 'tslib';
+import { Command } from "commander"
+import inquirer from "inquirer"
+import ora from "ora"
+import fs from "fs-extra"
+import { downloadTemplate } from "./download"
+import { modifyPackageJson } from "./modify"
 
-// 获取src/command路径下的命令
-const getCommand = () => {
-  commandsPath =
-    (globby as any).sync('./commands/*.*s', { cwd: __dirname, deep: 1 }) || []
-  return commandsPath
-}
 
-// 获取当前包的信息
-const getPkgInfo = () => {
-  const jsonPath = path.join(__dirname, '../package.json')
-  const jsonContent = fs.readFileSync(jsonPath, 'utf-8')
-  const jsonResult = JSON.parse(jsonContent)
-  pkgVersion = jsonResult.version
-  pkgName =  jsonResult.name
-}
+const log = ora("modify")
 
-// 获取最新包最新版本
-const getLatestVersion = async () => {
-    const manifest = await pacote.manifest(`${pkgName}@latest`)
-    return manifest.version
-}
+const templateGitUrl = "https://github.com/Xutaotaotao/ep-vite-react-electron-template"
 
-function start() {
-  getPkgInfo()
-  const commandsPath = getCommand()
-  program.version(pkgVersion)
-  commandsPath.forEach((commandPath) => {
-    const commandObj = require(`./${commandPath}`)
-    const { command, description, optionList, action } = commandObj.default
-    const curp = program
-      .command(command)
-      .description(description)
-      .action(action)
+let downloadPath = null
 
-    optionList &&
-      optionList.map((option: [string]) => {
-        curp.option(...option)
-      })
-  })
+const InitPrompts = [
+  {
+      name: "description",
+      message: "please input description",
+      default: "",
+  },
+  {
+      name: "author",
+      message: "please input author",
+      default: "",
+  }
+]
 
-  program.on('command:*', async ([cmd]) => {
-    program.outputHelp()
-    error(`未知命令 command ${chalk.yellow(cmd)}.`)
-    const latestVersion = await getLatestVersion() 
-    if(latestVersion !== pkgVersion){
-      info(`可更新版本，${chalk.green(pkgVersion)} -> ${chalk.green(latestVersion)}`)
-    }
-    process.exitCode = 1
-  })
+const program = new Command()
 
-  program.parseAsync(process.argv)
-}
+program
+    .name("create-electron-prokit-cli")
+    .description("create-electron-prokit+TypeScript application generator")
+    .version("0.0.1")
 
-start()
+program
+    .command("init <name>")
+    .description("init a create-electron-prokit project")
+    .action(async (name: string) => {
+        if (fs.existsSync(name)) {
+          log.warn(`Has the same name project,please create another project！`)
+          return
+        }
+        log.info(`Start init create-electron-prokit project: ${name}`)
+        const initOptions = await inquirer.prompt(InitPrompts)
+        try {
+            downloadPath = `./${name}`
+            await downloadTemplate(templateGitUrl, downloadPath)
+            modifyPackageJson(downloadPath, { name, ...initOptions })
+        } catch (error) {
+            console.error(error)
+        }
+    })
+
+program.parse()

@@ -1,5 +1,4 @@
 // @ts-check
-const { builtinModules } = require('node:module')
 const { defineConfig } = require('eslint-define-config')
 const pkg = require('./package.json')
 
@@ -90,10 +89,7 @@ module.exports = defineConfig({
     '@typescript-eslint/prefer-for-of': 'off',
     '@typescript-eslint/prefer-function-type': 'off',
 
-    'import/no-nodejs-modules': [
-      'error',
-      { allow: builtinModules.map((mod) => `node:${mod}`) },
-    ],
+    'import/no-nodejs-modules': ["error", {"allow": ["path"]}],
     'import/no-duplicates': 'error',
     'import/order': 'error',
     'sort-imports': [
@@ -108,6 +104,7 @@ module.exports = defineConfig({
     ],
 
     'regexp/no-contradiction-with-assertion': 'error',
+    'n/shebang': 'off'
   },
   reportUnusedDisableDirectives: true,
  

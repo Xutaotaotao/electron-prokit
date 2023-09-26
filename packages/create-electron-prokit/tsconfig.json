@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "allowJs": true,
+    "target": "es2016",
     "module": "ESNext",
-    "skipLibCheck": true,
     "moduleResolution": "node",
-    "downlevelIteration": true,
-    "declaration": true,
-    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "importHelpers": true 
   },
-  "include": ["src"],
+  "include": [".eslintrc.js", "src/**/*"],
+  "exclude": ["node_modules", "lib/**/*"],
 }

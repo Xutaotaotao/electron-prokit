@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 12.0.0
+
+### Major Changes
+
+- feat: create-electron-prokit
+
 ## 11.0.1
 
 ### Patch Changes

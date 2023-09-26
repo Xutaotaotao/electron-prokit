@@ -1,37 +1,7 @@
-# @electron-prokit/create-electron-prokit
-
-## 6.0.0
-
-### Major Changes
-
-- feat: add http ffi schedule db module.
-
-## 5.0.0
-
-### Major Changes
-
-- fix: type
-
-## 4.0.0
-
-### Major Changes
-
-- feat: publishConfig
-
-## 3.0.0
-
-### Major Changes
-
-- feat: change rollupconfig
+# create-electron-prokit
 
 ## 2.0.0
 
 ### Major Changes
 
-- feat: changeset
-
-## 1.1.0
-
-### Minor Changes
-
-- feat:first changeset
+- feat: create-electron-prokit
