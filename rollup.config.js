@@ -1,7 +1,6 @@
 const path = require("node:path");
 const ts = require("rollup-plugin-typescript2");
 const resolvePlugin = require("@rollup/plugin-node-resolve");
-const { pnpmResolve } = "@pnpm/resolve";
 const packagesDir = path.resolve(__dirname, "./packages");
 
 const globals = {
@@ -38,7 +37,6 @@ function getBuildConfig(name, inputPath = "src/index.ts") {
       resolvePlugin({
         moduleDirectories: ["node_modules", ".pnpm"],
       }),
-      pnpmResolve(),
     ],
     external: [
       "electron",

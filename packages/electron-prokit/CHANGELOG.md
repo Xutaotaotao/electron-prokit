@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 11.0.1
+
+### Patch Changes
+
+- fix: moduleDirectories
+
 ## 11.0.0
 
 ### Major Changes
