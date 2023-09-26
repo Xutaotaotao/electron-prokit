@@ -196,7 +196,7 @@ importers:
         specifier: ^26.1.0
         version: 26.2.1
       electron-prokit:
-        specifier: workspace:^8.0.0
+        specifier: workspace:^10.0.0
         version: link:../packages/electron-prokit
       esbuild:
         specifier: ^0.19.2
