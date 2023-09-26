@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 11.0.0
+
+### Major Changes
+
+- baf4c28: fix: pnpmResolve
+
 ## 10.0.0
 
 ### Major Changes
