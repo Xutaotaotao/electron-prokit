@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 10.0.0
+
+### Major Changes
+
+- fix: pnpm postinstall
+
 ## 9.0.2
 
 ### Patch Changes
