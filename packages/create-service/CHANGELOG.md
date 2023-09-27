@@ -1,5 +1,11 @@
 # @electron-prokit/create-vite-electron-service
 
+## 1.1.0
+
+### Minor Changes
+
+- 2f42824: feat: Release 1.0.0
+
 ## 5.0.0
 
 ### Major Changes

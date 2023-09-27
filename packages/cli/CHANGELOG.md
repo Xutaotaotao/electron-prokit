@@ -1,5 +1,11 @@
 # create-electron-prokit
 
+## 1.1.0
+
+### Minor Changes
+
+- 2f42824: feat: Release 1.0.0
+
 ## 2.0.1
 
 ### Patch Changes
