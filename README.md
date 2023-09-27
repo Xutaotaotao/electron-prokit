@@ -1,16 +1,13 @@
-# Electron ProKit
+# Electron Prokit
 
 <p align="center">
   <img style="width:500px" src="https://github.com/Xutaotaotao/electron-prokit/blob/main/docs/public/logo.svg" alt="logo">
 </p>
 
+English | [简体中文](./README_ZH.md)
 
+Electron Prokit is a collection of development tools and resources for building applications with Electron. Whether you're new to Electron or an experienced developer, Electron Prokit provides a set of utilities, templates, and best practices to streamline your Electron application development.
 
-Electron ProKit is a collection of development tools and resources for building applications with Electron. Whether you're new to Electron or an experienced developer, Electron ProKit provides a set of utilities, templates, and best practices to streamline your Electron application development.
-
-## In development 
-
-⚠️⚠️⚠️ This project is still under development,can't be used for the production environment.
 
 ## Features
 
@@ -22,45 +19,54 @@ Electron ProKit is a collection of development tools and resources for building 
 
 - **Best Practices**: Guidelines and best practices for structuring Electron applications for scalability and maintainability.
 
-## Installation
 
-You can install Electron ProKit via npm:
+## Using a Scaffold
 
-```bash
-npm install electron-prokit
-```
+You can quickly create a project using a scaffold, which integrates with the electron-prokit ecosystem.
 
-## Usage
+**Installing the Scaffold**
 
-**1.Initialize a New Electron Project:**
-
-Use the following command to create a new Electron project based on a template:
-
-Install create-electron-prokit
 
 ```bash
-npm intsall -g create-electron-prokit
+npm i @electron-prokit/cli -g
 ```
 
-Use create-electron-prokit create a project
+**Creating a Project**
+
+
 ```bash
-create-electron-prokit my-electron-app
+electron-prokit-cli init project
 ```
-**2.Run Your Electron Application:**
 
-Start your Electron application in development mode:
+In the command above, replace `project` with the name of your project.
+
+After init, install dependencies and run dev
+
+```bash
+
+cd project && yarn install
+
+yarn run dev
 
 ```
-cd my-electron-app
-npm start
+
+## Install Individually
+
+Using NPM:
+
+```bash
+npm i electron-prokit
+```
+
+Using Yarn:
+
+```bash
+yarn i electron-prokit
 ```
 
 ## Documentation
 
 For detailed usage instructions and documentation, please refer to [the Documentation](https://xutaotaotao.github.io/electron-prokit/) section.
-
-## Contributing
-If you'd like to contribute to Electron ProKit, please see our Contributing Guidelines.
 
 
 ## License
@@ -73,9 +79,6 @@ This project would not be possible without the contributions of the Electron com
 - Electron Forge
 
 Thank you to all the developers who have made these projects possible.
-
-## Contact
-If you have any questions or feedback, you can reach us at [xutaotao1108@outlook.com].
 
 
 ## Stargazers

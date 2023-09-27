@@ -1,17 +1,17 @@
-# create-vite-electron-service
+# create-service
 
 适用于 Vite 创建的项目，一次性为你创建好 Electron 需要的渲染进程、任务进程、主进程以及 Preload 脚本，可以一键启动 Electron 项目且支持热更新。
 
 ## 安装依赖
-`pnpm add @electron-prokit/create-vite-electron-service -D`
+`yarn add @electron-prokit/create-service -D`
 
-## 启动服务
+## 使用
 ```javascript
 // dev.js
 import path from "path";
 import electronPath from "electron";
 import { fileURLToPath } from "url";
-import createViteElectronService from "@electron-prokit/create-vite-electron-service";
+import createViteElectronService from "@electron-prokit/create-service";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 

@@ -18,20 +18,34 @@ Electron-Prokit是一个Electron应用开发框架，其中涵盖了Electron应�
 
 不管是开发初学者还是经验丰富的开发者,都可以利用Prokit提升生产力,快速交付高质量的Electron应用。
 
-## 安装
+## 使用脚手架
+
+直接使用脚手架快捷创建项目，脚手架结合了electron-prokit相关生态。
+
+**安装脚手架**
+
+```bash
+npm i @electron-prokit/cli -g
+```
+
+**创建项目**
+
+
+```bash
+electron-prokit-cli init project
+```
+
+其中`project`为项目名。
+
+## 单独安装
 
 使用 NPM:
 
 ```bash
-$ npm i electron-prokit
+npm i electron-prokit
 ```
 使用 Yarn:
 
 ```bash
-$ yarn i electron-prokit
-```
-使用 PNPM:
-
-```bash
-$ pnpm i electron-prokit
+yarn i electron-prokit
 ```

@@ -17,7 +17,27 @@ Provides configuration files for one-click packaging of applications for multipl
 
 Whether you are a beginner or an experienced developer, you can use Prokit to increase productivity and deliver high-quality Electron applications quickly.
 
-## Installation
+## Using a Scaffold
+
+You can quickly create a project using a scaffold, which integrates with the electron-prokit ecosystem.
+
+**Installing the Scaffold**
+
+
+```bash
+npm i @electron-prokit/cli -g
+```
+
+**Creating a Project**
+
+
+```bash
+electron-prokit-cli init project
+```
+
+In the command above, replace `project` with the name of your project.
+
+## Install Individually
 
 Using NPM:
 
@@ -29,10 +49,4 @@ Using Yarn:
 
 ```bash
 $ yarn i electron-prokit
-```
-
-Using PNPM:
-
-```bash
-$ pnpm i electron-prokit
 ```

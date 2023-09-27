@@ -65,8 +65,12 @@ const zhThemeConfig: DefaultTheme.Config | undefined = {
             link: "/zh/plugin/",
           },
           {
-            text: "create-vite-electron-service",
-            link: "/zh/plugin/create-vite-electron-service",
+            text: "create-service",
+            link: "/zh/plugin/create-service",
+          },
+          {
+            text: "electron-prokit-cli",
+            link: "/zh/plugin/electron-prokit-cli",
           },
         ],
       },
@@ -122,16 +126,16 @@ const themeConfig: DefaultTheme.Config | undefined = {
         text: "API",
         items: [
           {
-            text: "All apis",
+            text: "All API",
             link: "/api/",
-          },
-          {
-            text: "window",
-            link: "/api/electron-prokit/window",
           },
           {
             text: "ipc",
             link: "/api/electron-prokit/ipc",
+          },
+          {
+            text: "window",
+            link: "/api/electron-prokit/window",
           },
           {
             text: "http",
@@ -145,6 +149,10 @@ const themeConfig: DefaultTheme.Config | undefined = {
             text: "schedule",
             link: "/api/electron-prokit/schedule",
           },
+          {
+            text: "db",
+            link: "/api/electron-prokit/db",
+          },
         ],
       },
     ],
@@ -157,8 +165,12 @@ const themeConfig: DefaultTheme.Config | undefined = {
             link: "/plugin/",
           },
           {
-            text: "create-vite-electron-service",
-            link: "/plugin/create-vite-electron-service",
+            text: "create-service",
+            link: "/plugin/create-service",
+          },
+          {
+            text: "electron-prokit-cli",
+            link: "/plugin/electron-prokit-cli",
           },
         ],
       },

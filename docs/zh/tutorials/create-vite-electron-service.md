@@ -4,7 +4,7 @@
 
 用 Vite 官方的指引创建一个 vite+react 的项目。
 
-`pnpm create vite`
+`yarn create vite`
 
 选择 React，选择 Typescript + SWC。
 
@@ -186,7 +186,7 @@ export default config;
 
 安装`electron-prokit`
 
-`pnpm add electron-prokit -D`
+`yarn add electron-prokit -D`
 
 - `src/main/index.ts`
 
@@ -230,9 +230,9 @@ app.whenReady().then(() => {
 
 在根目录下创建`scripts`目录，添加`dev.js`文件。
 
-安装`electron`和`@electron-prokit/create-vite-electron-service`
+安装`electron`和`@electron-prokit/create-service`
 
-`pnpm add electron @electron-prokit/create-vite-electron-service -D`
+`yarn add electron @electron-prokit/create-service -D`
 
 -`dev.js`
 
@@ -240,7 +240,7 @@ app.whenReady().then(() => {
 import path from "path";
 import electronPath from "electron";
 import { fileURLToPath } from "url";
-import createViteElectronService from "@electron-prokit/create-vite-electron-service";
+import createViteElectronService from "@electron-prokit/create-service";
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 createViteElectronService({
