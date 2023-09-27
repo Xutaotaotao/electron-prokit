@@ -19,6 +19,8 @@ Electron Prokit is a collection of development tools and resources for building 
 
 - **Best Practices**: Guidelines and best practices for structuring Electron applications for scalability and maintainability.
 
+- **More API**: ipc、window、htto、ffi、schedule、db...
+
 
 ## Using a Scaffold
 
