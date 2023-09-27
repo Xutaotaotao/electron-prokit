@@ -26,7 +26,7 @@
     "@vitejs/plugin-react-swc": "^3.3.2",
     "antd": "^5.9.0",
     "electron": "^26.1.0",
-    "electron-prokit": "workspace:^15.0.0",
+    "electron-prokit": "workspace:^16.0.0",
     "esbuild": "^0.19.2",
     "esbuild-plugin-polyfill-node": "^0.3.0",
     "eslint": "^8.45.0",
