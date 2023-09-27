@@ -1,6 +1,6 @@
 {
-  "name": "@electron-prokit/create-vite-electron-service",
-  "version": "5.0.0",
+  "name": "@electron-prokit/create-service",
+  "version": "1.0.0",
   "description": "",
   "type": "module",
   "main": "index.js",

@@ -1,6 +1,6 @@
 {
-  "name": "@electron-prokit/create",
-  "version": "2.0.1",
+  "name": "@electron-prokit/cli",
+  "version": "1.0.0",
   "description": "A cli to create a electron project",
   "publishConfig": {
     "main": "dist/index.cjs.js",
@@ -21,7 +21,7 @@
     }
   },
   "bin": {
-    "create-electron-prokit": "dist/index.js"
+    "electron-prokit-cli": "dist/index.js"
   },
   "scripts": {
     "dev": "node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts",
