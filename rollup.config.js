@@ -17,12 +17,12 @@ function getBuildConfig(name, inputPath = "src/index.ts") {
     input: path.resolve(packageDir, inputPath),
     output: [
       {
-        file: path.resolve(packageDir, `dist/${name}.cjs.js`),
+        file: path.resolve(packageDir, `dist/index.cjs.js`),
         format: "cjs",
         globals,
       },
       {
-        file: path.resolve(packageDir, `dist/${name}.umd.js`),
+        file: path.resolve(packageDir, `dist/index.umd.js`),
         format: "umd",
         name,
         globals,
@@ -46,7 +46,7 @@ function getBuildConfig(name, inputPath = "src/index.ts") {
   };
 }
 
-function getCreateElectronProkitBuildConfig(name, inputPath = "src/index.ts") {
+function getCliBuildConfig(name, inputPath = "src/index.ts") {
   const packageDir = path.resolve(packagesDir, name);
   return {
     input: path.resolve(packageDir, inputPath),
@@ -94,6 +94,6 @@ function getCreateElectronProkitBuildConfig(name, inputPath = "src/index.ts") {
 module.exports = () => {
   return [
     getBuildConfig('electron-prokit'),
-    getCreateElectronProkitBuildConfig("create-electron-prokit"),
+    getCliBuildConfig("cli"),
   ];
 };
