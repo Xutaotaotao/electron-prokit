@@ -1,7 +1,7 @@
 import path from "path";
 import electronPath from "electron";
 import { fileURLToPath } from "url";
-import createViteElectronService from '@electron-prokit/create-vite-electron-service'
+import createViteElectronService from '@electron-prokit/create-service'
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 createViteElectronService({
