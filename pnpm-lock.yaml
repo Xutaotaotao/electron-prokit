@@ -49,6 +49,9 @@ importers:
       rollup-plugin-peer-deps-external:
         specifier: ^2.2.4
         version: 2.2.4(rollup@3.29.2)
+      rollup-plugin-shebang-bin:
+        specifier: ^0.0.5
+        version: 0.0.5(rollup@3.29.2)
       rollup-plugin-typescript2:
         specifier: ^0.35.0
         version: 0.35.0(rollup@3.29.2)(typescript@5.2.2)
@@ -79,6 +82,9 @@ importers:
       git-clone:
         specifier: ^0.2.0
         version: 0.2.0
+      handlebars:
+        specifier: ^4.7.8
+        version: 4.7.8
       inquirer:
         specifier: ^9.2.11
         version: 9.2.11
@@ -92,9 +98,9 @@ importers:
       commander:
         specifier: ^11.0.0
         version: 11.0.0
-      handlebars:
-        specifier: ^4.7.8
-        version: 4.7.8
+      rollup-plugin-shebang-bin:
+        specifier: ^0.0.5
+        version: 0.0.5
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@20.6.2)(typescript@5.2.2)
@@ -2009,6 +2015,20 @@ packages:
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
     engines: {node: '>= 8.0.0'}
     dependencies:
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+    dev: true
+
+  /@rollup/pluginutils@5.0.4:
+    resolution: {integrity: sha512-0KJnIoRI8A+a1dqOYLxH8vBf8bphDmty5QvIm2hqm7oFCFYKCAZWWd2hXgMibaPsNDhI0AtpYfQZJG47pt/k4g==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@types/estree': 1.0.1
       estree-walker: 2.0.2
       picomatch: 2.3.1
     dev: true
@@ -4546,7 +4566,7 @@ packages:
       wordwrap: 1.0.0
     optionalDependencies:
       uglify-js: 3.17.4
-    dev: true
+    dev: false
 
   /hard-rejection@2.1.0:
     resolution: {integrity: sha512-VIZB+ibDhx7ObhAe7OVtoEbuP4h/MuOTHJ+J8h/eBXotJYl0fBgR72xDFCKgIh22OJZIOVNxBMWuhAr10r8HdA==}
@@ -5621,6 +5641,13 @@ packages:
       yallist: 4.0.0
     dev: true
 
+  /magic-string@0.26.7:
+    resolution: {integrity: sha512-hX9XH3ziStPoPhJxLq1syWuZMxbDvGNbVchfrdCtanC7D13888bMFow61x8axrx+GfHLtVeAx2kxL7tTGRl+Ow==}
+    engines: {node: '>=12'}
+    dependencies:
+      sourcemap-codec: 1.4.8
+    dev: true
+
   /magic-string@0.27.0:
     resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
     engines: {node: '>=12'}
@@ -5777,7 +5804,6 @@ packages:
 
   /minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
-    dev: true
 
   /minisearch@6.1.0:
     resolution: {integrity: sha512-PNxA/X8pWk+TiqPbsoIYH0GQ5Di7m6326/lwU/S4mlo4wGQddIcf/V//1f9TB0V4j59b57b+HZxt8h3iMROGvg==}
@@ -5813,7 +5839,7 @@ packages:
 
   /neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
-    dev: true
+    dev: false
 
   /node-int64@0.4.0:
     resolution: {integrity: sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==}
@@ -7138,6 +7164,27 @@ packages:
       rollup: 3.29.2
     dev: true
 
+  /rollup-plugin-shebang-bin@0.0.5:
+    resolution: {integrity: sha512-05atGTgoRiepthxmZHPWE6v1OfkFsdfyW2ALT/b3Fis0Bb8H779Osz2BEMT+c1uJKAdFsHGeDzGf5LOBFt02ZQ==}
+    engines: {node: '>= 14.18'}
+    peerDependencies:
+      rollup: ^2 || ^3
+    dependencies:
+      '@rollup/pluginutils': 5.0.4
+      magic-string: 0.26.7
+    dev: true
+
+  /rollup-plugin-shebang-bin@0.0.5(rollup@3.29.2):
+    resolution: {integrity: sha512-05atGTgoRiepthxmZHPWE6v1OfkFsdfyW2ALT/b3Fis0Bb8H779Osz2BEMT+c1uJKAdFsHGeDzGf5LOBFt02ZQ==}
+    engines: {node: '>= 14.18'}
+    peerDependencies:
+      rollup: ^2 || ^3
+    dependencies:
+      '@rollup/pluginutils': 5.0.4(rollup@3.29.2)
+      magic-string: 0.26.7
+      rollup: 3.29.2
+    dev: true
+
   /rollup-plugin-typescript2@0.35.0(rollup@3.29.2)(typescript@5.2.2):
     resolution: {integrity: sha512-szcIO9hPUx3PhQl91u4pfNAH2EKbtrXaES+m163xQVE5O1CC0ea6YZV/5woiDDW3CR9jF2CszPrKN+AFiND0bg==}
     peerDependencies:
@@ -7347,6 +7394,10 @@ packages:
   /source-map@0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
+
+  /sourcemap-codec@1.4.8:
+    resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
+    deprecated: Please use @jridgewell/sourcemap-codec instead
     dev: true
 
   /spawndamnit@2.0.0:
@@ -7792,7 +7843,7 @@ packages:
     engines: {node: '>=0.8.0'}
     hasBin: true
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /unbox-primitive@1.0.2:
@@ -8115,7 +8166,7 @@ packages:
 
   /wordwrap@1.0.0:
     resolution: {integrity: sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==}
-    dev: true
+    dev: false
 
   /wrap-ansi@6.2.0:
     resolution: {integrity: sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==}

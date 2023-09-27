@@ -1,16 +1,25 @@
 {
   "name": "@electron-prokit/create",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "A cli to create a electron project",
   "publishConfig": {
+    "main": "dist/index.cjs.js",
+    "module": "dist/index.esm.js",
+    "types": "dist/index.d.ts",
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "main": "dist/index.js",
+  "main": "dist/index.ts",
   "type": "module",
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    }
+  },
   "bin": {
     "create-electron-prokit": "dist/index.js"
   },
@@ -35,8 +44,8 @@
     "@types/inquirer": "^9.0.3",
     "fs-extra": "^11.1.1",
     "git-clone": "^0.2.0",
+    "handlebars": "^4.7.8",
     "inquirer": "^9.2.11",
-    "ora": "^7.0.1",
-    "handlebars": "^4.7.8"
+    "ora": "^7.0.1"
   }
 }

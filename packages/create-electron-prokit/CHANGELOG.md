@@ -1,5 +1,11 @@
 # create-electron-prokit
 
+## 2.0.0
+
+### Major Changes
+
+- fix: build options
+
 ## 1.1.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 13.0.0
+
+### Major Changes
+
+- fix: build options
+
 ## 12.0.0
 
 ### Major Changes

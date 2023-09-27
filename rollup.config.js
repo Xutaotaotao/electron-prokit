@@ -3,6 +3,7 @@ const ts = require("rollup-plugin-typescript2");
 const resolvePlugin = require("@rollup/plugin-node-resolve");
 const commonjs = require('@rollup/plugin-commonjs');
 const json = require('@rollup/plugin-json');
+const shebang = require('rollup-plugin-shebang-bin')
 const packagesDir = path.resolve(__dirname, "./packages");
 
 const globals = {
@@ -18,11 +19,6 @@ function getBuildConfig(name, inputPath = "src/index.ts") {
       {
         file: path.resolve(packageDir, `dist/${name}.cjs.js`),
         format: "cjs",
-        globals,
-      },
-      {
-        file: path.resolve(packageDir, `dist/${name}.mjs`),
-        format: "es",
         globals,
       },
       {
@@ -54,10 +50,23 @@ function getCreateElectronProkitBuildConfig(name, inputPath = "src/index.ts") {
   const packageDir = path.resolve(packagesDir, name);
   return {
     input: path.resolve(packageDir, inputPath),
-    output: {
-      file: path.resolve(packageDir, `dist/index.js`),
-      format: 'cjs'
-    },
+    output: [
+      {
+        file: path.resolve(packageDir, `dist/index.js`),
+        format: "cjs",
+        banner: '#!/usr/bin/env node --experimental-specifier-resolution=node',
+      },
+      {
+        file: path.resolve(packageDir, `dist/index.cjs.js`),
+        format: "cjs",
+        banner: '#!/usr/bin/env node --experimental-specifier-resolution=node',
+      },
+      {
+        file: path.resolve(packageDir, `dist/index.esm.js`),
+        format: "esm",
+        banner: '#!/usr/bin/env node --experimental-specifier-resolution=node',
+      },
+    ],
     external: [
       'inquirer',
       'ora',
@@ -77,6 +86,7 @@ function getCreateElectronProkitBuildConfig(name, inputPath = "src/index.ts") {
       }),
       commonjs(),
       json(),
+      shebang()
     ],
   }
 }

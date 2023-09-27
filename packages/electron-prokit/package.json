@@ -1,16 +1,21 @@
 {
   "name": "electron-prokit",
-  "version": "12.0.0",
+  "version": "13.0.0",
   "description": "",
   "type": "module",
   "main": "src/index.ts",
   "publishConfig": {
     "main": "dist/electron-prokit.cjs.js",
-    "module": "dist/electron-prokit.mjs",
-    "umd:main": "dist/electron-prokit.umd.js",
+    "module": "dist/electron-prokit.esm.js",
     "types": "dist/index.d.ts",
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    }
   },
   "files": [
     "dist"
