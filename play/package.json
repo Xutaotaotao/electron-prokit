@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^5.2.6",
-    "@electron-prokit/create-service": "workspace:^5.0.0",
+    "@electron-prokit/create-service": "workspace:^1.0.0",
     "@types/node": "^20.5.7",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
