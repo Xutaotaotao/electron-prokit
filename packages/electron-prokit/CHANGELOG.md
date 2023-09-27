@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 14.0.0
+
+### Major Changes
+
+- feat: change build
+
 ## 13.1.0
 
 ### Minor Changes

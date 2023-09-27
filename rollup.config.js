@@ -6,11 +6,6 @@ const json = require('@rollup/plugin-json');
 const shebang = require('rollup-plugin-shebang-bin')
 const packagesDir = path.resolve(__dirname, "./packages");
 
-const globals = {
-  koffi: "koffi",
-  axios: "axios",
-};
-
 function getBuildConfig(name, inputPath = "src/index.ts") {
   const packageDir = path.resolve(packagesDir, name);
   return {
@@ -19,13 +14,14 @@ function getBuildConfig(name, inputPath = "src/index.ts") {
       {
         file: path.resolve(packageDir, `dist/index.cjs.js`),
         format: "cjs",
-        globals,
       },
       {
-        file: path.resolve(packageDir, `dist/index.umd.js`),
-        format: "umd",
-        name,
-        globals,
+        file: path.resolve(packageDir, `dist/index.esm.js`),
+        format: "esm",
+      },
+      {
+        file: path.resolve(packageDir, `dist/index.js`),
+        format: "esm",
       },
     ],
     plugins: [
