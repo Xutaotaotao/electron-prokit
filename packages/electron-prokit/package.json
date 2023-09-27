@@ -1,6 +1,6 @@
 {
   "name": "electron-prokit",
-  "version": "14.0.0",
+  "version": "1.0.0",
   "description": "",
   "type": "module",
   "main": "src/index.ts",

@@ -1,6 +1,6 @@
 {
   "name": "@electron-prokit/create-service",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "",
   "type": "module",
   "main": "index.js",
