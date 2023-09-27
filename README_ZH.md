@@ -4,7 +4,7 @@
   <img style="width:500px" src="https://github.com/Xutaotaotao/electron-prokit/blob/main/docs/public/logo.svg" alt="logo">
 </p>
 
-简体中文 | [English] (./README.md)
+简体中文 | [English](./README.md)
 
 Electron Prokit 是一组用于构建 Electron 应用程序的开发工具和资源。不论是初学者还是经验丰富的开发人员，Electron Prokit 提供了一套实用工具、模板和最佳实践，以简化 Electron 应用程序开发过程。
 
