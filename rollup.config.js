@@ -53,7 +53,7 @@ function getCreateElectronProkitBuildConfig(name, inputPath = "src/index.ts") {
     output: [
       {
         file: path.resolve(packageDir, `dist/index.js`),
-        format: "cjs",
+        format: "esm",
         banner: '#!/usr/bin/env node --experimental-specifier-resolution=node',
       },
       {
