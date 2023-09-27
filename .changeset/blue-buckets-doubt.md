@@ -4,4 +4,4 @@
 "@electron-prokit/cli": major
 ---
 
-- Release this project
+feat: Relase this package.

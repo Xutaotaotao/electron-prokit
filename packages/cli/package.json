@@ -1,6 +1,6 @@
 {
   "name": "@electron-prokit/cli",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A cli to create a electron project",
   "publishConfig": {
     "main": "dist/index.cjs.js",
