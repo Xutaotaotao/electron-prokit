@@ -89,7 +89,7 @@ const workWindow = getWindow('getWindow')
 getWindow(name: string): Electron.CrossProcessExports.BrowserWindow
 ```
 
-- name: 窗口名称，类型`string`
+- name: Window name, type `string`
 
 ### destroyWindow
 
@@ -110,7 +110,7 @@ destroyWindow(name: string): void
 
 ### getAllWindows
 
-获取所有窗口实例。
+Get all windows.
 
 ```ts
 // Main Process
