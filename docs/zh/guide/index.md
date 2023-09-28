@@ -70,6 +70,8 @@ yarn i electron-prokit
 ```bash
 git clone https://github.com/Xutaotaotao/electron-prokit.git
 
+cd electron-prokit
+
 pnpm i 
 
 pnpm run dev

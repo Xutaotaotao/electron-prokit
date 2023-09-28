@@ -70,6 +70,8 @@ You can find detailed API documentation at this link:<a href="https://xutaotaota
 ```bash
 git clone https://github.com/Xutaotaotao/electron-prokit.git
 
+cd electron-prokit
+
 pnpm i 
 
 pnpm run dev
