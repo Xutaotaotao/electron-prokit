@@ -38,6 +38,7 @@ function getBuildConfig(name, inputPath = "src/index.ts") {
       "postcss",
       "koffi",
       "axios",
+      "lowdb"
     ],
   };
 }
