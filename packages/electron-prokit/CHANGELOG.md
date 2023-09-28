@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 16.0.1
+
+### Patch Changes
+
+- b641ff7: fix: db initDb error.
+
 ## 16.0.0
 
 ### Major Changes
