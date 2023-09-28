@@ -24,7 +24,7 @@ createViteElectronService({
 });
 ```
 
-利用上面的脚本在 package.json 中的 scripts 添加`"dev": "node ./scripts/dev.js"`,`npm run dev` 即可启动项目。详细教程可参考[如何用 Vite 快速构建一个 Electron 的项目](/zh/tutorials/create-vite-electron-service)
+利用上面的脚本在 package.json 中的 scripts 添加`"dev": "node ./scripts/dev.js"`,`yarn run dev` 即可启动项目。详细教程可参考[如何用 Vite 快速构建一个 Electron 的项目](/zh/tutorials/create-vite-electron-service)
 
 ## API
 

@@ -59,16 +59,12 @@ npm i electron-prokit
 yarn i electron-prokit
 ```
 
-**⚠️注意事项⚠️**
 
-单独安装使用需要提前注入相应的环境变量，[教程](https://xutaotaotao.github.io/electron-prokit/zh/tutorials/create-vite-electron-service.html)
-
-现阶段没有暴露相关的环境变量注入API接口，后续会优化，建议使用脚手架初始化项目。
-
-
-## 文档
+## 使用
 
 详细的API文档以及一些教程在这里， [点击查看](https://xutaotaotao.github.io/electron-prokit/zh)
+
+- [用 Vite 快速构建一个 Electron 项目](https://xutaotaotao.github.io/electron-prokit/zh/tutorials/create-vite-electron-service.html)
 
 
 ## Stargazers

@@ -66,21 +66,9 @@ Using Yarn:
 yarn i electron-prokit
 ```
 
-## Documentation
+## Usage
 
 For detailed usage instructions and documentation, please refer to [the Documentation](https://xutaotaotao.github.io/electron-prokit/) section.
-
-
-## License
-Electron ProKit is open-source software licensed under the MIT License.
-
-## Acknowledgements
-This project would not be possible without the contributions of the Electron community and the following open-source projects:
-
-- Electron
-- Electron Forge
-
-Thank you to all the developers who have made these projects possible.
 
 
 ## Stargazers

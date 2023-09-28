@@ -252,12 +252,12 @@ createViteElectronService({
 });
 ```
 
-在 `package.json` 中的`scripts`选项添加 `"dev": "node ./scripts/dev.js"`,`package.json` 中添加入口"main": "dist/main/index.cjs",
+在 `package.json` 中的`scripts`选项添加 `"dev": "node ./scripts/dev.js"`,`package.json` 中添加入口"main": "dist/main/index.cjs"。
 
 ## 启动项目
 
 经过上面的步骤，就可以一键启动 Electron 项目了。
 
-`pnpm run dev`
+`yarn run dev`
 
 ![alt demo](/tutorials/create-vite-electron-service3.png)

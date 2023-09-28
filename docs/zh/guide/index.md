@@ -2,7 +2,7 @@
 
 ## 总览
 
-Electron-Prokit是一个Electron应用开发框架，其中涵盖了Electron应用开发的全流程。
+Electron-Prokit是一个Electron应用开发框架，其中涵盖了Electron应用开发的全流程，适用于Vite相关生态。
 
 ::: tip 项目初始化
 提供配置化的项目模板、多种UI框架选择和代码规范预设。
@@ -20,7 +20,7 @@ Electron-Prokit是一个Electron应用开发框架，其中涵盖了Electron应�
 
 ## 使用脚手架
 
-直接使用脚手架快捷创建项目，脚手架结合了electron-prokit相关生态。
+直接使用脚手架快捷创建项目，脚手架结合了electron-prokit相关生态，推荐使用此方式。
 
 **安装脚手架**
 
@@ -37,6 +37,14 @@ electron-prokit-cli init project
 
 其中`project`为项目名。
 
+**启动项目**
+```bash
+cd project && yarn install
+
+yarn run dev
+```
+
+
 ## 单独安装
 
 使用 NPM:
@@ -49,3 +57,9 @@ npm i electron-prokit
 ```bash
 yarn i electron-prokit
 ```
+
+## 使用
+
+详细的API文档在这里，<a href="https://xutaotaotao.github.io/electron-prokit/zh" target="_blank">点击查看</a>
+
+- <a href="https://xutaotaotao.github.io/electron-prokit/zh/tutorials/create-vite-electron-service.html" target="_blank">用 Vite 快速构建一个 Electron 项目</a>

@@ -6,7 +6,7 @@ description: electron-prokit http api
 
 # Http
 
-网络通信相关的 API 接口。支持`渲染进程`、`主进程`、`任务进程`，可以随处调用。
+网络通信相关的 API 接口。支持`渲染进程`、`主进程`、`preload`，可以随处调用。
 
 ## 作用
 

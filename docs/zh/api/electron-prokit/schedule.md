@@ -127,8 +127,6 @@ getSchedule(name: string): Schedule
 - name：任务名称，类型`string`
 
 
-例子：
-
 ### hasSchedule
 
 判断是否存在任务。
