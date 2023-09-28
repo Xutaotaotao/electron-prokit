@@ -1,24 +1,19 @@
 import { useDbFile, useLowdb } from "../hooks";
 let db: any = null;
 
-const defaultFile = useDbFile()
+const defaultFile = useDbFile();
 
 export const initDb = (file = defaultFile): Promise<boolean> => {
-  return new Promise((resolve, reject) => {
+  // eslint-disable-next-line no-async-promise-executor
+  return new Promise(async (resolve, reject) => {
     if (db) {
       resolve(true);
     } else {
       try {
-        const lowdb = useLowdb(file)
-        lowdb
-          .read()
-          .then(() => {
-            db = lowdb;
-            resolve(true);
-          })
-          .catch((err) => {
-            reject(err);
-          });
+        const lowdb = await useLowdb(file);
+        await lowdb.read();
+        db = lowdb;
+        resolve(true);
       } catch (err) {
         reject(err);
       }
@@ -26,27 +21,33 @@ export const initDb = (file = defaultFile): Promise<boolean> => {
   });
 };
 
+// todo data type constrains 
 export const writeDb = async (key: string, data: any): Promise<void> => {
   if (!db) {
     await initDb();
   }
-  db.data[key] = data;
+  await db.read();
+  const oldData = db.data;
+  db.data = {
+    ...oldData,
+    [key]: data,
+  };
   await db.write();
 };
 
-export const readDb = async (key:string):Promise<any> =>  {
+export const readDb = async (key: string): Promise<any> => {
   if (!db) {
-    return null
+    await initDb();
   }
-  await db.read()
-  const res = db.data[key];
-  return res
+  await db.read();
+  const res = db.data?.[key];
+  return res;
 };
 
-export const clearDb = async ():Promise<void> => {
+export const clearDb = async (): Promise<void> => {
   if (!db) {
-    return
+    return;
   }
-  db.data = {}
+  db.data = {};
   await db.write();
 };

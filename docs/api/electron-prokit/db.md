@@ -37,7 +37,7 @@ initDb()
 initDb = (file = defaultFile): Promise<boolean>
 ```
 
-- file：The location of the data storage file, defaulting to`join(app.getPath("appData"), "db.json")`。
+- file：The location of the data storage file, defaulting to`join(app.getPath("userData"), "db.json")`。
 
 ### writeDb
 

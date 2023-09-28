@@ -1,5 +1,7 @@
 const Home = () => {
-  return <div>Home</div>
+  return <div>
+    This is Electron Prokit Playground.
+  </div>
 }
 
 export default Home

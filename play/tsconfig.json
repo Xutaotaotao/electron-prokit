@@ -20,7 +20,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "esModuleInterop": false
+    "esModuleInterop": false,
+    
+    "paths": {
+      "electron-prokit": ["../packages/electron-prokit/src"] 
+    }
   },
   "include": ["src", "vendor.d.ts"],
 }

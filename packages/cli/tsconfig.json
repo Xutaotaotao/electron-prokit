@@ -11,5 +11,5 @@
     "importHelpers": true 
   },
   "include": [".eslintrc.js", "src/**/*"],
-  "exclude": ["node_modules", "lib/**/*"],
+  "exclude": ["node_modules", "dist/**/*"],
 }

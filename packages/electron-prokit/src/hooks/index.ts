@@ -1,3 +1,4 @@
+import type { LowSync } from "lowdb/lib";
 import { isMain, isPreload, isWork,  } from "../env";
 
 
@@ -38,20 +39,17 @@ export function useDbFile ():string {
   if (isMain) {
     const { join } = require('path');
     const {app} = require('electron')
-    const defaultFile = join(app.getPath("appData"), "db.json");
+    const defaultFile = join(app.getPath("userData"), "db.json");
     return defaultFile
   }
   return 'db.json'
 }
 
-export function useLowdb (file:string):any {
+export async function useLowdb (file:string):Promise<LowSync<unknown>> {
   if (isMain) {
-    const { Low } = require("lowdb");
-    const { JSONFile } = require("lowdb/node");
-    const adapter = new JSONFile(file);
-    const defaultData = {};
-    const lowdb = new Low(adapter, defaultData);
+    const { LowSync, JSONFileSync } = await import("lowdb");
+    const adapter = new JSONFileSync(file);
+    const lowdb = new LowSync(adapter);
     return lowdb
   }
-
 }

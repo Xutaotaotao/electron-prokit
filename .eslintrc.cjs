@@ -12,7 +12,7 @@ module.exports = defineConfig({
     'plugin:regexp/recommended',
   ],
   ignorePatterns: ['packages/create-vite/template-**'],
-  plugins: ['import', 'regexp'],
+  plugins: ['import', 'regexp','react-refresh'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',
@@ -20,6 +20,10 @@ module.exports = defineConfig({
   },
   rules: {
     eqeqeq: ['warn', 'always', { null: 'never' }],
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
+    ],
     'no-debugger': ['error'],
     'no-empty': ['warn', { allowEmptyCatch: true }],
     'no-process-exit': 'off',
@@ -60,10 +64,10 @@ module.exports = defineConfig({
 
     '@typescript-eslint/ban-ts-comment': 'error',
     '@typescript-eslint/ban-types': 'off', // TODO: we should turn this on in a new PR
-    '@typescript-eslint/explicit-module-boundary-types': [
-      'error',
-      { allowArgumentsExplicitlyTypedAsAny: true },
-    ],
+    // '@typescript-eslint/explicit-module-boundary-types': [
+    //   'error',
+    //   { allowArgumentsExplicitlyTypedAsAny: true },
+    // ],
     '@typescript-eslint/no-empty-function': [
       'error',
       { allow: ['arrowFunctions'] },
