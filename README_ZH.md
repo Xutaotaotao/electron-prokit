@@ -62,9 +62,9 @@ yarn i electron-prokit
 
 ## 使用
 
-详细的API文档以及一些教程在这里， [点击查看](https://xutaotaotao.github.io/electron-prokit/zh)
+详细的API文档在这里，<a href="https://xutaotaotao.github.io/electron-prokit/zh" target="_blank">点击查看</a>
 
-- [用 Vite 快速构建一个 Electron 项目](https://xutaotaotao.github.io/electron-prokit/zh/tutorials/create-vite-electron-service.html)
+- <a href="https://xutaotaotao.github.io/electron-prokit/zh/tutorials/create-vite-electron-service.html" target="_blank">用 Vite 快速构建一个 Electron 项目</a>
 
 
 ## Stargazers
