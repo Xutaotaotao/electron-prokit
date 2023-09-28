@@ -60,9 +60,9 @@ $ yarn i electron-prokit
 
 ## Usage
 
-You can find detailed API documentation at this link:<a href="https://xutaotaotao.github.io/electron-prokit" target="_blank">Click to view</a>
+You can find detailed API documentation at this link:<a href="https://xutaotaotao.github.io/electron-prokit/api/" >Click to view</a>
 
-- <a href="https://xutaotaotao.github.io/electron-prokit/tutorials/create-vite-electron-service.html" target="_blank">Building an Electron Project Quickly with Vite</a>
+- <a href="https://xutaotaotao.github.io/electron-prokit/tutorials/create-vite-electron-service.html" >Building an Electron Project Quickly with Vite</a>
 
 
 ## Playground
