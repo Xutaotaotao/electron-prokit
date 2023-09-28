@@ -63,3 +63,15 @@ yarn i electron-prokit
 详细的API文档在这里，<a href="https://xutaotaotao.github.io/electron-prokit/zh" target="_blank">点击查看</a>
 
 - <a href="https://xutaotaotao.github.io/electron-prokit/zh/tutorials/create-vite-electron-service.html" target="_blank">用 Vite 快速构建一个 Electron 项目</a>
+
+
+## 演练
+
+```bash
+git clone https://github.com/Xutaotaotao/electron-prokit.git
+
+pnpm i 
+
+pnpm run dev
+
+```

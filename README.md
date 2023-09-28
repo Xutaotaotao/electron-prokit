@@ -72,6 +72,17 @@ You can find detailed API documentation at this link:<a href="https://xutaotaota
 
 - <a href="https://xutaotaotao.github.io/electron-prokit/tutorials/create-vite-electron-service.html" target="_blank">Building an Electron Project Quickly with Vite</a>
 
+## Playground
+
+```bash
+git clone https://github.com/Xutaotaotao/electron-prokit.git
+
+pnpm i 
+
+pnpm run dev
+
+```
+
 
 ## Stargazers
 [![Stargazers repo roster for electron-prokit](https://reporoster.com/stars/Xutaotaotao/electron-prokit)](https://github.com/Xutaotaotao/electron-prokit/stargazers)
