@@ -259,4 +259,4 @@ After the above steps, you can start the Electron project with one click.
 
 `yarn run dev`
 
-![alt demo](/tutorials/create-vite-electron-service3.png)
+![alt demo](/tutorials/create-vite-electron-service-vue-2.png)

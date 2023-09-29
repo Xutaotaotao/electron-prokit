@@ -259,4 +259,4 @@ createViteElectronService({
 
 `yarn run dev`
 
-![alt demo](/tutorials/create-vite-electron-service3.png)
+![alt demo](/tutorials/create-vite-electron-service-vue-2.png)
