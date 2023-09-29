@@ -1,20 +1,19 @@
-# 用 Vite+React 快速构建一个 Electron 项目
+# 用 Vite+Vue3 快速构建一个 Electron 项目
 
-## 创建一个 Vite+React 的项目
+## 创建一个 Vite+Vue3 的项目
 
-用 Vite 官方的指引创建一个 vite+react 的项目。
+用 Vite 官方的指引创建一个 vite+Vue3 的项目。
 
 `yarn create vite`
 
-选择 React，选择 Typescript + SWC。
+选择 Vue3
 
-![alt 创建](/tutorials/create-vite-electron-service1.png)
+![alt 创建](/tutorials/create-vite-electron-service-vue.png)
 
 ## 修改项目结构
 
-我们在`src`目录下创建`main`、`render`、`preload`、`work`四个目录，然后将 src 下原有的所有内容移动到`render`目录下，然后改变`index.html`中`script`的引入`<script type="module" src="/src/render/main.tsx"></script>`
+我们在`src`目录下创建`main`、`render`、`preload`、`work`四个目录，然后将 src 下原有的所有内容移动到`render`目录下，然后改变`index.html`中`script`的引入`<script type="module" src="/src/render/main.ts"></script>`
 
-![alt 创建](/tutorials/create-vite-electron-service2.png)
 
 - `main` 是主进程相关的工程代码目录
 - `render` 是渲染进程相关的工程代码目录
@@ -70,7 +69,7 @@ export default config;
 - `render.js`
 
 ```javascript
-import react from "@vitejs/plugin-react-swc";
+import vue from '@vitejs/plugin-vue'
 import { builtinModules } from "module";
 import { fileURLToPath } from "url";
 import { cwd } from "node:process";
@@ -97,7 +96,7 @@ const config = {
       external: [...builtinModules],
     },
   },
-  plugins: [react()],
+  plugins: [vue()],
 };
 export default config;
 ```
@@ -252,7 +251,7 @@ createViteElectronService({
 });
 ```
 
-在 `package.json` 中的`scripts`选项添加 `"dev": "node ./scripts/dev.js"`,`package.json` 中添加入口`"main": "dist/main/index.cjs"`。
+在 `package.json` 中的`scripts`选项添加 `"dev": "node ./scripts/dev.js"`,`package.json` 中添加入口"main": "dist/main/index.cjs"。
 
 ## 启动项目
 

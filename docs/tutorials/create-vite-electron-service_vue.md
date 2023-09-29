@@ -1,33 +1,32 @@
-# 用 Vite+React 快速构建一个 Electron 项目
+# Building an Electron Project Quickly with Vite and Vue3
 
-## 创建一个 Vite+React 的项目
+## Create a Vite+Vue3 project
 
-用 Vite 官方的指引创建一个 vite+react 的项目。
+Use the official Vite guide to create a vite+react project.
 
 `yarn create vite`
 
-选择 React，选择 Typescript + SWC。
+Select `Vue`,.
 
-![alt 创建](/tutorials/create-vite-electron-service1.png)
+![alt Create](/tutorials/create-vite-electron-service-vue.png)
 
-## 修改项目结构
+## Modify the project structure
 
-我们在`src`目录下创建`main`、`render`、`preload`、`work`四个目录，然后将 src 下原有的所有内容移动到`render`目录下，然后改变`index.html`中`script`的引入`<script type="module" src="/src/render/main.tsx"></script>`
+Under the `src` directory, create `main`, `render`, `preload`, and `work` directories, then move all the original content under src to the render directory, and change the import of script in `index.html` to `<script type="module" src="/src/render/main.ts"></script>`
 
-![alt 创建](/tutorials/create-vite-electron-service2.png)
 
-- `main` 是主进程相关的工程代码目录
-- `render` 是渲染进程相关的工程代码目录
-- `preload` 是预加载相关脚本服务的工程代码目录
-- `work` 是任务进程相关的工程代码目录
+- `main` is the main process related code directory
+- `render` is the renderer process related code directory
+- `preload` is the preload script service code directory
+- `work` is the worker process related code directory
 
-这样就把一个 electron 的核心工程目录梳理划分出来了。
+This outlines the core engineering directories of an electron project.
 
-然后我们需要在`render`、`preload`、`work`下分别创建一个`index.ts`入口文件，方便后续用 Vite 去启动这些服务。
+Then we need to create an `index.ts` entry file under render, preload, and work respectively, to facilitate Vite to start these services later.
 
-## 添加 Vite 工程配置文件
+## Add Vite project configuration files
 
-这一步我们在根目录下创建一个`vite`文件夹。然后把`main`、`render`、`preload`、`work`几个服务的配置文件创建在这个目录下。
+In this step we create a vite folder at the root. Then create the configuration files for the main, render, preload, and work services under this directory.
 
 - `main.js`
 
@@ -70,7 +69,7 @@ export default config;
 - `render.js`
 
 ```javascript
-import react from "@vitejs/plugin-react-swc";
+import vue from '@vitejs/plugin-vue'
 import { builtinModules } from "module";
 import { fileURLToPath } from "url";
 import { cwd } from "node:process";
@@ -97,7 +96,7 @@ const config = {
       external: [...builtinModules],
     },
   },
-  plugins: [react()],
+  plugins: [vue()],
 };
 export default config;
 ```
@@ -180,11 +179,11 @@ const config = {
 export default config;
 ```
 
-在上面的配置文件中，除了`render.js`有点不一样，其他几个配置文件基本一样，入口文件有区别。
+In the above configuration files, except `render.js` is a bit different, the other configuration files are basically the same, just different entry files.
 
-## 主进程代码编写
+## Write main process code
 
-安装`electron` 和 `electron-prokit`
+Install `electron` & `electron-prokit`
 
 `yarn add electron electron-prokit -D`
 
@@ -224,13 +223,13 @@ app.whenReady().then(() => {
 });
 ```
 
-## 集成自定义项目启动脚本
+## Integrate custom project startup scripts
 
-有了 Vite 配置文件之后，我们就可以自定义开发脚本来启动本地的 electron 项目了。
+With the Vite configuration files, we can customize dev scripts to start local electron projects.
 
-在根目录下创建`scripts`目录，添加`dev.js`文件。
+Create a scripts directory at the root, and add the dev.js file.
 
-安装@electron-prokit/create-service`
+Install  `@electron-prokit/create-service`.
 
 `yarn add @electron-prokit/create-service -D`
 
@@ -252,11 +251,11 @@ createViteElectronService({
 });
 ```
 
-在 `package.json` 中的`scripts`选项添加 `"dev": "node ./scripts/dev.js"`,`package.json` 中添加入口`"main": "dist/main/index.cjs"`。
+Add `"dev": "node ./scripts/dev.js"` to the scripts option in `package.json`, and add `"main": "dist/main/index.cjs"` entry in package.json.
 
-## 启动项目
+## Start the project
 
-经过上面的步骤，就可以一键启动 Electron 项目了。
+After the above steps, you can start the Electron project with one click.
 
 `yarn run dev`
 

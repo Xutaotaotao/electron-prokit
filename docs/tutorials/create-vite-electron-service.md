@@ -184,9 +184,9 @@ In the above configuration files, except `render.js` is a bit different, the oth
 
 ## Write main process code
 
-Install `electron-prokit`
+Install `electron` and `electron-prokit`
 
-`yarn add electron-prokit -D`
+`yarn add electron electron-prokit -D`
 
 - `src/main/index.ts`
 
@@ -230,9 +230,9 @@ With the Vite configuration files, we can customize dev scripts to start local e
 
 Create a scripts directory at the root, and add the dev.js file.
 
-Install `electron` and `@electron-prokit/create-service`.
+Install `@electron-prokit/create-service`.
 
-`yarn add electron @electron-prokit/create-service -D`
+`yarn add @electron-prokit/create-service -D`
 
 -`dev.js`
 
