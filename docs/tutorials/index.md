@@ -1,3 +1,5 @@
 # Tutorials
 
-- <a href="https://xutaotaotao.github.io/electron-prokit/tutorials/create-vite-electron-service.html" target="_blank">Building an Electron Project Quickly with Vite</a>
+- [Building an Electron Project Quickly with Vite and React](/tutorials/create-vite-electron-service)
+
+- [Building an Electron Project Quickly with Vite and Vue3](/tutorials/create-vite-electron-service-vue3)

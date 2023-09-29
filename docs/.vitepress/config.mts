@@ -89,7 +89,7 @@ const zhThemeConfig: DefaultTheme.Config | undefined = {
           },
           {
             text: " 用Vite+Vue3快速构建一个Electron项目",
-            link: "/zh/tutorials/create-vite-electron-service_vue",
+            link: "/zh/tutorials/create-vite-electron-service-vue",
           },
         ],
       },
@@ -193,7 +193,7 @@ const themeConfig: DefaultTheme.Config | undefined = {
           },
           {
             text: "Build an Electron Project Quickly with Vite and Vue3",
-            link: "/tutorials/create-vite-electron-service_vue",
+            link: "/tutorials/create-vite-electron-service-vue",
           },
         ],
       },
