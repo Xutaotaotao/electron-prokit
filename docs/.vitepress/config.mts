@@ -84,7 +84,7 @@ const zhThemeConfig: DefaultTheme.Config | undefined = {
             link: "/zh/tutorials/",
           },
           {
-            text: " 用Vite快速构建一个Electron项目",
+            text: " 用Vite+React快速构建一个Electron项目",
             link: "/zh/tutorials/create-vite-electron-service",
           },
         ],
@@ -184,7 +184,7 @@ const themeConfig: DefaultTheme.Config | undefined = {
             link: "/tutorials/",
           },
           {
-            text: "Build an Electron Project Quickly with Vite.",
+            text: "Build an Electron Project Quickly with Vite and React.",
             link: "/tutorials/create-vite-electron-service",
           },
         ],

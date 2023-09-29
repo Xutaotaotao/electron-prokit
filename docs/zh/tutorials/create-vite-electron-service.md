@@ -1,4 +1,4 @@
-# 用 Vite 快速构建一个 Electron 项目
+# 用 Vite+React 快速构建一个 Electron 项目
 
 ## 创建一个 Vite+React 的项目
 

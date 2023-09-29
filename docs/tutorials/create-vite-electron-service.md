@@ -1,4 +1,4 @@
-# Building an Electron Project Quickly with Vite
+# Building an Electron Project Quickly with Vite and React
 
 ## Create a Vite+React project
 
