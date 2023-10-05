@@ -26,7 +26,7 @@
   "scripts": {
     "dev": "node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts",
     "build": "tsc",
-    "start": "node --experimental-specifier-resolution=node lib/index.js"
+    "start": "node --experimental-specifier-resolution=node dist/index.js"
   },
   "keywords": [],
   "author": "",
