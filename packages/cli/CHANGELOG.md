@@ -4,7 +4,7 @@
 
 ### Major Changes
 
-- fix:version
+- feat: change vue template
 
 ## 2.0.0
 
