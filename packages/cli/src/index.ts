@@ -65,7 +65,7 @@ program
       ],
     });
     let templateGitUrl =
-      frameworkOptions.value === "React"
+      frameworkOptions.framework === "React"
         ? ReactTemplateGitUrl
         : VueTemplateGitUrl;
     try {
