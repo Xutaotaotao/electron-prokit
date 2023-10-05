@@ -1,5 +1,5 @@
 ---
-"@electron-prokit/cli": minor
+"@electron-prokit/cli": major
 ---
 
 feat:add vue template.
