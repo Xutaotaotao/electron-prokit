@@ -13,10 +13,11 @@
     "exports": {
       ".": {
         "import": {
-          "default": "dist/index.js"
+          "default": "./dist/index.js",
+          "types": "./dist/index.d.ts"
         },
         "require": {
-          "default": "dist/index.cjs.js"
+          "default": "./dist/index.cjs.js"
         }
       }
     }
