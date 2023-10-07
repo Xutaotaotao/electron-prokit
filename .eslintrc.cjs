@@ -93,7 +93,6 @@ module.exports = defineConfig({
     '@typescript-eslint/prefer-for-of': 'off',
     '@typescript-eslint/prefer-function-type': 'off',
 
-    'import/no-nodejs-modules': ["error", {"allow": ["path"]}],
     'import/no-duplicates': 'error',
     'import/order': 'error',
     'sort-imports': [
