@@ -128,8 +128,8 @@ function getCreateServiceConfig(name, inputPath = "src/index.ts") {
 
 module.exports = () => {
   return [
-    // getBuildConfig('electron-prokit'),
+    getBuildConfig('electron-prokit'),
     getCreateServiceConfig('create-service'),
-    // getCliBuildConfig("cli"),
+    getCliBuildConfig("cli"),
   ];
 };
