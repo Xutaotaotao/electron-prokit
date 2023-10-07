@@ -3,7 +3,7 @@
     <img style="width:300px" src="https://github.com/Xutaotaotao/electron-prokit/blob/main/docs/public/logo.svg" alt="logo">
   </p>
   <h1>Electron Prokit</h1>
-  <p>A desktop application development framework based on Electron, providing an ultimate desktop application development experience.</p>
+  <p>A desktop app framework based on Electron,develop desktop applications like a pro! </p>
 
   ![github workflow](https://github.com/Xutaotaotao/electron-prokit/actions/workflows/release.yml/badge.svg) ![npm downloads](https://img.shields.io/npm/dm/electron-prokit) ![npm version](https://img.shields.io/npm/v/electron-prokit) ![license](https://img.shields.io/github/license/Xutaotaotao/electron-prokit?color=%232dce89&logo=github&style=flat-square)
 </div>
@@ -67,7 +67,7 @@ Using Yarn:
 yarn i electron-prokit
 ```
 
-## Documents
+## 📖 Documents
 
 <a href="https://xutaotaotao.github.io/electron-prokit" target="_blank">Homepage</a>
 
