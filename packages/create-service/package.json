@@ -4,6 +4,23 @@
   "description": "",
   "type": "module",
   "main": "src/index.ts",
+  "publishConfig": {
+    "main": "dist/index.js",
+    "module": "dist/index.esm.js",
+    "types": "dist/index.d.ts",
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "exports": {
+      ".": {
+        "import": {
+          "default": "dist/index.js"
+        },
+        "require": {
+          "default": "dist/index.cjs.js"
+        }
+      }
+    }
+  },
   "files": [
     "dist"
   ],
@@ -15,12 +32,5 @@
   "license": "ISC",
   "dependencies": {
     "vite": "^4.4.5"
-  },
-  "publishConfig": {
-    "main": "dist/index.cjs.js",
-    "module": "dist/index.esm.js",
-    "types": "dist/index.d.ts",
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
   }
 }
