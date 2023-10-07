@@ -23,6 +23,14 @@
 
 - **🎨 丰富的 API**: 进程通信、窗口管理、网络请求、跨语言调用、任务管理、数据库管理...
 
+## 👜 npm 包
+
+|Package|npm version|npm downloads|
+| :-: | :-: | :-: |
+| [electron-prokit](packages/electron-prokit) | ![npm version](https://img.shields.io/npm/v/electron-prokit) | ![npm downloads](https://img.shields.io/npm/dm/electron-prokit) |
+| [@electron-prokit/cli](packages/cli) | ![npm version](https://img.shields.io/npm/v/@electron-prokit/cli) | ![npm downloads](https://img.shields.io/npm/dm/@electron-prokit/cli) |
+| [@electron-prokit/create-service](packages/create-service)| ![npm version](https://img.shields.io/npm/v/@electron-prokit/create-service) | ![npm downloads](https://img.shields.io/npm/dm/@electron-prokit/create-service) |
+
 ## 🔧 使用脚手架
 
 创建 electron 项目的脚手架，结合了 electron-prokit 相关生态，一键初始化项目

@@ -22,6 +22,14 @@ English | [简体中文](./README_ZH.md)
 - **🎨 Abundant APIs**: Process communication, window management, network requests, cross-language invocation, task management, database management...
 
 
+## 👜 Packages
+
+|Package|npm version|npm downloads|
+| :-: | :-: | :-: |
+| [electron-prokit](packages/electron-prokit) | ![npm version](https://img.shields.io/npm/v/electron-prokit) | ![npm downloads](https://img.shields.io/npm/dm/electron-prokit) |
+| [@electron-prokit/cli](packages/cli) | ![npm version](https://img.shields.io/npm/v/@electron-prokit/cli) | ![npm downloads](https://img.shields.io/npm/dm/@electron-prokit/cli) |
+| [@electron-prokit/create-service](packages/create-service)| ![npm version](https://img.shields.io/npm/v/@electron-prokit/create-service) | ![npm downloads](https://img.shields.io/npm/dm/@electron-prokit/create-service) |
+
 
 ## 🔧 Using a Scaffold
 
