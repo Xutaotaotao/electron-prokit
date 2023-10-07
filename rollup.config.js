@@ -88,9 +88,48 @@ function getCliBuildConfig(name, inputPath = "src/index.ts") {
   }
 }
 
+function getCreateServiceConfig(name, inputPath = "src/index.ts") {
+  const packageDir = path.resolve(packagesDir, name);
+  return {
+    input: path.resolve(packageDir, inputPath),
+    output: [
+      {
+        file: path.resolve(packageDir, `dist/index.js`),
+        format: "esm",
+      },
+      {
+        file: path.resolve(packageDir, `dist/index.cjs.js`),
+        format: "cjs",
+      },
+      {
+        file: path.resolve(packageDir, `dist/index.esm.js`),
+        format: "esm",
+      },
+    ],
+    external: [
+      'vite',
+    ],
+    plugins: [
+      ts({
+        tsconfig: path.resolve(packageDir, "./tsconfig.json"),
+      }),
+      resolvePlugin({
+        extensions:['.js', '.ts'],
+        mainFields: ['main'],
+        modulesOnly: true,
+        preferredBuiltins :false
+      }),
+      commonjs(),
+      json(),
+      shebang()
+    ],
+  }
+}
+
 module.exports = () => {
   return [
-    getBuildConfig('electron-prokit'),
-    getCliBuildConfig("cli"),
+    // getBuildConfig('electron-prokit'),
+    getCreateServiceConfig('create-service'),
+    // getCliBuildConfig("cli"),
   ];
 };
