@@ -24,162 +24,127 @@
 
 然后我们需要在`render`、`preload`、`work`下分别创建一个`index.ts`入口文件，方便后续用 Vite 去启动这些服务。
 
-## 添加 Vite 工程配置文件
+## 添加工程配置文件
 
-这一步我们在根目录下创建一个`vite`文件夹。然后把`main`、`render`、`preload`、`work`几个服务的配置文件创建在这个目录下。
+这一步我们在根目录下创建一个`ep.config.ts`文件。
 
-- `main.js`
+- `ep.config.ts`
 
-```javascript
+```ts
 import { builtinModules } from "module";
 import { fileURLToPath } from "url";
-import { cwd } from "node:process";
+import { cwd } from "process";
 import path from "path";
-
-const __dirname = fileURLToPath(new URL(".", import.meta.url));
-
-const config = {
-  root: cwd(),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "../src"),
-    },
-  },
-  build: {
-    outDir: path.resolve(__dirname, "../dist/main"),
-    minify: false,
-    lib: {
-      entry: path.resolve(__dirname, "../src/main/index.ts"),
-      formats: ["cjs"],
-    },
-    rollupOptions: {
-      external: ["electron", ...builtinModules],
-      output: {
-        entryFileNames: "[name].cjs",
-      },
-    },
-    emptyOutDir: true,
-    brotliSize: false,
-    chunkSizeWarningLimit: 2048,
-  },
-};
-export default config;
-```
-
-- `render.js`
-
-```javascript
 import vue from '@vitejs/plugin-vue'
-import { builtinModules } from "module";
-import { fileURLToPath } from "url";
-import { cwd } from "node:process";
-import path from "path";
+import electronPath from "electron";
+import type { UserConfig } from "vite";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
-const config = {
-  root: cwd(),
-  base: "./",
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "../src"),
-    },
+const sharedResolve = {
+  alias: {
+    "@": path.resolve(__dirname, "src"),
   },
-  build: {
-    outDir: path.resolve(__dirname, "../dist/render"),
-    minify: true,
-    assetsInlineLimit: 1048576,
-    emptyOutDir: true,
-    brotliSize: false,
-    chunkSizeWarningLimit: 2048,
-    rollupOptions: {
-      external: [...builtinModules],
-    },
-  },
-  plugins: [vue()],
 };
-export default config;
-```
 
-- `preload.js`
+interface Config {
+  main: UserConfig;
+  preload: UserConfig;
+  render: UserConfig;
+  work: UserConfig;
+  electronPath:any;
+}
 
-```javascript
-import { builtinModules } from "module";
-import { fileURLToPath } from "url";
-import { cwd } from "node:process";
-import path from "path";
-
-const __dirname = fileURLToPath(new URL(".", import.meta.url));
-
-const config = {
-  root: cwd(),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "../src"),
+const config: Config = {
+  // 主进程配置
+  main: {
+    root: cwd(),
+    resolve: sharedResolve,
+    build: {
+      outDir: path.resolve(__dirname, "dist/main"),
+      minify: false,
+      lib: {
+        entry: path.resolve(__dirname, "src/main/index.ts"),
+        formats: ["cjs"],
+      },
+      rollupOptions: {
+        external: ["electron", "koffi", ...builtinModules],
+        output: {
+          entryFileNames: "[name].cjs",
+        },
+      },
+      emptyOutDir: true,
+      chunkSizeWarningLimit: 2048,
     },
   },
-  build: {
-    outDir: path.resolve(__dirname, "../dist/preload"),
-    minify: false,
-    lib: {
-      entry: path.resolve(__dirname, "../src/preload/index.ts"),
-      formats: ["cjs"],
+  // preload配置
+  preload: {
+    root: cwd(),
+    resolve: sharedResolve,
+    build: {
+      outDir: path.resolve(__dirname, "dist/preload"),
+      minify: false,
+      lib: {
+        entry: path.resolve(__dirname, "src/preload/index.ts"),
+        formats: ["cjs"],
+      },
+      rollupOptions: {
+        external: ["electron", ...builtinModules],
+        output: {
+          entryFileNames: "[name].cjs",
+        },
+      },
+      emptyOutDir: true,
+      chunkSizeWarningLimit: 2048,
     },
-    rollupOptions: {
-      external: ["electron", ...builtinModules],
-      output: {
-        entryFileNames: "[name].cjs",
+  },
+  // 渲染进程配置
+  render: {
+    root: cwd(),
+    base: "./",
+    resolve: sharedResolve,
+    build: {
+      outDir: path.resolve(__dirname, "../dist/render"),
+      minify: true,
+      assetsInlineLimit: 1048576,
+      emptyOutDir: true,
+      chunkSizeWarningLimit: 2048,
+      rollupOptions: {
+        external: [...builtinModules, "electron"],
       },
     },
-    emptyOutDir: true,
-    brotliSize: false,
-    chunkSizeWarningLimit: 2048,
+    plugins: [vue()],
   },
-};
-export default config;
-```
-
-- `work.js`
-
-```javascript
-import { builtinModules } from "module";
-import { fileURLToPath } from "url";
-import path from "path";
-import { cwd } from "node:process";
-
-const __dirname = fileURLToPath(new URL(".", import.meta.url));
-
-const config = {
-  root: path.resolve(__dirname, "../src/work"),
-  envDir: cwd(),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "../src"),
-    },
-  },
-  build: {
-    outDir: path.resolve(__dirname, "../dist/work"),
-    assetsDir: ".",
-    minify: false,
-    lib: {
-      entry: path.resolve(__dirname, "../src/work/index.ts"),
-      formats: ["cjs"],
-    },
-    rollupOptions: {
-      external: ["electron", ...builtinModules],
-      output: {
-        entryFileNames: "[name].cjs",
+  // work进程配置
+  work: {
+    root: path.resolve(__dirname, "src/work"),
+    envDir: cwd(),
+    resolve: sharedResolve,
+    build: {
+      outDir: path.resolve(__dirname, "dist/work"),
+      assetsDir: ".",
+      minify: false,
+      lib: {
+        entry: path.resolve(__dirname, "src/work/index.ts"),
+        formats: ["cjs"],
       },
+      rollupOptions: {
+        external: ["electron", ...builtinModules],
+        output: {
+          entryFileNames: "[name].cjs",
+        },
+      },
+      emptyOutDir: true,
+      chunkSizeWarningLimit: 2048,
     },
-    emptyOutDir: true,
-    brotliSize: false,
-    chunkSizeWarningLimit: 2048,
   },
+  electronPath,
 };
+
 export default config;
+
 ```
 
-在上面的配置文件中，除了`render.js`有点不一样，其他几个配置文件基本一样，入口文件有区别。
 
 ## 主进程代码编写
 
@@ -233,25 +198,26 @@ app.whenReady().then(() => {
 
 `yarn add @electron-prokit/create-service -D`
 
--`dev.js`
+-`scripts/dev.ts`
 
-```javascript
-import path from "path";
-import electronPath from "electron";
-import { fileURLToPath } from "url";
-import createViteElectronService from "@electron-prokit/create-service";
-const __dirname = fileURLToPath(new URL(".", import.meta.url));
-
+```ts
+import createViteElectronService from '@electron-prokit/create-service';
+import config from "../ep.config";
 createViteElectronService({
-  renderConfigFile: path.resolve(__dirname, "../vite/render.js"),
-  preloadConfigFile: path.resolve(__dirname, "../vite/preload.js"),
-  workConfigFile: path.resolve(__dirname, "../vite/work.js"),
-  mainConfigFile: path.resolve(__dirname, "../vite/main.js"),
-  electronPath,
+  render: config.render,
+  preload: config.preload,
+  work: config.work,
+  main: config.main,
+  electronPath: config.electronPath
 });
 ```
 
-在 `package.json` 中的`scripts`选项添加 `"dev": "node ./scripts/dev.js"`,`package.json` 中添加入口"main": "dist/main/index.cjs"。
+在 `package.json` 中的 `scripts` 添加
+```bash
+ "dev": "node --experimental-specifier-resolution=node --loader ts-node/esm ./scripts/dev.ts"
+```
+
+在 `package.json` 中添加`main`选项：`"main": "dist/main/index.cjs"`
 
 ## 启动项目
 

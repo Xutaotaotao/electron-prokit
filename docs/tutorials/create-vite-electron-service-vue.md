@@ -24,162 +24,126 @@ This outlines the core engineering directories of an electron project.
 
 Then we need to create an `index.ts` entry file under render, preload, and work respectively, to facilitate Vite to start these services later.
 
-## Add Vite project configuration files
+## Add configuration file
 
-In this step we create a vite folder at the root. Then create the configuration files for the main, render, preload, and work services under this directory.
+Create a configuration file at the root
 
-- `main.js`
+- `ep.config.ts`
 
-```javascript
+```ts
 import { builtinModules } from "module";
 import { fileURLToPath } from "url";
-import { cwd } from "node:process";
+import { cwd } from "process";
 import path from "path";
-
-const __dirname = fileURLToPath(new URL(".", import.meta.url));
-
-const config = {
-  root: cwd(),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "../src"),
-    },
-  },
-  build: {
-    outDir: path.resolve(__dirname, "../dist/main"),
-    minify: false,
-    lib: {
-      entry: path.resolve(__dirname, "../src/main/index.ts"),
-      formats: ["cjs"],
-    },
-    rollupOptions: {
-      external: ["electron", ...builtinModules],
-      output: {
-        entryFileNames: "[name].cjs",
-      },
-    },
-    emptyOutDir: true,
-    brotliSize: false,
-    chunkSizeWarningLimit: 2048,
-  },
-};
-export default config;
-```
-
-- `render.js`
-
-```javascript
 import vue from '@vitejs/plugin-vue'
-import { builtinModules } from "module";
-import { fileURLToPath } from "url";
-import { cwd } from "node:process";
-import path from "path";
+import electronPath from "electron";
+import type { UserConfig } from "vite";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
-const config = {
-  root: cwd(),
-  base: "./",
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "../src"),
-    },
+const sharedResolve = {
+  alias: {
+    "@": path.resolve(__dirname, "src"),
   },
-  build: {
-    outDir: path.resolve(__dirname, "../dist/render"),
-    minify: true,
-    assetsInlineLimit: 1048576,
-    emptyOutDir: true,
-    brotliSize: false,
-    chunkSizeWarningLimit: 2048,
-    rollupOptions: {
-      external: [...builtinModules],
-    },
-  },
-  plugins: [vue()],
 };
-export default config;
-```
 
-- `preload.js`
+interface Config {
+  main: UserConfig;
+  preload: UserConfig;
+  render: UserConfig;
+  work: UserConfig;
+  electronPath:any;
+}
 
-```javascript
-import { builtinModules } from "module";
-import { fileURLToPath } from "url";
-import { cwd } from "node:process";
-import path from "path";
-
-const __dirname = fileURLToPath(new URL(".", import.meta.url));
-
-const config = {
-  root: cwd(),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "../src"),
+const config: Config = {
+  // main process config
+  main: {
+    root: cwd(),
+    resolve: sharedResolve,
+    build: {
+      outDir: path.resolve(__dirname, "dist/main"),
+      minify: false,
+      lib: {
+        entry: path.resolve(__dirname, "src/main/index.ts"),
+        formats: ["cjs"],
+      },
+      rollupOptions: {
+        external: ["electron", "koffi", ...builtinModules],
+        output: {
+          entryFileNames: "[name].cjs",
+        },
+      },
+      emptyOutDir: true,
+      chunkSizeWarningLimit: 2048,
     },
   },
-  build: {
-    outDir: path.resolve(__dirname, "../dist/preload"),
-    minify: false,
-    lib: {
-      entry: path.resolve(__dirname, "../src/preload/index.ts"),
-      formats: ["cjs"],
+  // preload config
+  preload: {
+    root: cwd(),
+    resolve: sharedResolve,
+    build: {
+      outDir: path.resolve(__dirname, "dist/preload"),
+      minify: false,
+      lib: {
+        entry: path.resolve(__dirname, "src/preload/index.ts"),
+        formats: ["cjs"],
+      },
+      rollupOptions: {
+        external: ["electron", ...builtinModules],
+        output: {
+          entryFileNames: "[name].cjs",
+        },
+      },
+      emptyOutDir: true,
+      chunkSizeWarningLimit: 2048,
     },
-    rollupOptions: {
-      external: ["electron", ...builtinModules],
-      output: {
-        entryFileNames: "[name].cjs",
+  },
+  // render process config
+  render: {
+    root: cwd(),
+    base: "./",
+    resolve: sharedResolve,
+    build: {
+      outDir: path.resolve(__dirname, "../dist/render"),
+      minify: true,
+      assetsInlineLimit: 1048576,
+      emptyOutDir: true,
+      chunkSizeWarningLimit: 2048,
+      rollupOptions: {
+        external: [...builtinModules, "electron"],
       },
     },
-    emptyOutDir: true,
-    brotliSize: false,
-    chunkSizeWarningLimit: 2048,
+    plugins: [vue()],
   },
-};
-export default config;
-```
-
-- `work.js`
-
-```javascript
-import { builtinModules } from "module";
-import { fileURLToPath } from "url";
-import path from "path";
-import { cwd } from "node:process";
-
-const __dirname = fileURLToPath(new URL(".", import.meta.url));
-
-const config = {
-  root: path.resolve(__dirname, "../src/work"),
-  envDir: cwd(),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "../src"),
-    },
-  },
-  build: {
-    outDir: path.resolve(__dirname, "../dist/work"),
-    assetsDir: ".",
-    minify: false,
-    lib: {
-      entry: path.resolve(__dirname, "../src/work/index.ts"),
-      formats: ["cjs"],
-    },
-    rollupOptions: {
-      external: ["electron", ...builtinModules],
-      output: {
-        entryFileNames: "[name].cjs",
+  // works process config
+  work: {
+    root: path.resolve(__dirname, "src/work"),
+    envDir: cwd(),
+    resolve: sharedResolve,
+    build: {
+      outDir: path.resolve(__dirname, "dist/work"),
+      assetsDir: ".",
+      minify: false,
+      lib: {
+        entry: path.resolve(__dirname, "src/work/index.ts"),
+        formats: ["cjs"],
       },
+      rollupOptions: {
+        external: ["electron", ...builtinModules],
+        output: {
+          entryFileNames: "[name].cjs",
+        },
+      },
+      emptyOutDir: true,
+      chunkSizeWarningLimit: 2048,
     },
-    emptyOutDir: true,
-    brotliSize: false,
-    chunkSizeWarningLimit: 2048,
   },
+  electronPath,
 };
-export default config;
-```
 
-In the above configuration files, except `render.js` is a bit different, the other configuration files are basically the same, just different entry files.
+export default config;
+
+```
 
 ## Write main process code
 
@@ -227,13 +191,13 @@ app.whenReady().then(() => {
 
 With the Vite configuration files, we can customize dev scripts to start local electron projects.
 
-Create a scripts directory at the root, and add the dev.js file.
+Create a scripts directory at the root, and add the dev.ts file.
 
-Install  `@electron-prokit/create-service`.
+Install `@electron-prokit/create-service`.
 
 `yarn add @electron-prokit/create-service -D`
 
--`dev.js`
+-`scripts/dev.ts`
 
 ```javascript
 import path from "path";
@@ -251,7 +215,15 @@ createViteElectronService({
 });
 ```
 
-Add `"dev": "node ./scripts/dev.js"` to the scripts option in `package.json`, and add `"main": "dist/main/index.cjs"` entry in package.json.
+Add 
+```bash
+ "dev": "node --experimental-specifier-resolution=node --loader ts-node/esm ./scripts/dev.ts"
+```
+
+to the `scripts` option in `package.json`
+
+
+Add `"main": "dist/main/index.cjs"` entry in package.json.
 
 ## Start the project
 
