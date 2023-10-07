@@ -13,7 +13,7 @@ English | [简体中文](./README_ZH.md)
 
 ## ✨ Features
 
-- **⚙️CLI Tools**: Quickly get started with scaffolding tools, scaffolding built-in React and Vue - two front-end frameworks for Electron applications.
+- **⚙️ CLI Tools**: Quickly get started with scaffolding tools, scaffolding built-in React and Vue - two front-end frameworks for Electron applications.
 
 - **🛡 Enhanced Development**: Develop with TypeScript, provide complete type definition files.
 
