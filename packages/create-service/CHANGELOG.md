@@ -1,5 +1,11 @@
 # @electron-prokit/create-service
 
+## 3.0.0
+
+### Major Changes
+
+- e0ecd29: feat: exports types
+
 ## 2.1.0
 
 ### Minor Changes
