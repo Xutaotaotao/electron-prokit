@@ -1,28 +1,29 @@
-# Electron Prokit
+<div align="center">
+  <p align="center">
+    <img style="width:300px" src="https://github.com/Xutaotaotao/electron-prokit/blob/main/docs/public/logo.svg" alt="logo">
+  </p>
+  <h1>Electron Prokit</h1>
+  <p>A desktop application development framework based on Electron, providing an ultimate desktop application development experience.</p>
 
-<p align="center">
-  <img style="width:500px" src="https://github.com/Xutaotaotao/electron-prokit/blob/main/docs/public/logo.svg" alt="logo">
-</p>
+  ![github workflow](https://github.com/Xutaotaotao/electron-prokit/actions/workflows/release.yml/badge.svg) ![npm downloads](https://img.shields.io/npm/dm/electron-prokit) ![npm version](https://img.shields.io/npm/v/electron-prokit) ![license](https://img.shields.io/github/license/Xutaotaotao/electron-prokit?color=%232dce89&logo=github&style=flat-square)
+</div>
 
 English | [简体中文](./README_ZH.md)
 
-Electron Prokit is a collection of development tools and resources for building applications with Electron. Whether you're new to Electron or an experienced developer, Electron Prokit provides a set of utilities, templates, and best practices to streamline your Electron application development.
+
+## ✨ Features
+
+- **⚙️CLI Tools**: Quickly get started with scaffolding tools, scaffolding built-in React and Vue - two front-end frameworks for Electron applications.
+
+- **🛡 Enhanced Development**: Develop with TypeScript, provide complete type definition files.
+
+- **📦 Best Practices**: Provide best practices for extensible and maintainable Electron applications.
+
+- **🎨 Abundant APIs**: Process communication, window management, network requests, cross-language invocation, task management, database management...
 
 
-## Features
 
-- **Boilerplate Templates**: Get started quickly with pre-configured Electron application templates for various use cases.
-
-- **CLI Tools**: Command-line tools to automate common tasks such as project initialization and packaging Electron apps.
-
-- **Development Enhancements**: Helpful utilities and extensions to improve your development workflow.
-
-- **Best Practices**: Guidelines and best practices for structuring Electron applications for scalability and maintainability.
-
-- **More API**: ipc、window、htto、ffi、schedule、db...
-
-
-## Using a Scaffold
+## 🔧 Using a Scaffold
 
 You can quickly create a project using a scaffold, which integrates with the electron-prokit ecosystem.
 
@@ -52,7 +53,7 @@ yarn run dev
 
 ```
 
-## Install Individually
+## 📦 Install Individually
 
 Using NPM:
 
@@ -66,13 +67,17 @@ Using Yarn:
 yarn i electron-prokit
 ```
 
-## Usage
+## Documents
 
-You can find detailed API documentation at this link:<a href="https://xutaotaotao.github.io/electron-prokit" target="_blank">Click to view</a>
+<a href="https://xutaotaotao.github.io/electron-prokit" target="_blank">Homepage</a>
 
-- <a href="https://xutaotaotao.github.io/electron-prokit/tutorials/create-vite-electron-service.html" target="_blank">Building an Electron Project Quickly with Vite</a>
+<a href="https://xutaotaotao.github.io/electron-prokit/api" target="_blank">API</a>
 
-## Playground
+<a href="https://xutaotaotao.github.io/electron-prokit/plugin" target="_blank">Plugins</a>
+
+<a href="https://xutaotaotao.github.io/electron-prokit/tutorials" target="_blank">Tutorials</a>
+
+## ⌨️ Playground
 
 ```bash
 git clone https://github.com/Xutaotaotao/electron-prokit.git
@@ -84,5 +89,5 @@ pnpm run dev
 ```
 
 
-## Stargazers
+## 👥 Stargazers
 [![Stargazers repo roster for electron-prokit](https://reporoster.com/stars/Xutaotaotao/electron-prokit)](https://github.com/Xutaotaotao/electron-prokit/stargazers)

@@ -1,27 +1,31 @@
-# Electron Prokit
+<div align="center">
+  <p align="center">
+    <img style="width:300px" src="https://github.com/Xutaotaotao/electron-prokit/blob/main/docs/public/logo.svg" alt="logo">
+  </p>
+  <h1>Electron Prokit</h1>
+  <p>一款基于 Electron 的桌面软件开发框架,让你拥有极致的桌面开发体验。</p>
 
-<p align="center">
-  <img style="width:500px" src="https://github.com/Xutaotaotao/electron-prokit/blob/main/docs/public/logo.svg" alt="logo">
-</p>
+  ![github workflow](https://github.com/Xutaotaotao/electron-prokit/actions/workflows/release.yml/badge.svg) ![npm downloads](https://img.shields.io/npm/dm/electron-prokit) ![npm version](https://img.shields.io/npm/v/electron-prokit) ![license](https://img.shields.io/github/license/Xutaotaotao/electron-prokit?color=%232dce89&logo=github&style=flat-square)
+</div>
+
+
 
 简体中文 | [English](./README.md)
 
-Electron Prokit 一款基于Electron的桌面软件开发框架。集合了很多Electron相关的开发工具和资源，让你拥有极致的桌面开发体验。
 
-## 特点
-- **样板模板**: 使用预配置的 Electron 应用程序模板快速入门，适用于各种用例。
+## ✨ 特性
 
-- **CLI 工具**: 命令行工具，用于自动化常见任务，如项目初始化和打包 Electron 应用程序。
+- **⚙️ CLI 工具**: 使用脚手架快速上手，脚手架内置 React 和 Vue 两种前端框架的 Electron 应用程序。
 
-- **开发增强**: 有用的实用工具和扩展，简化开发工作流程。
+- **🛡 开发增强**: 使用 TypeScript 开发，提供完整的类型定义文件。
 
-- **最佳实践**: 有关为了可扩展性和可维护性而构建 Electron 应用程序的结构的指南和最佳实践。
+- **📦 最佳实践**: 提供可扩展性和可维护性的 Electron 应用程序的最佳实践。
 
-- **丰富的API**: 进程通信、窗口管理、网络请求、跨语言调用、任务管理、数据库管理...
+- **🎨 丰富的 API**: 进程通信、窗口管理、网络请求、跨语言调用、任务管理、数据库管理...
 
-## 使用脚手架
+## 🔧 使用脚手架
 
-创建electron项目的脚手架，结合了electron-prokit相关生态。
+创建 electron 项目的脚手架，结合了 electron-prokit 相关生态，一键初始化项目
 
 **安装依赖**
 
@@ -45,7 +49,7 @@ yarn run dev
 
 ```
 
-## 单独安装
+## 📦 单独安装
 
 **NPM**
 
@@ -59,24 +63,29 @@ npm i electron-prokit
 yarn i electron-prokit
 ```
 
+## 📖 官方文档
 
-## 使用
+<a href="https://xutaotaotao.github.io/electron-prokit/zh" target="_blank">文档首页</a>
 
-详细的API文档在这里，<a href="https://xutaotaotao.github.io/electron-prokit/zh" target="_blank">点击查看</a>
+<a href="https://xutaotaotao.github.io/electron-prokit/zh/api" target="_blank">API</a>
 
-- <a href="https://xutaotaotao.github.io/electron-prokit/zh/tutorials/create-vite-electron-service.html" target="_blank">用 Vite 快速构建一个 Electron 项目</a>
+<a href="https://xutaotaotao.github.io/electron-prokit/zh/plugin" target="_blank">插件</a>
 
-## 演练
+<a href="https://xutaotaotao.github.io/electron-prokit/zh/tutorials" target="_blank">教程</a>
+
+
+
+## ⌨️ 演练
 
 ```bash
 git clone https://github.com/Xutaotaotao/electron-prokit.git
 
-pnpm i 
+pnpm i
 
 pnpm run dev
 
 ```
 
+## 👥 Stargazers
 
-## Stargazers
 [![Stargazers repo roster for electron-prokit](https://reporoster.com/stars/Xutaotaotao/electron-prokit)](https://github.com/Xutaotaotao/electron-prokit/stargazers)

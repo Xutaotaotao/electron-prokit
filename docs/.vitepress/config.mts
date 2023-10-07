@@ -65,12 +65,12 @@ const zhThemeConfig: DefaultTheme.Config | undefined = {
             link: "/zh/plugin/",
           },
           {
-            text: "create-service",
-            link: "/zh/plugin/create-service",
-          },
-          {
             text: "electron-prokit-cli",
             link: "/zh/plugin/electron-prokit-cli",
+          },
+          {
+            text: "create-service",
+            link: "/zh/plugin/create-service",
           },
         ],
       },
@@ -169,12 +169,12 @@ const themeConfig: DefaultTheme.Config | undefined = {
             link: "/plugin/",
           },
           {
-            text: "create-service",
-            link: "/plugin/create-service",
-          },
-          {
             text: "electron-prokit-cli",
             link: "/plugin/electron-prokit-cli",
+          },
+          {
+            text: "create-service",
+            link: "/plugin/create-service",
           },
         ],
       },
