@@ -28,48 +28,26 @@
 |Package|npm version|npm downloads|
 | :-: | :-: | :-: |
 | [electron-prokit](packages/electron-prokit) | ![npm version](https://img.shields.io/npm/v/electron-prokit) | ![npm downloads](https://img.shields.io/npm/dm/electron-prokit) |
-| [@electron-prokit/cli](packages/cli) | ![npm version](https://img.shields.io/npm/v/@electron-prokit/cli) | ![npm downloads](https://img.shields.io/npm/dm/@electron-prokit/cli) |
+| [create-electron-prokit](packages/create-electron-prokit) | ![npm version](https://img.shields.io/npm/v/create-electron-prokit) | ![npm downloads](https://img.shields.io/npm/dm/create-electron-prokit) |
 | [@electron-prokit/create-service](packages/create-service)| ![npm version](https://img.shields.io/npm/v/@electron-prokit/create-service) | ![npm downloads](https://img.shields.io/npm/dm/@electron-prokit/create-service) |
 
-## 🔧 使用脚手架
+## 🔧 创建项目
 
-创建 electron 项目的脚手架，结合了 electron-prokit 相关生态，一键初始化项目
+直接使用脚手架快捷创建项目，脚手架结合了electron-prokit相关生态，推荐使用此方式。
 
-**安装依赖**
-
-```bash
-npm i @electron-prokit/cli -g
-```
-
-**使用**
+使用 NPM:
 
 ```bash
-electron-prokit-cli init [project]
+npm create electron-prokit myapp
 ```
 
-其中`project`为项目名。项目创建完毕后安装依赖并启动项目。
+使用 Yarn:
 
 ```bash
-
-cd project && yarn install
-
-yarn run dev
-
+yarn create electron-prokit myapp
 ```
 
-## 📦 单独安装
-
-**NPM**
-
-```bash
-npm i electron-prokit
-```
-
-**Yarn**
-
-```bash
-yarn i electron-prokit
-```
+其中`myapp`为你的项目名,然后按照提示操作即可！
 
 ## 📖 官方文档
 

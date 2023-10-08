@@ -5,7 +5,7 @@
 Electron-Prokit是一个Electron应用开发框架，其中涵盖了Electron应用开发的全流程，适用于Vite相关生态。
 
 ::: tip 项目初始化
-提供配置化的项目模板、多种UI框架选择和代码规范预设。
+提供配置化的项目模板、Vue + React框架选择和代码规范预设。
 :::
 
 ::: tip 开发
@@ -18,51 +18,27 @@ Electron-Prokit是一个Electron应用开发框架，其中涵盖了Electron应�
 
 不管是开发初学者还是经验丰富的开发者,都可以利用Prokit提升生产力,快速交付高质量的Electron应用。
 
-## 使用脚手架
+## 搭建第一个Electron-Prokit项目
+
+::: warning  兼容性注意
+Electron-Prokit 需要 Node.js 版本 14.18+，16+。然而，有些模板需要依赖更高的 Node 版本才能正常运行，当你的包管理器发出警告时，请注意升级你的 Node 版本。
+:::
 
 直接使用脚手架快捷创建项目，脚手架结合了electron-prokit相关生态，推荐使用此方式。
-
-**安装脚手架**
-
-```bash
-npm i @electron-prokit/cli -g
-```
-
-**创建项目**
-
-
-```bash
-electron-prokit-cli init project
-```
-
-其中`project`为项目名。
-
-**启动项目**
-```bash
-cd project && yarn install
-
-yarn run dev
-```
-
-
-## 单独安装
 
 使用 NPM:
 
 ```bash
-npm i electron-prokit
+npm create electron-prokit myapp
 ```
+
 使用 Yarn:
 
 ```bash
-yarn i electron-prokit
+yarn create electron-prokit myapp
 ```
 
-## 使用
-
-详细的API文档在这里，<a href="https://xutaotaotao.github.io/electron-prokit/zh/api/">点击查看</a>
-
-- <a href="https://xutaotaotao.github.io/electron-prokit/zh/tutorials/create-vite-electron-service.html">用 Vite 快速构建一个 Electron 项目</a>
+其中`myapp`为你的项目名,然后按照提示操作即可！
 
 
 ## 演练

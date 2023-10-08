@@ -65,10 +65,6 @@ const zhThemeConfig: DefaultTheme.Config | undefined = {
             link: "/zh/plugin/",
           },
           {
-            text: "electron-prokit-cli",
-            link: "/zh/plugin/electron-prokit-cli",
-          },
-          {
             text: "create-service",
             link: "/zh/plugin/create-service",
           },
@@ -167,10 +163,6 @@ const themeConfig: DefaultTheme.Config | undefined = {
           {
             text: "All plugins",
             link: "/plugin/",
-          },
-          {
-            text: "electron-prokit-cli",
-            link: "/plugin/electron-prokit-cli",
           },
           {
             text: "create-service",

@@ -27,7 +27,7 @@ English | [简体中文](./README_ZH.md)
 |Package|npm version|npm downloads|
 | :-: | :-: | :-: |
 | [electron-prokit](packages/electron-prokit) | ![npm version](https://img.shields.io/npm/v/electron-prokit) | ![npm downloads](https://img.shields.io/npm/dm/electron-prokit) |
-| [@electron-prokit/cli](packages/cli) | ![npm version](https://img.shields.io/npm/v/@electron-prokit/cli) | ![npm downloads](https://img.shields.io/npm/dm/@electron-prokit/cli) |
+| [create-electron-prokit](packages/create-electron-prokit) | ![npm version](https://img.shields.io/npm/v/create-electron-prokit) | ![npm downloads](https://img.shields.io/npm/dm/create-electron-prokit) |
 | [@electron-prokit/create-service](packages/create-service)| ![npm version](https://img.shields.io/npm/v/@electron-prokit/create-service) | ![npm downloads](https://img.shields.io/npm/dm/@electron-prokit/create-service) |
 
 
@@ -35,45 +35,21 @@ English | [简体中文](./README_ZH.md)
 
 You can quickly create a project using a scaffold, which integrates with the electron-prokit ecosystem.
 
-**Installing the Scaffold**
 
-
-```bash
-npm i @electron-prokit/cli -g
-```
-
-**Creating a Project**
-
+Use NPM:
 
 ```bash
-electron-prokit-cli init project
+npm create electron-prokit myapp
 ```
 
-In the command above, replace `project` with the name of your project.
-
-After init, install dependencies and run dev
+Use Yarn:
 
 ```bash
-
-cd project && yarn install
-
-yarn run dev
-
+yarn create electron-prokit myapp
 ```
 
-## 📦 Install Individually
+In the command above, replace `myapp` with the name of your project.
 
-Using NPM:
-
-```bash
-npm i electron-prokit
-```
-
-Using Yarn:
-
-```bash
-yarn i electron-prokit
-```
 
 ## 📖 Documents
 

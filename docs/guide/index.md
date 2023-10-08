@@ -20,49 +20,26 @@ Whether you are a beginner or an experienced developer, you can use Prokit to in
 
 ## Using a Scaffold
 
+::: warning  兼容性注意
+Electron-Prokit requires Node.js version 14.18+, 16+. However, some templates require a higher Node.js version to work, please upgrade if your package manager warns about it.
+:::
+
 You can quickly create a project using a scaffold, which integrates with the electron-prokit ecosystem.It is recommended to use this Scaffold.
 
-**Installing the Scaffold**
+Use NPM:
 
 ```bash
-npm i @electron-prokit/cli -g
+npm create electron-prokit myapp
 ```
 
-**Creating a Project**
+Use Yarn:
 
 ```bash
-electron-prokit-cli init project
+yarn create electron-prokit myapp
 ```
 
-In the command above, replace `project` with the name of your project.
+In the command above, replace `myapp` with the name of your project.
 
-**Start**
-
-```bash
-cd project && yarn install
-
-yarn run dev
-```
-
-## Install Individually
-
-Using NPM:
-
-```bash
-$ npm i electron-prokit
-```
-
-Using Yarn:
-
-```bash
-$ yarn i electron-prokit
-```
-
-## Usage
-
-You can find detailed API documentation at this link:<a href="https://xutaotaotao.github.io/electron-prokit/api/" >Click to view</a>
-
-- <a href="https://xutaotaotao.github.io/electron-prokit/tutorials/create-vite-electron-service.html" >Building an Electron Project Quickly with Vite</a>
 
 
 ## Playground
