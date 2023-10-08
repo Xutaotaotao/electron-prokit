@@ -25,5 +25,5 @@ dist-ssr
 
 # lock
 yarn.lock
-pnpm.lock
+pnpm-lock.yaml
 npm.lock
