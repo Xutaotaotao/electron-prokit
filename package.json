@@ -3,9 +3,7 @@
   "workspaces": [
     "packages/*",
     "play",
-    "docs",
-    "​service",
-    "templates/*"
+    "docs"
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",

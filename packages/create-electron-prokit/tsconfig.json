@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "importHelpers": true 
+  },
+  "include": [".eslintrc.js", "src/**/*"],
+  "exclude": ["node_modules", "dist/**/*"],
+}
