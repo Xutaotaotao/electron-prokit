@@ -4,7 +4,7 @@
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "allowJs": true,
-    "module": "ESNext",
+    "module": "esnext",
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -20,11 +20,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     
     "paths": {
       "electron-prokit": ["../packages/electron-prokit/src"] 
     }
   },
-  "include": ["src", "vendor.d.ts"],
+  "include": ["src", "vendor.d.ts","scripts","ep.config.ts","electron-builder.config.ts"],
 }

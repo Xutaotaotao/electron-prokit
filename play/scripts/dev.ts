@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import createViteElectronService from "@electron-prokit/create-service";
 import config from "../ep.config";
 

@@ -19,7 +19,7 @@ interface Config {
   preload: UserConfig;
   render: UserConfig;
   work: UserConfig;
-  electronPath:any;
+  electronPath: any;
 }
 
 const config: Config = {
@@ -68,7 +68,7 @@ const config: Config = {
     base: "./",
     resolve: sharedResolve,
     build: {
-      outDir: path.resolve(__dirname, "../dist/render"),
+      outDir: path.resolve(__dirname, "dist/render"),
       minify: true,
       assetsInlineLimit: 1048576,
       emptyOutDir: true,
