@@ -1,5 +1,11 @@
 # create-electron-prokit
 
+## 1.0.0
+
+### Major Changes
+
+- 7a05dad: feat: relase a major version
+
 ## 0.0.2
 
 ### Patch Changes
