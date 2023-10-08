@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 16.0.2
+
+### Patch Changes
+
+- 8fc37e2: feat:create-electron-prokit
+
 ## 16.0.1
 
 ### Patch Changes

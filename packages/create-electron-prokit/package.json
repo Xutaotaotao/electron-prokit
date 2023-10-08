@@ -1,6 +1,6 @@
 {
   "name": "create-electron-prokit",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A cli to create a electron prokit project",
   "publishConfig": {
     "main": "dist/index.cjs.js",
@@ -28,7 +28,16 @@
     "build": "tsc",
     "start": "node --experimental-specifier-resolution=node dist/index.js"
   },
-  "keywords": ["Electron","electron","electron-prokit","electron prokit","Electron Prokit","Prokit","prokit","create-electron-prokit"],
+  "keywords": [
+    "Electron",
+    "electron",
+    "electron-prokit",
+    "electron prokit",
+    "Electron Prokit",
+    "Prokit",
+    "prokit",
+    "create-electron-prokit"
+  ],
   "author": "Xutaotaotao",
   "license": "MIT",
   "devDependencies": {

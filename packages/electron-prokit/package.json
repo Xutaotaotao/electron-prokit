@@ -1,6 +1,6 @@
 {
   "name": "electron-prokit",
-  "version": "16.0.1",
+  "version": "16.0.2",
   "description": "A desktop app framework based on Electron,develop desktop applications like a pro!",
   "type": "module",
   "main": "src/index.ts",
@@ -18,7 +18,15 @@
     "test": "jest",
     "test-c": "jest --coverage"
   },
-  "keywords": ["Electron","electron","electron-prokit","electron prokit","Electron Prokit","Prokit","prokit"],
+  "keywords": [
+    "Electron",
+    "electron",
+    "electron-prokit",
+    "electron prokit",
+    "Electron Prokit",
+    "Prokit",
+    "prokit"
+  ],
   "author": "Xutaotaotao",
   "license": "MIT",
   "devDependencies": {
