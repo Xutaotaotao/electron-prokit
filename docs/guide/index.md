@@ -20,7 +20,7 @@ Whether you are a beginner or an experienced developer, you can use Prokit to in
 
 ## Using a Scaffold
 
-::: warning  兼容性注意
+::: warning  Compatibility Note
 Electron-Prokit requires Node.js version 14.18+, 16+. However, some templates require a higher Node.js version to work, please upgrade if your package manager warns about it.
 :::
 
