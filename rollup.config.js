@@ -131,5 +131,6 @@ module.exports = () => {
     getBuildConfig('electron-prokit'),
     getCreateServiceConfig('create-service'),
     getCliBuildConfig("cli"),
+    getCliBuildConfig("create-electron-prokit")
   ];
 };
