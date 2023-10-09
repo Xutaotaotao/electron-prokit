@@ -1,5 +1,5 @@
 import { join, resolve } from "path";
-import { app, Menu } from "electron";
+import { Menu, app } from "electron";
 import {
   createWindow,
   sendMsgToRender,
