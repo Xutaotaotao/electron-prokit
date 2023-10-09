@@ -1,8 +1,8 @@
 import type { Configuration } from "electron-builder";
 
 const config: Configuration = {
-  productName: "ElectronProkitPlay", // 应用程序名称
-  appId: "electron.prokit.play", // 应用程序唯一标识
+  productName: "ElectronProkit", // 应用程序名称
+  appId: "electron.prokit.com", // 应用程序唯一标识
   copyright: "Copyright © 2023",
   asar: false, // 是否将应用程序打包为asar文件
   files: ["dist/**", "package.json"], // 将要打包的文件或目录
@@ -38,7 +38,7 @@ const config: Configuration = {
       { x: 410, y: 190, type: "link", path: "/Applications" }, // dmg 文件中的可执行文件路径
       { x: 130, y: 190, type: "file" }, // dmg 文件中的文件路径
     ],
-    title: "ViteReactElectronApp", // dmg 文件的标题
+    title: "ElectronProkit", // dmg 文件的标题
   },
   win: {
     icon: "./resources/icon/icon.ico", // 可执行文件的图标
@@ -60,9 +60,9 @@ const config: Configuration = {
     perMachine: true, // 是否在每台机器上安装，需要管理员权限
     createDesktopShortcut: true, // 是否在桌面上创建快捷方式
     createStartMenuShortcut: true, // 是否在开始菜单上创建快捷方式
-    guid: "ElectronProkitPlay", // 安装程序的 GUID
-    shortcutName: "ElectronProkitPlay", // 创建快捷方式的名称
-    artifactName: "ElectronProkitPlay@${version}.${ext}", // 生成安装文件时的文件名
+    guid: "ElectronProkit", // 安装程序的 GUID
+    shortcutName: "ElectronProkit", // 创建快捷方式的名称
+    artifactName: "ElectronProkit@${version}.${ext}", // 生成安装文件时的文件名
     include: "./build/install/installer.nsh", //包含其他脚本文件的路径
   },
 };

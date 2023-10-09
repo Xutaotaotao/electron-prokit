@@ -1,11 +1,16 @@
 import { createEpffi } from "electron-prokit";
 import path from "path";
-import {app} from 'electron'
 
-const appPath = app.getAppPath();
+const getResourcesPath = (path:string) => {
+  if (import.meta.env.MODE === 'production') {
+    return `../../../${path}`
+  }
+  return `../../${path}`
+}
+
 
 export const {sum} = createEpffi({
-  path: path.join(appPath,'resources/dll/sum.dylib'),
+  path: path.join(__dirname,getResourcesPath('resources/dll/sum.dylib')),
   function:{
     functionName:'sum',
     returnType:'int',
@@ -14,7 +19,7 @@ export const {sum} = createEpffi({
 })
 
 export const { mul,div } = createEpffi({
-  path: path.join(appPath, "resources/dll/mul_and_div.dylib"),
+  path: path.join(__dirname, getResourcesPath("resources/dll/mul_and_div.dylib")),
   function: [
     {
       functionName: "mul",

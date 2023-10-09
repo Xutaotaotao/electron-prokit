@@ -1,5 +1,5 @@
 import {
-  createBrowserRouter,
+  createHashRouter,
 } from "react-router-dom";
 import Root from "../layout";
 import ErrorPage from "../pages/error-page";
@@ -10,7 +10,7 @@ import Ffi from "../pages/ffi";
 import Schedule from "../pages/schedule";
 import Db from "../pages/db";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Root />,
