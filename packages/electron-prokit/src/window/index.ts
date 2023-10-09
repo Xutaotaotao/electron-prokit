@@ -43,6 +43,18 @@ function clearWindows(): void {
   windows.clear();
 }
 
+function showWindow(name: string = 'main'):void {
+  const win = getWindow(name);
+  if (win && win.show) {
+    win.show();
+    if (win && win.center) {
+      win.center();
+    }
+  } else {
+    console.error("showWindow", "no windowInstance");
+  }
+}
+
 export {
   createWindow,
   getWindow,
@@ -50,4 +62,5 @@ export {
   getAllWindows,
   hasWindow,
   clearWindows,
+  showWindow
 };

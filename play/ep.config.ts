@@ -24,9 +24,11 @@ interface Config {
 
 const config: Config = {
   main: {
-    root: cwd(),
+    root: path.resolve(__dirname, "src/main"),
+    envDir: cwd(),
     resolve: sharedResolve,
     build: {
+      watch: {},
       outDir: path.resolve(__dirname, "dist/main"),
       minify: false,
       lib: {
@@ -44,9 +46,11 @@ const config: Config = {
     },
   },
   preload: {
-    root: cwd(),
+    root: path.resolve(__dirname, "src/preload"),
+    envDir: cwd(),
     resolve: sharedResolve,
     build: {
+      watch: {},
       outDir: path.resolve(__dirname, "dist/preload"),
       minify: false,
       lib: {
@@ -64,10 +68,10 @@ const config: Config = {
     },
   },
   render: {
-    root: cwd(),
     base: "./",
     resolve: sharedResolve,
     build: {
+      watch: {},
       outDir: path.resolve(__dirname, "dist/render"),
       minify: true,
       assetsInlineLimit: 1048576,
@@ -84,6 +88,7 @@ const config: Config = {
     envDir: cwd(),
     resolve: sharedResolve,
     build: {
+      watch: {},
       outDir: path.resolve(__dirname, "dist/work"),
       assetsDir: ".",
       minify: false,

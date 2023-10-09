@@ -1,12 +1,8 @@
-import { createEpffi } from "electron-prokit";
 import path from "path";
+import { createEpffi } from "electron-prokit";
+import { getResourcesPath } from "../util";
 
-const getResourcesPath = (path:string) => {
-  if (import.meta.env.MODE === 'production') {
-    return `../../../${path}`
-  }
-  return `../../${path}`
-}
+
 
 
 export const {sum} = createEpffi({
