@@ -1,5 +1,11 @@
 # create-electron-prokit
 
+## 1.0.1
+
+### Patch Changes
+
+- dbf4c9b: fix: gitclone error with promise
+
 ## 1.0.0
 
 ### Major Changes
