@@ -1,6 +1,6 @@
 {
   "name": "electron-prokit",
-  "version": "16.0.2",
+  "version": "16.0.3",
   "engines": {
     "node": "^14.8.0 || >=16.0.0"
   },
