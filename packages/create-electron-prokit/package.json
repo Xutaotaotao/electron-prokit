@@ -1,6 +1,9 @@
 {
   "name": "create-electron-prokit",
   "version": "1.0.0",
+  "engines": {
+    "node": "^14.8.0 || >=16.0.0"
+  },
   "description": "A cli to create a electron prokit project",
   "publishConfig": {
     "main": "dist/index.cjs.js",

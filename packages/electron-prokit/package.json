@@ -1,6 +1,9 @@
 {
   "name": "electron-prokit",
   "version": "16.0.2",
+  "engines": {
+    "node": "^14.8.0 || >=16.0.0"
+  },
   "description": "A desktop app framework based on Electron,develop desktop applications like a pro!",
   "type": "module",
   "main": "src/index.ts",

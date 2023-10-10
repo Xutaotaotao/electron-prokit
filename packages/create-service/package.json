@@ -1,6 +1,9 @@
 {
   "name": "@electron-prokit/create-service",
   "version": "3.0.0",
+  "engines": {
+    "node": "^14.8.0 || >=16.0.0"
+  },
   "description": "",
   "type": "module",
   "main": "src/index.ts",
