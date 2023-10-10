@@ -1,7 +1,7 @@
 ---
-"create-electron-prokit": path
-"electron-prokit": path
-"@electron-prokit/create-service": path
+"create-electron-prokit": patch
+"electron-prokit": patch
+"@electron-prokit/create-service": patch
 ---
 
 feat: add node engines version
