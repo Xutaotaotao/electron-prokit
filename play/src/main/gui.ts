@@ -30,7 +30,7 @@ const initTray = () => {
   if (process.platform === "darwin") {
     try {
       const iconPath = nativeImage.createFromPath(
-        join(__dirname, getResourcesPath("resources/icon/icon3.png"))
+        join(__dirname, getResourcesPath("resources/icon/icon.png"))
       );
       tray = new Tray(iconPath);
       tray.setContextMenu(menu);
