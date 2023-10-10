@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 16.0.3
+
+### Patch Changes
+
+- 8c0cc9c: feat: add node engines version
+
 ## 16.0.2
 
 ### Patch Changes

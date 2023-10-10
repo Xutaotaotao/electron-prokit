@@ -1,5 +1,11 @@
 # @electron-prokit/create-service
 
+## 3.0.1
+
+### Patch Changes
+
+- 8c0cc9c: feat: add node engines version
+
 ## 3.0.0
 
 ### Major Changes
