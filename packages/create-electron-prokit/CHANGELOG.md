@@ -1,5 +1,11 @@
 # create-electron-prokit
 
+## 2.0.0
+
+### Major Changes
+
+- a0531d6: fix: change main function
+
 ## 1.0.1
 
 ### Patch Changes
