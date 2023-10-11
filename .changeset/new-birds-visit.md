@@ -1,5 +1,5 @@
 ---
-"create-electron-prokit": major
+"create-electron-prokit": patch
 ---
 
 fix: change main function
