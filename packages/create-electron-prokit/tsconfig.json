@@ -10,6 +10,6 @@
     "outDir": "./dist",
     "importHelpers": true 
   },
-  "include": [".eslintrc.js", "src/**/*"],
+  "include": ["src/**/*","typings.d.ts"],
   "exclude": ["node_modules", "dist/**/*"],
 }

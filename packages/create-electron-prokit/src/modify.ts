@@ -5,7 +5,14 @@ import ora from "ora"
 
 const log = ora("modify")
 
-export const modifyPackageJson = function (downloadPath: string, options: any):void {
+// interface Options {
+//   name:string;
+//   description:string;
+//   author:string;
+// }
+
+
+export const modifyPackageJson = function (downloadPath: string, options: Options):void {
   const packagePath = path.join(downloadPath, "package.json")
   log.start("start modifying package.json")
   if (fs.existsSync(packagePath)) {

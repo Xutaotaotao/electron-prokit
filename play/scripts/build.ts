@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import pkgJson from "../package.json" assert { type: "json" };
-import { build } from "vite";
 import { dirname } from "path";
+import { build } from "vite";
 import type { UserConfig } from "vite";
+import pkgJson from "../package.json" assert { type: "json" };
 import config from "../ep.config";
 
 interface PackageConfigs {
@@ -39,7 +39,7 @@ const buildByConfig = (config: UserConfig) => build({ ...config, mode });
     const totalTimeLabel = "Total bundling time";
     console.time(totalTimeLabel);
 
-    for (let config in packagesConfigs) {
+    for (const config in packagesConfigs) {
       process.env.VITE_CURRENT_RUN_MODE = config;
       const consoleGroupName = `${dirname(config)}/`;
       console.group(consoleGroupName);
@@ -52,6 +52,7 @@ const buildByConfig = (config: UserConfig) => build({ ...config, mode });
       console.log("\n"); // Just for pretty print
     }
     console.timeEnd(totalTimeLabel);
+    process.exit();
   } catch (e) {
     console.error(e);
     process.exit(1);
