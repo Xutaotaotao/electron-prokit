@@ -5,3 +5,10 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv
 }
+
+interface IpcDBArgs {
+  fun: 'initDb' | 'writeDb' | 'readDb' | 'clearDb';
+  file?: string;
+  key?:string;
+  data?:any
+}

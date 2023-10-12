@@ -1,54 +1,28 @@
-import type {LowSync} from 'lowdb'
-import { useDbFile, useLowdb } from "../hooks";
-let db: LowSync<any> | null = null;
+import { isMain,isRender } from "../env";
 
-const defaultFile = useDbFile();
+import {
+  clearDb as mainClearDb, 
+  initDb as mainInitDb,
+  readDb as mainReadDb,
+  writeDb as mainWriteDb
+} from './main'
+import {
+  clearDb as renderClearDb,
+  initDb as renderInitDb,
+  readDb as renderReadDb,
+  writeDb as renderWriteDb
+} from './render'
+import {
+  clearDb as preloadClearDb,
+  initDb as preloadInitDb,
+  readDb as preloadReadDb,
+  writeDb as preloadWriteDb
+} from './preload'
 
-export const initDb = (file = defaultFile): Promise<boolean> => {
-  // eslint-disable-next-line no-async-promise-executor
-  return new Promise(async (resolve, reject) => {
-    if (db) {
-      resolve(true);
-    } else {
-      try {
-        const lowdb = await useLowdb(file);
-        await lowdb.read();
-        db = lowdb;
-        resolve(true);
-      } catch (err) {
-        reject(err);
-      }
-    }
-  });
-};
+export const initDb = isMain ? mainInitDb : isRender ? renderInitDb : preloadInitDb
 
-// todo data type constrains 
-export const writeDb = async (key: string, data: any): Promise<void> => {
-  if (!db) {
-    await initDb();
-  }
-  await db.read();
-  const oldData = db.data || {}
-  db.data = {
-    ...oldData,
-    [key]: data,
-  };
-  await db.write();
-};
+export const readDb = isMain ? mainReadDb : isRender ? renderReadDb : preloadReadDb
 
-export const readDb = async (key: string): Promise<any> => {
-  if (!db) {
-    await initDb();
-  }
-  await db.read();
-  const res = db.data?.[key];
-  return res;
-};
+export const writeDb = isMain ? mainWriteDb: isRender ? renderWriteDb : preloadWriteDb
 
-export const clearDb = async (): Promise<void> => {
-  if (!db) {
-    return;
-  }
-  db.data = {};
-  await db.write();
-};
+export const clearDb = isMain ? mainClearDb : isRender ? renderClearDb : preloadClearDb

@@ -1,30 +1,20 @@
 import { Button, Divider, Space } from 'antd'
-import {sendMsgToMain} from 'electron-prokit'
+import {initDb,readDb,writeDb} from 'electron-prokit'
 
 const Db = () => {
 
   const initDbHandle = () => {
-    sendMsgToMain({key:'initDb'}).then(res => {
+    initDb().then((res:boolean) => {
       console.log(res)
     })
   }
 
   const writeDbHandle = () => {
-    sendMsgToMain({key:'writeDb',data:{
-      key:'electron-prokit',
-      value:{
-        name: 'electron-prokit',
-        des: 'this is a electron kit'
-      }
-    }}).then(res => {
-      console.log(res)
-    })
+    writeDb('electron-prokit',{hello:'im electron-prokit'})
   }
 
   const readDbHandle = () => {
-    sendMsgToMain({key:'readDb',data:{
-      key:'electron-prokit',
-    }}).then(res => {
+    readDb('electron-prokit').then((res:any) => {
       console.log(res)
     })
   }

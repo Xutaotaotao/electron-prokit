@@ -13,7 +13,6 @@ import {
 } from "./preload";
 
 export * from "./main";
-export { initExposeInMainWorld } from "./preload";
 export const onMsgFromMain = isRender
   ? renderOnMsgFromMain
   : preloadOnMsgFromMain;

@@ -1,6 +1,6 @@
 import {Button,Divider,Space,Tag} from 'antd'
 import { useEffect, useState } from 'react'
-import {sendMsgToMain,sendMsgToOtherRender,onMsgFromMain} from 'electron-prokit'
+import {onMsgFromMain,sendMsgToMain,sendMsgToOtherRender} from 'electron-prokit'
 
 
 const Ipc = () => {

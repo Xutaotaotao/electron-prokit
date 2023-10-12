@@ -93,7 +93,7 @@ const electronRequest = (electronAdaptedOptions: Options) => {
       })
     }
 
-    // timeout 
+    // todo timeout 
 
     request.on("response", (response) => {
       let responseData = "";
