@@ -9,6 +9,7 @@
     "moduleResolution": "node",
     "downlevelIteration": true,
     "declaration": true,
+    "esModuleInterop": true
   },
   "types": [
     "jest"
