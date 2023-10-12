@@ -2,14 +2,9 @@ import path from "path"
 import fs from "fs-extra"
 import handlebars from "handlebars"
 import ora from "ora"
+import type { Options } from '../typings'
 
 const log = ora("modify")
-
-// interface Options {
-//   name:string;
-//   description:string;
-//   author:string;
-// }
 
 
 export const modifyPackageJson = function (downloadPath: string, options: Options):void {

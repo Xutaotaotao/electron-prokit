@@ -4,6 +4,7 @@ import type { QuestionCollection } from "inquirer";
 import inquirer from "inquirer";
 import ora from "ora";
 import fs from "fs-extra";
+import type { Options } from '../typings'
 import { downloadTemplate } from "./download";
 import { modifyPackageJson } from "./modify";
 

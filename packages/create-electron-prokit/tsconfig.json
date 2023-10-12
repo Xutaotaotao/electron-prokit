@@ -8,7 +8,7 @@
     "strict": true,
     "sourceMap": true,
     "outDir": "./dist",
-    "importHelpers": true 
+    "importHelpers": true,
   },
   "include": ["src/**/*","typings.d.ts"],
   "exclude": ["node_modules", "dist/**/*"],
