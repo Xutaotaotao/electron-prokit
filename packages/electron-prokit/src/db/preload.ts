@@ -1,15 +1,16 @@
 import { useIpcRenderer } from "../hooks";
+import type { ClearDbFunc, InitDbFunc, ReadDbFunc, WriteDbFunc } from "./type";
 
 const ipcRenderer = useIpcRenderer();
 
-export const initDb = (file?:string): Promise<boolean> => {
+export const initDb:InitDbFunc = (file) => {
   return ipcRenderer.invoke("EPinitDb", {
     fun:'initDb',
     file
   });
 }
 
-export const writeDb = (key: string, data: any):Promise<void> => {
+export const writeDb:WriteDbFunc = (key, data) => {
   return ipcRenderer.invoke("EPinitDb", {
     fun:'writeDb',
     key,
@@ -17,7 +18,7 @@ export const writeDb = (key: string, data: any):Promise<void> => {
   });
 }
 
-export const readDb = (key: string):Promise<any> => {
+export const readDb:ReadDbFunc = (key) => {
   return ipcRenderer.invoke("EPinitDb", {
     fun:'readDb',
     key,
@@ -25,7 +26,7 @@ export const readDb = (key: string):Promise<any> => {
 }
 
 
-export const clearDb = (key: string):Promise<void> => {
+export const clearDb:ClearDbFunc = () => {
   return ipcRenderer.invoke("EPinitDb", {
     fun:'clearDb',
   });

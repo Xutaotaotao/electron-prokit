@@ -1,15 +1,17 @@
-export const initDb = (file?: string) => {
+import type { ClearDbFunc, InitDbFunc, ReadDbFunc, WriteDbFunc } from "./type";
+
+export const initDb:InitDbFunc = (file) => {
   return window.electronProkit.initDb(file);
 };
 
-export const writeDb = (key: string, data: any) => {
+export const  writeDb:WriteDbFunc = (key, data) => {
   return window.electronProkit.writeDb(key, data);
 };
 
-export const readDb = (key: string) => {
+export const readDb:ReadDbFunc = (key) => {
   return window.electronProkit.readDb(key);
 };
 
-export const clearDb = () => {
+export const clearDb:ClearDbFunc = () => {
   return window.electronProkit.clearDb();
 };

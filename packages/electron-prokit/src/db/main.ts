@@ -1,10 +1,12 @@
 import type {LowSync} from 'lowdb'
 import { useDbFile, useLowdb } from "../hooks";
+import type { ClearDbFunc, InitDbFunc, ReadDbFunc, WriteDbFunc } from './type';
+
 let db: LowSync<any> | null = null;
 
 const defaultFile = useDbFile();
 
-export const initDb = (file = defaultFile): Promise<boolean> => {
+export const initDb:InitDbFunc = (file = defaultFile) => {
   // eslint-disable-next-line no-async-promise-executor
   return new Promise(async (resolve, reject) => {
     if (db) {
@@ -23,7 +25,7 @@ export const initDb = (file = defaultFile): Promise<boolean> => {
 };
 
 // todo data type constrains 
-export const writeDb = async (key: string, data: any): Promise<void> => {
+export const writeDb:WriteDbFunc = async (key, data) => {
   if (!db) {
     await initDb();
   }
@@ -36,7 +38,7 @@ export const writeDb = async (key: string, data: any): Promise<void> => {
   await db.write();
 };
 
-export const readDb = async (key: string): Promise<any> => {
+export const readDb:ReadDbFunc = async (key) => {
   if (!db) {
     await initDb();
   }
@@ -45,7 +47,7 @@ export const readDb = async (key: string): Promise<any> => {
   return res;
 };
 
-export const clearDb = async (): Promise<void> => {
+export const clearDb:ClearDbFunc = async () => {
   if (!db) {
     return;
   }
