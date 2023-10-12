@@ -1,5 +1,6 @@
+import type {LowSync} from 'lowdb'
 import { useDbFile, useLowdb } from "../hooks";
-let db: any = null;
+let db: LowSync<any> | null = null;
 
 const defaultFile = useDbFile();
 
@@ -27,7 +28,7 @@ export const writeDb = async (key: string, data: any): Promise<void> => {
     await initDb();
   }
   await db.read();
-  const oldData = db.data;
+  const oldData = db.data || {}
   db.data = {
     ...oldData,
     [key]: data,
