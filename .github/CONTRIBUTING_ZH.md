@@ -14,7 +14,7 @@ root
 |
 |---docs   # 项目文档
 |
-|---packages    # 开发目录
+|---packages    # 包目录
 |     |---create-electron-prokit    # 脚手架
 |     |---create-service    # 用于快速创建electron相关服务
 |     |---electron-prokit    # electron-prokit 核心包
