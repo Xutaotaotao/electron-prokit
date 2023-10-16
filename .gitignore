@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 release
+coverage
 *.local
 
 # Editor directories and files

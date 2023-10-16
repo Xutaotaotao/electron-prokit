@@ -26,6 +26,14 @@ jobs:
       # https://pnpm.io/zh/cli/install#--frozen-lockfile
       - name: Install Dependencies
         run: pnpm install --no-frozen-lockfile
+      
+      - name: Run Jest tests
+        run: pnpm test-c
+      
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build docs
         run: pnpm docs:build
