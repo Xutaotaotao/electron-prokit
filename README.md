@@ -5,11 +5,18 @@
   <h1>Electron Prokit</h1>
   <p>A desktop app framework based on Electron,develop desktop applications like a pro! </p>
 
-  ![github workflow](https://github.com/Xutaotaotao/electron-prokit/actions/workflows/release.yml/badge.svg) ![npm downloads](https://img.shields.io/npm/dm/electron-prokit) ![npm version](https://img.shields.io/npm/v/electron-prokit) ![license](https://img.shields.io/github/license/Xutaotaotao/electron-prokit?color=%232dce89&logo=github&style=flat-square)
+  <p align="center">
+    <a href="https://npmjs.com/package/electron-prokit"><img src="https://img.shields.io/npm/v/electron-prokit.svg" alt="npm package"></a>
+    <a href="https://nodejs.org/en/about/releases/"><img src="https://img.shields.io/node/v/electron-prokit.svg" alt="node compatibility"></a>
+    <a href="https://github.com/Xutaotaotao/electron-prokit/actions/workflows/release.yml"><img src="https://github.com/Xutaotaotao/electron-prokit/actions/workflows/release.yml/badge.svg" alt="build status"></a>
+    <a href="https://coveralls.io/github/Xutaotaotao/electron-prokit?branch=main"><img src="https://coveralls.io/repos/github/Xutaotaotao/electron-prokit/badge.svg?branch=main" alt="license"></a>
+    <a href="https://github.com/Xutaotaotao/electron-prokit/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Xutaotaotao/electron-prokit?color=%232dce89&logo=github&style=flat-square" alt="license"></a>
+    
+  </p>
+
 </div>
 
 English | [简体中文](./README_ZH.md)
-
 
 ## ✨ Features
 
@@ -21,20 +28,17 @@ English | [简体中文](./README_ZH.md)
 
 - **🎨 Abundant APIs**: Process communication, window management, network requests, cross-language invocation, task management, database management...
 
-
 ## 👜 Packages
 
-|Package|npm version|npm downloads|
-| :-: | :-: | :-: |
-| [electron-prokit](packages/electron-prokit) | ![npm version](https://img.shields.io/npm/v/electron-prokit) | ![npm downloads](https://img.shields.io/npm/dm/electron-prokit) |
-| [create-electron-prokit](packages/create-electron-prokit) | ![npm version](https://img.shields.io/npm/v/create-electron-prokit) | ![npm downloads](https://img.shields.io/npm/dm/create-electron-prokit) |
-| [@electron-prokit/create-service](packages/create-service)| ![npm version](https://img.shields.io/npm/v/@electron-prokit/create-service) | ![npm downloads](https://img.shields.io/npm/dm/@electron-prokit/create-service) |
-
+|                          Package                           |                                 npm version                                  |                                  npm downloads                                  |
+| :--------------------------------------------------------: | :--------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: |
+|        [electron-prokit](packages/electron-prokit)         |         ![npm version](https://img.shields.io/npm/v/electron-prokit)         |         ![npm downloads](https://img.shields.io/npm/dm/electron-prokit)         |
+| [create-electron-prokit](packages/create-electron-prokit)  |     ![npm version](https://img.shields.io/npm/v/create-electron-prokit)      |     ![npm downloads](https://img.shields.io/npm/dm/create-electron-prokit)      |
+| [@electron-prokit/create-service](packages/create-service) | ![npm version](https://img.shields.io/npm/v/@electron-prokit/create-service) | ![npm downloads](https://img.shields.io/npm/dm/@electron-prokit/create-service) |
 
 ## 🔧 Using a Scaffold
 
 You can quickly create a project using a scaffold, which integrates with the electron-prokit ecosystem.
-
 
 Use NPM:
 
@@ -49,7 +53,6 @@ yarn create electron-prokit myapp
 ```
 
 In the command above, replace `myapp` with the name of your project.
-
 
 ## 📖 Documents
 
@@ -66,12 +69,12 @@ In the command above, replace `myapp` with the name of your project.
 ```bash
 git clone https://github.com/Xutaotaotao/electron-prokit.git
 
-pnpm i 
+pnpm i
 
 pnpm run dev
 
 ```
 
-
 ## 👥 Stargazers
+
 [![Stargazers repo roster for electron-prokit](https://reporoster.com/stars/Xutaotaotao/electron-prokit)](https://github.com/Xutaotaotao/electron-prokit/stargazers)
