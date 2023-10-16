@@ -9,7 +9,7 @@
     <a href="https://npmjs.com/package/electron-prokit"><img src="https://img.shields.io/npm/v/electron-prokit.svg" alt="npm package"></a>
     <a href="https://nodejs.org/en/about/releases/"><img src="https://img.shields.io/node/v/electron-prokit.svg" alt="node compatibility"></a>
     <a href="https://github.com/Xutaotaotao/electron-prokit/actions/workflows/release.yml"><img src="https://github.com/Xutaotaotao/electron-prokit/actions/workflows/release.yml/badge.svg" alt="build status"></a>
-    <a href="https://coveralls.io/github/Xutaotaotao/electron-prokit?branch=main"><img src="https://coveralls.io/repos/github/Xutaotaotao/electron-prokit/badge.svg?branch=main" alt="license"></a>
+    <a href="https://coveralls.io/github/Xutaotaotao/electron-prokit?branch=main"><img src="https://coveralls.io/repos/github/Xutaotaotao/electron-prokit/badge.svg?branch=main" alt="coveralls"></a>
     <a href="https://github.com/Xutaotaotao/electron-prokit/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Xutaotaotao/electron-prokit?color=%232dce89&logo=github&style=flat-square" alt="license"></a>
     
   </p>
