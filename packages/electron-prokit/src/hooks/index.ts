@@ -9,24 +9,28 @@ export function useBrowserWindow(
     const { BrowserWindow } = require("electron");
     return new BrowserWindow(options);
   }
+  return undefined; 
 }
 
 export function useIpcMain(): Electron.IpcMain | undefined {
   if (isMain) {
     return require("electron").ipcMain;
   }
+  return undefined;
 }
 
 export function useIpcRenderer():  Electron.IpcRenderer | undefined {
   if (isPreload || isWork) {
     return require("electron").ipcRenderer;
   }
+  return undefined; 
 }
 
 export function useContextBridge(): Electron.ContextBridge | undefined {
   if (isPreload || isWork) {
     return require("electron").contextBridge;
   }
+  return undefined; 
 }
 
 export function useKoffi ():any {
@@ -52,4 +56,5 @@ export async function useLowdb (file:string):Promise<LowSync<unknown>> {
     const lowdb = new LowSync(adapter);
     return lowdb
   }
+  return Promise.resolve(undefined as unknown as LowSync<unknown>)
 }

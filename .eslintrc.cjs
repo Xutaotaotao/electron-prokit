@@ -48,7 +48,7 @@ module.exports = defineConfig({
     'n/no-extraneous-import': [
       'error',
       {
-        allowModules: ['vite', 'less', 'sass', 'vitest', 'unbuild'],
+        allowModules: ['vite', 'less', 'sass', 'vitest', 'unbuild',"@jest/globals"],
       },
     ],
     'n/no-extraneous-require': [
