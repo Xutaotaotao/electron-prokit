@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import type { MenuProps } from 'antd';
 import { Layout, Menu, theme } from 'antd';
-import { Outlet,Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import {menus} from './menu'
 
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 const Root: React.FC = () => {
   const {
@@ -45,12 +45,11 @@ const Root: React.FC = () => {
       </Sider>
       <Layout>
         <Header style={{ paddingLeft: 10, background: colorBgContainer }}> {currentMenuName(currentMenuKey)} </Header>
-        <Content style={{ margin: '24px 16px 0' }}>
-          <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>
+        <Content style={{ margin: '10px 16px 0' }}>
+          <div style={{ padding: 10, minHeight: 360 }}>
             <Outlet />
           </div>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Electron Prokit ©2023 Created by Taotao</Footer>
       </Layout>
     </Layout>
   );
