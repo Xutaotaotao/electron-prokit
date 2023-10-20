@@ -1,0 +1,8 @@
+{
+  "home":"Home",
+  "ipc":"ipc",
+  "http":"http",
+  "ffi": "ffi",
+  "schedule": "schedule",
+  "db": "db"
+}

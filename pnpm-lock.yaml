@@ -171,6 +171,9 @@ importers:
 
   play:
     dependencies:
+      koffi:
+        specifier: 2.3.20
+        version: 2.3.20
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -229,15 +232,18 @@ importers:
       eslint-plugin-react-refresh:
         specifier: ^0.4.3
         version: 0.4.3(eslint@8.50.0)
-      koffi:
-        specifier: 2.3.20
-        version: 2.3.20
+      i18next:
+        specifier: ^23.6.0
+        version: 23.6.0
       lowdb:
         specifier: 3.0.0
         version: 3.0.0
       minimist:
         specifier: ^1.2.8
         version: 1.2.8
+      react-i18next:
+        specifier: ^13.3.1
+        version: 13.3.1(i18next@23.6.0)(react-dom@18.2.0)(react@18.2.0)
       react-router-dom:
         specifier: ^6.15.0
         version: 6.16.0(react-dom@18.2.0)(react@18.2.0)
@@ -5023,6 +5029,12 @@ packages:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
     dev: true
 
+  /html-parse-stringify@3.0.1:
+    resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
+    dependencies:
+      void-elements: 3.1.0
+    dev: true
+
   /http-cache-semantics@4.1.1:
     resolution: {integrity: sha512-er295DKPVsV82j5kw1Gjt+ADA/XYHsajl82cGNQG2eyoPkvgUhX+nDIyelzhIWbbsXP39EHcI6l5tYs2FYqYXQ==}
     dev: true
@@ -5063,6 +5075,12 @@ packages:
   /human-signals@2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
+    dev: true
+
+  /i18next@23.6.0:
+    resolution: {integrity: sha512-z0Cxr0MGkt+kli306WS4nNNM++9cgt2b2VCMprY92j+AIab/oclgPxdwtTZVLP1zn5t5uo8M6uLsZmYrcjr3HA==}
+    dependencies:
+      '@babel/runtime': 7.23.1
     dev: true
 
   /iconv-corefoundation@1.1.7:
@@ -5986,6 +6004,7 @@ packages:
   /koffi@2.3.20:
     resolution: {integrity: sha512-y1W9JikdswM/CLmumtibnCknGJ6bmCNpWWD9G6WzP6Zj3lEY7d0J7jO82uMVoD1udz/2ZYUw2twhsGUGqeZH1g==}
     requiresBuild: true
+    dev: false
 
   /lazy-val@1.0.5:
     resolution: {integrity: sha512-0/BnGCCfyUMkBpeDgWihanIAF9JmZhHBgUhEqzvf+adhNGLoP6TaiI5oF8oyb3I45P+PcnrqihSf01M0l0G5+Q==}
@@ -7447,6 +7466,28 @@ packages:
       react: 18.2.0
       scheduler: 0.23.0
 
+  /react-i18next@13.3.1(i18next@23.6.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-JAtYREK879JXaN9GdzfBI4yJeo/XyLeXWUsRABvYXiFUakhZJ40l+kaTo+i+A/3cKIED41kS/HAbZ5BzFtq/Og==}
+    peerDependencies:
+      i18next: '>= 23.2.3'
+      react: '>= 16.8.0'
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.23.1
+      html-parse-stringify: 3.0.1
+      i18next: 23.6.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: true
+
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
@@ -8690,6 +8731,11 @@ packages:
       - sugarss
       - terser
       - universal-cookie
+    dev: true
+
+  /void-elements@3.1.0:
+    resolution: {integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==}
+    engines: {node: '>=0.10.0'}
     dev: true
 
   /vscode-oniguruma@1.7.0:
