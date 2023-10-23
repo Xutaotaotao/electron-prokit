@@ -14,7 +14,11 @@ i18n
       translation: zhCnTrans,
     },
   },
-  fallbackLng: 'en', 
+  detection: {
+    order: ['queryString', 'cookie'],
+    caches: ['cookie']
+  },
+  fallbackLng: 'zh', 
   debug: false,
   interpolation: {
     escapeValue: false,
