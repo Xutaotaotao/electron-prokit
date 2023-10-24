@@ -20,10 +20,28 @@ hero:
       link: https://github.com/Xutaotaotao/electron-prokit
 
 features:
-  - title: 快捷
-    details: 一站式开发Electron桌面端应用
-  - title: 方便
-    details: 去除繁琐的工程搭建步骤
-  - title: 丰富
-    details: 非常多的Electron基建物料和工具
+  - icon: 💡
+    title: 快速开始
+    details: 脚手架工具助你一键快速开发Electron项目
+  - icon: ⚡️
+    title: Vite支持
+    details: 所有的进程配置使用方式与 Vite 相同
+  - icon: 🛠️
+    title: 开箱即用
+    details: 开箱即用支持 Typescript、Vue、React
+  - icon: 📦
+    title: 预设打包
+    details: 一站式打包构建解决方案
+  - icon: 🔥
+    title: 热更新
+    details: 所有进程及脚本都支持热更新
+  - icon: 🔑
+    title: 完全类型化
+    details: 灵活的 API 和完整的 TypeScript 类型
+  - icon: 🎨
+    title: 丰富的API
+    details: 进程通信、窗口、网络、跨语言、任务、数据库...
+  - icon: 📺
+    title: 最佳实践
+    details: 提供 Electron 应用程序的最佳实践演示
 ---
