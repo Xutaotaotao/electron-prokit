@@ -28,6 +28,7 @@ const Root: React.FC = () => {
 
 
   const menuOnSelect: MenuProps["onSelect"] = (a) => {
+    console.log(a.key)
     setCurrentMenuKey(a.key);
   };
 
@@ -142,10 +143,12 @@ const Root: React.FC = () => {
   }
 
   useEffect(() => {
+    console.log(pathname)
     if (!componentList.current.has(pathname)) {
       componentList.current.set(pathname, outLet);
       forceUpdate();
     }
+    setCurrentMenuKey(pathname)
   }, [pathname]);
 
   useEffect(() => {

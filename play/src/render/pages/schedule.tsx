@@ -1,7 +1,10 @@
 import { Button,Card, Space } from 'antd'
 import {registerSchedule,runSchedule,stopSchedule} from 'electron-prokit'
+import { useTranslation } from "react-i18next";
+
 
 const Schedule = () => {
+  const { t } = useTranslation();
 
   const runScheduleTest = () => {
     registerSchedule({
@@ -15,12 +18,12 @@ const Schedule = () => {
   }
 
   return <Space direction="vertical" style={{width:'100%'}}>
-    <Card title="注册一个任务并运行" bordered={false}>
-     <Button type='primary' onClick={() => runScheduleTest()}>注册并运行一个任务</Button>
+    <Card title={t('Register a task and run it')} bordered={false}>
+     <Button type='primary' onClick={() => runScheduleTest()}>{t('Start')}</Button>
     </Card>
 
-    <Card title="停止一个任务" bordered={false}>
-      <Button type='primary' onClick={() => stopSchedule('runScheduleTest')}>停止一个任务</Button>
+    <Card title={t("Stop a task")} bordered={false}>
+      <Button type='primary' onClick={() => stopSchedule('runScheduleTest')}>{t('Stop')}</Button>
     </Card>
   </Space>
 }
