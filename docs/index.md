@@ -18,11 +18,29 @@ hero:
       link: https://github.com/Xutaotaotao/electron-prokit
 
 features:
-  - title: Efficient
-    details: All-in-One Development of Electron.
-  - title: Convenient
-    details: Eliminate Tedious Project Setup Steps.
-  - title: Abundant
-    details: A Wealth of Electron Infrastructure Materials.
+  - icon: 💡
+    title: Quick Start
+    details: Quickly get started with scaffolding tools!
+  - icon: ⚡️
+    title: Use Vite
+    details: Configure each process like configuring the vite project.
+  - icon: 🛠️
+    title: Rich Features
+    details: Out-of-the-box support for Typescript、Vue、React and more.
+  - icon: 📦
+    title: Optimized Build
+    details: Packing and Construction Integrated solution.
+  - icon: 🔥
+    title: Hot Reloading
+    details: The main process and rendering process and preload scripts support hot reloading.
+  - icon: 🔑
+    title: Fully Typed APIs
+    details: Flexible programmatic APIs with full TypeScript typing.
+  - icon: 🎨
+    title: Abundant APIs
+    details: Process communication, window management, http, ffi, task...
+  - icon: 📺
+    title: Best Practices
+    details: Provide best practices and demo electron applications.
 ---
 

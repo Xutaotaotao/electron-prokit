@@ -3,7 +3,7 @@
     <img style="width:300px" src="https://github.com/Xutaotaotao/electron-prokit/blob/main/docs/public/logo.svg" alt="logo">
   </p>
   <h1>Electron Prokit</h1>
-  <p>一款基于 Electron 的桌面软件开发框架,让你拥有极致的桌面开发体验。</p>
+  <p>A desktop app framework based on Electron,develop desktop applications like a pro! </p>
 
   <p align="center">
     <a href="https://npmjs.com/package/electron-prokit"><img src="https://img.shields.io/npm/v/electron-prokit.svg" alt="npm package"></a>
@@ -13,62 +13,66 @@
     <a href="https://github.com/Xutaotaotao/electron-prokit/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Xutaotaotao/electron-prokit?color=%232dce89&logo=github&style=flat-square" alt="license"></a>
     
   </p>
+
 </div>
 
+English | [简体中文](./README_ZH.md)
 
+## ✨ Features
 
-简体中文 | [English](./README_EN.md)
+- **💡 Quick Start**: Quickly get started with scaffolding tools!
 
+- **⚡️ Use Vite**: Configure each process like configuring the vite project.
 
-## ✨ 特性
+- **🛠️ Rich Features**: Out-of-the-box support for Typescript、Vue、React and more.
 
-- **⚙️ CLI 工具**: 使用脚手架快速上手，脚手架内置 React 和 Vue 两种前端框架的 Electron 应用程序。
+- **📦 Optimized Build**: Packing and Construction Integrated solution.
 
-- **🛡 开发增强**: 使用 TypeScript 开发，提供完整的类型定义文件。
+- **🔥 Hot Reloading Optimized Build**: The main process and rendering process and preload scripts support hot reloading.
 
-- **📦 最佳实践**: 提供可扩展性和可维护性的 Electron 应用程序的最佳实践。
+- **🔑 Fully Typed APIs**: Flexible programmatic APIs with full TypeScript typing.
 
-- **🎨 丰富的 API**: 进程通信、窗口管理、网络请求、跨语言调用、任务管理、数据库管理...
+- **🎨 Abundant APIs**: Process communication, window management, network requests, cross-language invocation, task management, database management...
 
-## 👜 npm 包
+- **📺 Best Practices**: Provide best practices and demo electron applications.
 
-|Package|npm version|npm downloads|
-| :-: | :-: | :-: |
-| [electron-prokit](packages/electron-prokit) | ![npm version](https://img.shields.io/npm/v/electron-prokit) | ![npm downloads](https://img.shields.io/npm/dm/electron-prokit) |
-| [create-electron-prokit](packages/create-electron-prokit) | ![npm version](https://img.shields.io/npm/v/create-electron-prokit) | ![npm downloads](https://img.shields.io/npm/dm/create-electron-prokit) |
-| [@electron-prokit/create-service](packages/create-service)| ![npm version](https://img.shields.io/npm/v/@electron-prokit/create-service) | ![npm downloads](https://img.shields.io/npm/dm/@electron-prokit/create-service) |
+## 👜 Packages
 
-## 🔧 创建项目
+|                          Package                           |                                 npm version                                  |                                  npm downloads                                  |
+| :--------------------------------------------------------: | :--------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: |
+|        [electron-prokit](packages/electron-prokit)         |         ![npm version](https://img.shields.io/npm/v/electron-prokit)         |         ![npm downloads](https://img.shields.io/npm/dm/electron-prokit)         |
+| [create-electron-prokit](packages/create-electron-prokit)  |     ![npm version](https://img.shields.io/npm/v/create-electron-prokit)      |     ![npm downloads](https://img.shields.io/npm/dm/create-electron-prokit)      |
+| [@electron-prokit/create-service](packages/create-service) | ![npm version](https://img.shields.io/npm/v/@electron-prokit/create-service) | ![npm downloads](https://img.shields.io/npm/dm/@electron-prokit/create-service) |
 
-直接使用脚手架快捷创建项目，脚手架结合了electron-prokit相关生态，推荐使用此方式。
+## 🔧 Using a Scaffold
 
-使用 NPM:
+You can quickly create a project using a scaffold, which integrates with the electron-prokit ecosystem.
+
+Use NPM:
 
 ```bash
 npm create electron-prokit myapp
 ```
 
-使用 Yarn:
+Use Yarn:
 
 ```bash
 yarn create electron-prokit myapp
 ```
 
-其中`myapp`为你的项目名,然后按照提示操作即可！
+In the command above, replace `myapp` with the name of your project.
 
-## 📖 官方文档
+## 📖 Documents
 
-<a href="https://xutaotaotao.github.io/electron-prokit/zh" target="_blank">文档首页</a>
+<a href="https://xutaotaotao.github.io/electron-prokit" target="_blank">Homepage</a>
 
-<a href="https://xutaotaotao.github.io/electron-prokit/zh/api" target="_blank">API</a>
+<a href="https://xutaotaotao.github.io/electron-prokit/api" target="_blank">API</a>
 
-<a href="https://xutaotaotao.github.io/electron-prokit/zh/plugin" target="_blank">插件</a>
+<a href="https://xutaotaotao.github.io/electron-prokit/plugin" target="_blank">Plugins</a>
 
-<a href="https://xutaotaotao.github.io/electron-prokit/zh/tutorials" target="_blank">教程</a>
+<a href="https://xutaotaotao.github.io/electron-prokit/tutorials" target="_blank">Tutorials</a>
 
-
-
-## ⌨️ 演练
+## ⌨️ Playground
 
 ```bash
 git clone https://github.com/Xutaotaotao/electron-prokit.git
@@ -79,16 +83,12 @@ pnpm run dev
 
 ```
 
-## 📷 截图
+## 📷 Screenshot
 
 <img src="https://github.com/Xutaotaotao/cloud_img/blob/master/ep-light.png" alt="light">
 
 <img src="https://github.com/Xutaotaotao/cloud_img/blob/master/ep-dark.png" alt="dark">
 
-
-
-
 ## 👥 Stargazers
 
 [![Stargazers repo roster for electron-prokit](https://reporoster.com/stars/Xutaotaotao/electron-prokit)](https://github.com/Xutaotaotao/electron-prokit/stargazers)
-
