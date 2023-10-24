@@ -1,7 +1,11 @@
-import { Button, Card, Divider, Space } from "antd";
+import { Button, Card, Space } from "antd";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 
 const Ffi = () => {
+  const { t } = useTranslation();
+
   const [msgFromFfiSum, setMsgFromFfiSum] = useState<number>();
   const [msgFromFfiMul, setMsgFromFfiMul] = useState<number>();
   const [msgFromFfiDiv, setMsgFromFfiDiv] = useState<number>();
@@ -22,19 +26,19 @@ const Ffi = () => {
 
   return (
     <Space direction="vertical" style={{ width: "100%" }}>
-      <Card title="调用ffi注册的单个sum方法" bordered={false}>
+      <Card title={t('Call a single method registered by ffi')} bordered={false}>
         <Space direction="vertical">
           <Button
             type="primary"
             onClick={() => renderMsgToMain({ key: "nativeSum" })}
           >
-            调用ffi的sum
+            {t('Call the sum of ffi')}
           </Button>
-          <div>这里ffi的sum的返回值：{msgFromFfiSum}</div>
+          <div>{t('Here is the return value of the call')}：{msgFromFfiSum}</div>
         </Space>
       </Card>
 
-      <Card title="调用ffi注册的多个方法：mul和div" bordered={false}>
+      <Card title={t('Call multiple methods registered by ffi')} bordered={false}>
         <Space direction="vertical">
           <div>
             <Space direction="vertical">
@@ -42,9 +46,9 @@ const Ffi = () => {
                 type="primary"
                 onClick={() => renderMsgToMain({ key: "nativeMul" })}
               >
-                调用ffi的mul
+                {t('Call the mul of ffi')}
               </Button>
-              <div>这里ffi的mul的返回值：{msgFromFfiMul}</div>
+              <div>{t('Here is the return value of the call')}：{msgFromFfiMul}</div>
             </Space>
           </div>
 
@@ -54,9 +58,9 @@ const Ffi = () => {
                 type="primary"
                 onClick={() => renderMsgToMain({ key: "nativeDiv" })}
               >
-                调用ffi的div
+                 {t('Call the div of ffi')}
               </Button>
-              <div>这里ffi的div的返回值：{msgFromFfiDiv}</div>
+              <div>{t('Here is the return value of the call')}：{msgFromFfiDiv}</div>
             </Space>
           </div>
         </Space>

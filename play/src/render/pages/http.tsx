@@ -1,7 +1,11 @@
 import { Button, Card,Space, } from 'antd'
 import { http,sendMsgToMain } from 'electron-prokit'
+import { useTranslation } from "react-i18next";
+
 
 const Http = () => {
+
+  const { t } = useTranslation();
 
   const httpTest = () => {
     http({
@@ -19,11 +23,11 @@ const Http = () => {
   }
 
   return <Space direction="vertical" style={{width:'100%'}}>
-    <Card title="渲染进程请求" bordered={false}>
-      <Button type='primary' onClick={() => httpTest()}>发送一个请求</Button>
+    <Card title={t('The render process initiates a request')} bordered={false}>
+      <Button type='primary' onClick={() => httpTest()}>{t('Initiates a request')}</Button>
     </Card>
-    <Card title="渲染进程发送一个消息让主进程发起Http请求" bordered={false}>
-      <Button type='primary' onClick={() => httpMainTest()}>发送一个消息让主进程请求</Button>
+    <Card title={t("The render process sends a message to the main process to initiate an http request")} bordered={false}>
+      <Button type='primary' onClick={() => httpMainTest()}>{t('Initiates a request')}</Button>
     </Card>
   </Space>
 }

@@ -11,9 +11,9 @@ export interface Menu {
 
 export const menus:Array<Menu> = [
   {path:'/',icon: HomeOutlined,name:'home' },
-  {path:'ipc',icon: UploadOutlined,name:"ipc" },
-  {path:'http',icon: WifiOutlined,name:"http" },
-  {path:'ffi',icon: UsbOutlined,name:"ffi" },
-  {path:'schedule',icon: FilterOutlined,name:"schedule" },
-  {path:'db',icon: DatabaseOutlined,name:"db" },
+  {path:'/ipc',icon: UploadOutlined,name:"ipc" },
+  {path:'/http',icon: WifiOutlined,name:"http" },
+  {path:'/ffi',icon: UsbOutlined,name:"ffi" },
+  {path:'/schedule',icon: FilterOutlined,name:"schedule" },
+  {path:'/db',icon: DatabaseOutlined,name:"db" },
 ]
