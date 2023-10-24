@@ -1,0 +1,14 @@
+{
+  "home":"Home",
+  "ipc":"Ipc",
+  "http":"Http",
+  "ffi": "FFI",
+  "schedule": "Schedule",
+  "db": "DB",
+  "Hello": "Hello，",
+  "Event": "Event",
+  "Notice": "Notice",
+  "Recent Contacts":"Recent Contacts",
+  "Done": "Done",
+  "Untreated": "Untreated"
+}

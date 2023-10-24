@@ -1,0 +1,14 @@
+{
+  "home":"首页",
+  "ipc":"跨进程通信",
+  "http":"网络请求",
+  "ffi": "跨语言调用",
+  "schedule": "任务管理",
+  "db": "本地数据库管理",
+  "Hello": "你好，",
+  "Event": "事件",
+  "Notice": "公告",
+  "Recent Contacts":"最近联系人",
+  "Done": "已处理",
+  "Untreated": "未处理"
+}
