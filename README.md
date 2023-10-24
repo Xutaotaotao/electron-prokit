@@ -83,10 +83,9 @@ pnpm run dev
 
 - 主题支持 & 多语言支持
 
-<img style="width:300px" src="https://github.com/Xutaotaotao/cloud_img/blob/master/ep-dark.png" alt="main">
+<img src="https://github.com/Xutaotaotao/cloud_img/blob/master/ep-light.png" alt="light">
 
-
-<img style="width:300px" src="https://github.com/Xutaotaotao/cloud_img/blob/master/ep-light.png" alt="main">
+<img src="https://github.com/Xutaotaotao/cloud_img/blob/master/ep-dark.png" alt="dark">
 
 
 
