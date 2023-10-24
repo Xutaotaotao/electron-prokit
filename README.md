@@ -79,6 +79,18 @@ pnpm run dev
 
 ```
 
+## 📷 截图
+
+- 主题支持 & 多语言支持
+
+<img style="width:300px" src="https://github.com/Xutaotaotao/cloud_img/blob/master/ep-dark.png" alt="main">
+
+
+<img style="width:300px" src="https://github.com/Xutaotaotao/cloud_img/blob/master/ep-light.png" alt="main">
+
+
+
+
 ## 👥 Stargazers
 
 [![Stargazers repo roster for electron-prokit](https://reporoster.com/stars/Xutaotaotao/electron-prokit)](https://github.com/Xutaotaotao/electron-prokit/stargazers)

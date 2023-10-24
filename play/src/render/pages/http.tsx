@@ -1,5 +1,5 @@
-import { Button, Card,Space } from 'antd'
-import { http } from 'electron-prokit'
+import { Button, Card,Space, } from 'antd'
+import { http,sendMsgToMain } from 'electron-prokit'
 
 const Http = () => {
 
@@ -13,7 +13,7 @@ const Http = () => {
   }
 
   const httpMainTest = () => {
-    window.electronProkit.renderMsgToMain<Msg, number>({ key: 'testGetHttp' }).then((res) => {
+    sendMsgToMain<Msg, number>({ key: 'testGetHttp' }).then((res) => {
       console.log(res)
     })
   }
