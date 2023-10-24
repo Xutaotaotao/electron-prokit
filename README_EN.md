@@ -77,8 +77,6 @@ pnpm run dev
 
 ## 📷 Screenshot
 
-- Theme support & multi-language support
-
 <img src="https://github.com/Xutaotaotao/cloud_img/blob/master/ep-light.png" alt="light">
 
 <img src="https://github.com/Xutaotaotao/cloud_img/blob/master/ep-dark.png" alt="dark">
