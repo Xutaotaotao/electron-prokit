@@ -1,4 +1,6 @@
-export const isMain:boolean = import.meta.env.VITE_CURRENT_RUN_MODE === "main";
-export const isRender:boolean = import.meta.env.VITE_CURRENT_RUN_MODE === "render";
-export const isPreload:boolean  = import.meta.env.VITE_CURRENT_RUN_MODE === "preload";
-export const isWork: boolean = import.meta.env.VITE_CURRENT_RUN_MODE === "work";
+export const hasElectron = typeof process !== 'undefined' && typeof process.versions === 'object' && !!process.versions.electron
+export const hasUserAgent = typeof navigator === 'object' && typeof navigator.userAgent === 'string' && navigator.userAgent.indexOf('Electron') >= 0
+
+export const isMain:boolean = hasElectron && !hasUserAgent;
+export const isRender:boolean = !hasElectron && hasUserAgent;
+export const isPreload:boolean  = hasElectron && hasUserAgent;

@@ -1,27 +1,32 @@
-# 开始
+# 快速开始
 
 ## 总览
 
-Electron-Prokit是一个Electron应用开发框架，其中涵盖了Electron应用开发的全流程，适用于Vite相关生态。
+**electron-prokit**是一款基于 Electron 的桌面软件开发框架，让你拥有极致的桌面开发体验，适用于Vite相关生态。
 
-::: tip 项目初始化
-提供配置化的项目模板、Vue + React框架选择和代码规范预设。
+主要由三个部分组成：
+
+::: tip 脚手架
+提供配置化的项目模板，让你快速开发Electron项目。
 :::
 
-::: tip 开发
-调试、热更新等解决方案，大量API及工具供你选择。
+::: tip 核心API
+框架实现的核心功能，提供一些electron生态的解决方案。
 :::
 
-::: tip 构建打包
-提供配置文件，一键打包多个平台的应用。
+::: tip 插件
+为框架提供额外支撑的插件，让使用者开发更加方便。
 :::
 
-不管是开发初学者还是经验丰富的开发者,都可以利用Prokit提升生产力,快速交付高质量的Electron应用。
 
-## 搭建第一个Electron-Prokit项目
+不管是开发初学者还是经验丰富的开发者，都可以利用electron-prokit提升生产力，快速交付高质量的Electron应用。
+
+你可以在[简介](./index)部分深入了解该项目的设计理念。
+
+## 搭建第一个electron-prokit项目
 
 ::: warning  兼容性注意
-Electron-Prokit 需要 Node.js 版本 14.18+，16+。然而，有些模板需要依赖更高的 Node 版本才能正常运行，当你的包管理器发出警告时，请注意升级你的 Node 版本。
+electron-prokit 需要 Node.js 版本 14.18+，16+。然而，有些模板需要依赖更高的 Node 版本才能正常运行，当你的包管理器发出警告时，请注意升级你的 Node 版本。
 :::
 
 直接使用脚手架快捷创建项目，脚手架结合了electron-prokit相关生态，推荐使用此方式。
@@ -38,10 +43,35 @@ npm create electron-prokit myapp
 yarn create electron-prokit myapp
 ```
 
-其中`myapp`为你的项目名,然后按照提示操作即可！
+其中`myapp`为你的项目名，然后按照提示操作即可！
+
+## 配置 electron-prokit
+
+根目录配置`ep.config.ts`
+
+```ts
+// ep.config.ts
+export default {
+  main: {
+    // vite config options
+  },
+  preload: {
+    // vite config options
+  },
+  renderer: {
+    // vite config options
+  },
+  work: {
+    // vite config options
+  },
+  electronPath: '' // electron路径/可选
+}
+```
 
 
 ## 演练
+
+通过演练你可以更加详细地了解electron-prokit相关的功能。
 
 ```bash
 git clone https://github.com/Xutaotaotao/electron-prokit.git
@@ -53,3 +83,7 @@ pnpm i
 pnpm run dev
 
 ```
+
+## 寻求帮助
+
+如果你在开发过程中遇到 electron-prokit 的疑难问题，你可以去 [GitHub issue](https://github.com/Xutaotaotao/electron-prokit/issues?q=is%3Aissue) 查看是否有人已经遇到相同的问题。如果没有，欢迎[提交](https://github.com/Xutaotaotao/electron-prokit/issues/new) issue，另外你也可以在[GitHub Discussions](https://github.com/Xutaotaotao/electron-prokit/discussions) 社区来寻求帮助。

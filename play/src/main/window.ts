@@ -8,9 +8,6 @@ const main = () => {
     width: 960,
     height: 720,
     webPreferences: {
-      contextIsolation: true,
-      nodeIntegration: true,
-      webSecurity: false,
       preload: join(__dirname, "../preload/index.cjs"),
     },
   });
@@ -29,9 +26,6 @@ const main = () => {
   const workWindow = createWindow("work", {
     show: false,
     webPreferences: {
-      contextIsolation: true,
-      nodeIntegration: true,
-      webSecurity: false,
       preload: join(__dirname, "../work/index.cjs"),
     },
   });

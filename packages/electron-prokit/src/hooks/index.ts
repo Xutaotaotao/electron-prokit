@@ -1,5 +1,5 @@
 import type { LowSync } from "lowdb/lib";
-import { isMain, isPreload, isWork,  } from "../env";
+import { isMain, isPreload  } from "../env";
 
 
 export function useBrowserWindow(
@@ -20,14 +20,14 @@ export function useIpcMain(): Electron.IpcMain | undefined {
 }
 
 export function useIpcRenderer():  Electron.IpcRenderer | undefined {
-  if (isPreload || isWork) {
+  if (isPreload) {
     return require("electron").ipcRenderer;
   }
   return undefined; 
 }
 
 export function useContextBridge(): Electron.ContextBridge | undefined {
-  if (isPreload || isWork) {
+  if (isPreload) {
     return require("electron").contextBridge;
   }
   return undefined; 

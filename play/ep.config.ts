@@ -36,7 +36,7 @@ const config: Config = {
         formats: ["cjs"],
       },
       rollupOptions: {
-        external: ["electron", "koffi", ...builtinModules],
+        external: ["electron","lowdb","koffi",...builtinModules],
         output: {
           entryFileNames: "[name].cjs",
         },
@@ -58,7 +58,7 @@ const config: Config = {
         formats: ["cjs"],
       },
       rollupOptions: {
-        external: ["electron", ...builtinModules],
+        external: ["electron","lowdb",...builtinModules],
         output: {
           entryFileNames: "[name].cjs",
         },
@@ -78,7 +78,7 @@ const config: Config = {
       emptyOutDir: true,
       chunkSizeWarningLimit: 2048,
       rollupOptions: {
-        external: [...builtinModules, "electron"],
+        external: [...builtinModules, "electron","lowdb"],
       },
     },
     plugins: [react()],
@@ -97,7 +97,7 @@ const config: Config = {
         formats: ["cjs"],
       },
       rollupOptions: {
-        external: ["electron", ...builtinModules],
+        external: ["electron","lowdb", ...builtinModules],
         output: {
           entryFileNames: "[name].cjs",
         },

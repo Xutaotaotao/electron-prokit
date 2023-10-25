@@ -19,7 +19,7 @@ const zhThemeConfig: DefaultTheme.Config | undefined = {
             link: "/zh/guide/",
           },
           {
-            text: "开始",
+            text: "快速开始",
             link: "/zh/guide/start",
           },
         ],
