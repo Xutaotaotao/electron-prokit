@@ -24,7 +24,7 @@ electron-prokit旨在解决这些问题，让你拥有极致的桌面开发体�
 ![alt inner](/guide/inner.png)
 
 
-## 关于nodeIntegration和contentIsolation
+## 注意事项
 
 electron-prokit 严格按照[Electron最佳实践](https://www.electronjs.org/docs/latest/tutorial/security)，没有开启node集成(nodeIntegration)和关闭上下文隔离(contentIsolation)，框架内部的方法都是用contextBridge实现的。
 
