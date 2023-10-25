@@ -1,14 +1,32 @@
 #!/usr/bin/env node --experimental-specifier-resolution=node
-import * as tslib from "tslib";
+import path from "path";
+import { fileURLToPath } from "node:url";
 import type { QuestionCollection } from "inquirer";
 import inquirer from "inquirer";
 import ora from "ora";
 import fs from "fs-extra";
-import type { Options } from '../typings'
-import { downloadTemplate } from "./download";
+import type { Options } from "../typings";
 import { modifyPackageJson } from "./modify";
 
 const log = ora("modify");
+
+function copy(src: string, dest: string) {
+  const stat = fs.statSync(src);
+  if (stat.isDirectory()) {
+    copyDir(src, dest);
+  } else {
+    fs.copyFileSync(src, dest);
+  }
+}
+
+function copyDir(srcDir: string, destDir: string) {
+  fs.mkdirSync(destDir, { recursive: true });
+  for (const file of fs.readdirSync(srcDir)) {
+    const srcFile = path.resolve(srcDir, file);
+    const destFile = path.resolve(destDir, file);
+    copy(srcFile, destFile);
+  }
+}
 
 async function init(name: string) {
   const ReactTemplateGitUrl =
@@ -36,12 +54,12 @@ async function init(name: string) {
     message: "Select a framework",
     choices: [
       {
-        name: "React",
-        value: "React",
+        name: "react-ts",
+        value: "react-ts",
       },
       {
-        name: "Vue",
-        value: "Vue",
+        name: "vue-ts",
+        value: "vue-ts",
       },
     ],
   };
@@ -52,14 +70,17 @@ async function init(name: string) {
   log.info(`Start init create-electron-prokit project: ${name}`);
   const initOptions = await inquirer.prompt(InitPrompts);
   const frameworkOptions = await inquirer.prompt(FrameworkOptions);
-  const templateGitUrl =
-    frameworkOptions.framework === "React"
-      ? ReactTemplateGitUrl
-      : VueTemplateGitUrl;
+  const framework = frameworkOptions.framework;
+  const templateDir = path.resolve(
+    fileURLToPath(import.meta.url),
+    "../..",
+    `template-${framework}`
+  );
+
   try {
-    const downloadPath = `./${name}`;
-    await downloadTemplate(templateGitUrl, downloadPath);
-    modifyPackageJson(downloadPath, { name, ...initOptions } as Options);
+    const targetPath = `./${name}`;
+    copy(templateDir, targetPath);
+    modifyPackageJson(targetPath, { name, ...initOptions } as Options);
   } catch (error) {
     console.error(error);
   }
