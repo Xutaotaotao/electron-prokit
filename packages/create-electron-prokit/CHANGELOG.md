@@ -1,5 +1,11 @@
 # create-electron-prokit
 
+## 1.0.3
+
+### Patch Changes
+
+- 551985d: fix: gitclone error,change inner templateDir.
+
 ## 1.0.2
 
 ### Patch Changes
