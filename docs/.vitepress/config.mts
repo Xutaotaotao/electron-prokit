@@ -15,8 +15,12 @@ const zhThemeConfig: DefaultTheme.Config | undefined = {
         text: "指引",
         items: [
           {
-            text: "开始",
+            text: "简介",
             link: "/zh/guide/",
+          },
+          {
+            text: "开始",
+            link: "/zh/guide/start",
           },
         ],
       },
