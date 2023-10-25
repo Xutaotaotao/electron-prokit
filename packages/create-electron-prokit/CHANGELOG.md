@@ -1,5 +1,11 @@
 # create-electron-prokit
 
+## 1.0.4
+
+### Patch Changes
+
+- 1bd2d65: fix: template home edit info
+
 ## 1.0.3
 
 ### Patch Changes
