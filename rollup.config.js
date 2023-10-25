@@ -68,7 +68,6 @@ function getCliBuildConfig(name, inputPath = "src/index.ts") {
       'inquirer',
       'ora',
       'fs-extra',
-      'git-clone/promise',
       'handlebars'
     ],
     plugins: [
