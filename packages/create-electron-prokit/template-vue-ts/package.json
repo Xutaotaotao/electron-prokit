@@ -1,0 +1,30 @@
+{
+  "name": "{{name}}",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/main/index.cjs",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
+  "scripts": {
+    "dev": "node --experimental-specifier-resolution=node --loader ts-node/esm ./scripts/dev.ts",
+    "build": "node --experimental-specifier-resolution=node --loader ts-node/esm ./scripts/build.ts",
+    "compile": "electron-builder build --config ./electron-builder.config.ts",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "koffi": "2.3.20",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@electron-prokit/create-service": "^3.0.0",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "electron": "^26.2.0",
+    "electron-builder": "^24.6.4",
+    "electron-prokit": "^16.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vue-tsc": "^1.8.5"
+  }
+}
