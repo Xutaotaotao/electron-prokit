@@ -3,7 +3,7 @@ import {
   createWindow,
 } from "electron-prokit";
 
-const main = () => {
+const initMainWin = () => {
   const mainWindow = createWindow("main", {
     width: 960,
     height: 720,
@@ -22,21 +22,26 @@ const main = () => {
       mainWindow.loadFile(resolve(__dirname, "../render/index.html"));
     }
   }
+}
 
+const initWorkWin = () => {
   const workWindow = createWindow("work", {
     show: false,
     webPreferences: {
-      preload: join(__dirname, "../work/index.cjs"),
+      preload: join(__dirname, "../preload/index.cjs"),
     },
   });
-
   workWindow.hide();
 
   if (import.meta.env.MODE === "dev") {
     workWindow.webContents.openDevTools();
   }
-
   workWindow.loadFile(resolve(__dirname, "../work/index.html"));
+}
+
+const main = () => {
+  initMainWin()
+  initWorkWin()
 };
 
 export default main

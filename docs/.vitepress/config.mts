@@ -119,8 +119,12 @@ const themeConfig: DefaultTheme.Config | undefined = {
         text: "Guide",
         items: [
           {
-            text: "Start",
+            text: "Introduction",
             link: "/guide/",
+          },
+          {
+            text: "Start",
+            link: "/guide/start",
           },
         ],
       },

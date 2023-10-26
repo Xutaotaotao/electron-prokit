@@ -52,19 +52,19 @@ yarn create electron-prokit myapp
 ```ts
 // ep.config.ts
 export default {
-  main: {
+  main: { // 主进程
     // vite config options
   },
-  preload: {
+  preload: { // 脚本
     // vite config options
   },
-  renderer: {
+  renderer: { // 渲染进程
     // vite config options
   },
-  work: {
+  work: { // work进程 / 可选 / 是一个隐藏窗口的进程 / 可以做一些任务
     // vite config options
   },
-  electronPath: '' // electron路径/可选
+  electronPath: '' // electron路径
 }
 ```
 

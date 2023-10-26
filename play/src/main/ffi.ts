@@ -2,9 +2,6 @@ import path from "path";
 import { createEpffi } from "electron-prokit";
 import { getResourcesPath } from "../util";
 
-
-
-
 export const {sum} = createEpffi({
   path: path.join(__dirname,getResourcesPath('resources/dll/sum.dylib')),
   function:{
