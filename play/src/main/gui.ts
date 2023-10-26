@@ -43,7 +43,7 @@ const initTray = () => {
   } else {
     try {
       const iconPath = nativeImage.createFromPath(
-        join(__dirname, getResourcesPath("resources/icon/icon.ico"))
+        join(__dirname, getResourcesPath("resources/icon/icon.png"))
       );
       tray = new Tray(iconPath);
       tray.setContextMenu(menu);
