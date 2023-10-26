@@ -27,32 +27,17 @@ const initMenu = () => {
 };
 
 const initTray = () => {
-  if (process.platform === "darwin") {
-    try {
-      const iconPath = nativeImage.createFromPath(
-        join(__dirname, getResourcesPath("resources/icon/icon.png"))
-      );
-      tray = new Tray(iconPath);
-      tray.setContextMenu(menu);
-      tray.on("click", () => {
-        showWindow();
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  } else {
-    try {
-      const iconPath = nativeImage.createFromPath(
-        join(__dirname, getResourcesPath("resources/icon/icon.png"))
-      );
-      tray = new Tray(iconPath);
-      tray.setContextMenu(menu);
-      tray.on("click", () => {
-        showWindow();
-      });
-    } catch (err) {
-      console.error(err);
-    }
+  try {
+    const iconPath = nativeImage.createFromPath(
+      join(__dirname, getResourcesPath("resources/icon/icon.png"))
+    );
+    tray = new Tray(iconPath);
+    tray.setContextMenu(menu);
+    tray.on("click", () => {
+      showWindow();
+    });
+  } catch (err) {
+    console.error(err);
   }
 };
 
