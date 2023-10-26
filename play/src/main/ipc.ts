@@ -1,6 +1,6 @@
 import {nativeTheme} from 'electron'
 import { initIpc,onMsgFromRender } from "electron-prokit";
-import { div, mul,sum } from "./ffi";
+import { divide, mul,sum } from "./ffi";
 import { testGetHttp } from "./http";
 
 const main = ():void => {
@@ -17,7 +17,7 @@ const main = ():void => {
       return mul(100, 22);
     }
     if (args.key === 'nativeDiv') {
-      return div(100, 2);
+      return divide(100, 2);
     }
     if (args.key === 'changeTheme') {
       nativeTheme.themeSource = args.data

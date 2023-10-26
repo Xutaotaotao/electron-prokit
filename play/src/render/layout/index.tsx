@@ -143,7 +143,6 @@ const Root: React.FC = () => {
   }
 
   useEffect(() => {
-    console.log(pathname)
     if (!componentList.current.has(pathname)) {
       componentList.current.set(pathname, outLet);
       forceUpdate();

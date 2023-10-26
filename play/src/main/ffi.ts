@@ -2,11 +2,8 @@ import path from "path";
 import { createEpffi } from "electron-prokit";
 import { getResourcesPath } from "../util";
 
-
-
-
 export const {sum} = createEpffi({
-  path: path.join(__dirname,getResourcesPath('resources/dll/sum.dylib')),
+  path: path.join(__dirname,process.platform === 'win32' ? getResourcesPath('resources/dll/sum.dll') : getResourcesPath('resources/dll/sum.dylib')),
   function:{
     functionName:'sum',
     returnType:'int',
@@ -14,8 +11,8 @@ export const {sum} = createEpffi({
   }
 })
 
-export const { mul,div } = createEpffi({
-  path: path.join(__dirname, getResourcesPath("resources/dll/mul_and_div.dylib")),
+export const { mul,divide } = createEpffi({
+  path: path.join(__dirname,process.platform === 'win32' ? getResourcesPath("resources/dll/mul_and_div.dll") : getResourcesPath("resources/dll/mul_and_div.dylib")),
   function: [
     {
       functionName: "mul",
@@ -23,7 +20,7 @@ export const { mul,div } = createEpffi({
       inputs: ["int", "int"],
     },
     {
-      functionName: "div",
+      functionName: "divide",
       returnType: "int",
       inputs: ["int", "int"],
     },
