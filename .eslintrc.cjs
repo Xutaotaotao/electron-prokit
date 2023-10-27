@@ -1,6 +1,5 @@
 // @ts-check
 const { defineConfig } = require('eslint-define-config')
-const pkg = require('./package.json')
 
 module.exports = defineConfig({
   root: true,
@@ -77,7 +76,7 @@ module.exports = defineConfig({
     'no-extra-semi': 'off',
     '@typescript-eslint/no-extra-semi': 'off', // conflicts with prettier
     '@typescript-eslint/no-inferrable-types': 'off',
-    '@typescript-eslint/no-unused-vars': 'off', // maybe we should turn this on in a new PR
+    // '@typescript-eslint/no-unused-vars': 'off', // maybe we should turn this on in a new PR
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/consistent-type-imports': [
       'error',
@@ -107,7 +106,8 @@ module.exports = defineConfig({
     ],
 
     'regexp/no-contradiction-with-assertion': 'error',
-    'n/shebang': 'off'
+    'n/shebang': 'off',
+    'n/no-unpublished-bin': 'off',
   },
   reportUnusedDisableDirectives: true,
  

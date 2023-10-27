@@ -29,11 +29,6 @@ function copyDir(srcDir: string, destDir: string) {
 }
 
 async function init(name: string) {
-  const ReactTemplateGitUrl =
-    "https://github.com/Xutaotaotao/ep-vite-react-electron-template";
-
-  const VueTemplateGitUrl =
-    "https://github.com/Xutaotaotao/ep-vite-vue3-electron-template";
 
   const InitPrompts: QuestionCollection = [
     {

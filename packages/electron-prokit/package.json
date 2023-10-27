@@ -14,8 +14,12 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "bin": {
+    "ep": "bin/ep.js"
+  },
   "files": [
-    "dist"
+    "dist",
+    "bin"
   ],
   "keywords": [
     "Electron",
