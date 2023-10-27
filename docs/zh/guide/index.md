@@ -1,55 +1,31 @@
-# 开始
+# 简介
 
-## 总览
-
-Electron-Prokit是一个Electron应用开发框架，其中涵盖了Electron应用开发的全流程，适用于Vite相关生态。
-
-::: tip 项目初始化
-提供配置化的项目模板、Vue + React框架选择和代码规范预设。
+::: tip 提示
+本指南假设你熟悉 [Electron](https://www.electronjs.org/) 和 [Vite](https://vitejs.dev/)，熟悉之后阅读本指南更加容易理解框架的设计思想。
 :::
 
-::: tip 开发
-调试、热更新等解决方案，大量API及工具供你选择。
-:::
+## 解决什么样的问题
 
-::: tip 构建打包
-提供配置文件，一键打包多个平台的应用。
-:::
+Electron开发在社区中有很多的解决方案，比较了一些方案，大概有这些共同的问题：
 
-不管是开发初学者还是经验丰富的开发者,都可以利用Prokit提升生产力,快速交付高质量的Electron应用。
+- 繁琐的搭建Electron项目的步骤
+- 无法自主选择前端框架
+- 各个进程本地开发代码热更新问题
+- 构建打包一体化配置问题
+- 渲染进程调用无法抹平差异问题
+- 缺少成套的企业级解决方案
 
-## 搭建第一个Electron-Prokit项目
+electron-prokit旨在解决这些问题，让你拥有极致的桌面开发体验。
 
-::: warning  兼容性注意
-Electron-Prokit 需要 Node.js 版本 14.18+，16+。然而，有些模板需要依赖更高的 Node 版本才能正常运行，当你的包管理器发出警告时，请注意升级你的 Node 版本。
-:::
+## 核心理念
 
-直接使用脚手架快捷创建项目，脚手架结合了electron-prokit相关生态，推荐使用此方式。
+因为Vite 有能力同时处理 Chromium 和 Node.js这两种环境的程序的能力，所以就单独写了 [@electron-prokit/create-service](https://www.npmjs.com/package/@electron-prokit/create-service) 这个插件去读取各个进程的vite配置，然后去创建各个服务，最后再融合到一起，这样不管是哪个进程的变动都可以进行热更新处理，达到跟开发传统Web开发一样的感觉，这也大大得提高了开发效率和调试效率。
 
-使用 NPM:
-
-```bash
-npm create electron-prokit myapp
-```
-
-使用 Yarn:
-
-```bash
-yarn create electron-prokit myapp
-```
-
-其中`myapp`为你的项目名,然后按照提示操作即可！
+![alt inner](/guide/inner.png)
 
 
-## 演练
+## 注意事项
 
-```bash
-git clone https://github.com/Xutaotaotao/electron-prokit.git
+electron-prokit 严格按照[Electron最佳实践](https://www.electronjs.org/docs/latest/tutorial/security)，没有开启node集成(nodeIntegration)和关闭上下文隔离(contentIsolation)，框架内部的方法都是用contextBridge实现的。
 
-cd electron-prokit
 
-pnpm i 
-
-pnpm run dev
-
-```

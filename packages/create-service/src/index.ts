@@ -149,7 +149,7 @@ const mainDev = {
 interface CreateViteElectronServiceOptions {
   render: UserConfig;
   preload: UserConfig;
-  work: UserConfig;
+  work?: UserConfig;
   main: UserConfig;
   electronPath: any;
   sharedOptions?: {
@@ -178,7 +178,9 @@ const createViteElectronService = async (options: CreateViteElectronServiceOptio
   try {
     const renderDevServer = await renderDev.createRenderServer({ config: render, sharedOptions });
     await preloadDev.createRenderServer(renderDevServer, { config: preload, sharedOptions });
-    await workDev.createRenderServer(renderDevServer, { config: work, sharedOptions });
+    if (work) {
+      await workDev.createRenderServer(renderDevServer, { config: work, sharedOptions });
+    }
     await mainDev.createMainServer(renderDevServer, { config: main, sharedOptions }, electronPath);
   } catch (err) {
     console.error(err);

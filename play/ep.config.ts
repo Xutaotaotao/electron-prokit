@@ -18,8 +18,8 @@ interface Config {
   main: UserConfig;
   preload: UserConfig;
   render: UserConfig;
-  work: UserConfig;
-  electronPath: any;
+  work?: UserConfig;
+  electronPath?: any;
 }
 
 const config: Config = {
@@ -36,7 +36,7 @@ const config: Config = {
         formats: ["cjs"],
       },
       rollupOptions: {
-        external: ["electron", "koffi", ...builtinModules],
+        external: ["electron","lowdb","koffi",...builtinModules],
         output: {
           entryFileNames: "[name].cjs",
         },
@@ -58,7 +58,7 @@ const config: Config = {
         formats: ["cjs"],
       },
       rollupOptions: {
-        external: ["electron", ...builtinModules],
+        external: ["electron","lowdb",...builtinModules],
         output: {
           entryFileNames: "[name].cjs",
         },
@@ -68,7 +68,7 @@ const config: Config = {
     },
   },
   render: {
-    base: "./",
+    root: path.resolve(__dirname, "src/render"),
     resolve: sharedResolve,
     build: {
       watch: {},
@@ -78,33 +78,27 @@ const config: Config = {
       emptyOutDir: true,
       chunkSizeWarningLimit: 2048,
       rollupOptions: {
-        external: [...builtinModules, "electron"],
+        external: [...builtinModules, "electron","lowdb"],
       },
     },
     plugins: [react()],
   },
   work: {
     root: path.resolve(__dirname, "src/work"),
-    envDir: cwd(),
+    base: './',
     resolve: sharedResolve,
     build: {
       watch: {},
       outDir: path.resolve(__dirname, "dist/work"),
-      assetsDir: ".",
-      minify: false,
-      lib: {
-        entry: path.resolve(__dirname, "src/work/index.ts"),
-        formats: ["cjs"],
-      },
-      rollupOptions: {
-        external: ["electron", ...builtinModules],
-        output: {
-          entryFileNames: "[name].cjs",
-        },
-      },
+      minify: true,
+      assetsInlineLimit: 1048576,
       emptyOutDir: true,
       chunkSizeWarningLimit: 2048,
+      rollupOptions: {
+        external: [...builtinModules, "electron","lowdb"],
+      },
     },
+    plugins: [react()],
   },
   electronPath,
 };
