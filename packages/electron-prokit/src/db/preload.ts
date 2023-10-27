@@ -3,15 +3,15 @@ import type { ClearDbFunc, InitDbFunc, ReadDbFunc, WriteDbFunc } from "./type";
 
 const ipcRenderer = useIpcRenderer();
 
-export const initDb:InitDbFunc = (file) => {
-  return ipcRenderer.invoke("EPinitDb", {
+export const initDb:InitDbFunc = (file?:string) => {
+  return ipcRenderer?.invoke("EPinitDb", {
     fun:'initDb',
     file
   });
 }
 
 export const writeDb:WriteDbFunc = (key, data) => {
-  return ipcRenderer.invoke("EPinitDb", {
+  return ipcRenderer?.invoke("EPinitDb", {
     fun:'writeDb',
     key,
     data
@@ -19,7 +19,7 @@ export const writeDb:WriteDbFunc = (key, data) => {
 }
 
 export const readDb:ReadDbFunc = (key) => {
-  return ipcRenderer.invoke("EPinitDb", {
+  return ipcRenderer?.invoke("EPinitDb", {
     fun:'readDb',
     key,
   });
@@ -27,7 +27,7 @@ export const readDb:ReadDbFunc = (key) => {
 
 
 export const clearDb:ClearDbFunc = () => {
-  return ipcRenderer.invoke("EPinitDb", {
+  return ipcRenderer?.invoke("EPinitDb", {
     fun:'clearDb',
   });
 }

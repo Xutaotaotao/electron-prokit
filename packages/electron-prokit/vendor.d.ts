@@ -5,7 +5,7 @@ interface WindowElectronProkit {
   renderMsgToRender(windowName:string,msg:any):void;
   onRenderMsgToRender(callBack): void;
   
-  initDb(file:string):Promise<boolean>;
+  initDb(file?:string):Promise<boolean>;
   writeDb(key: string, data: any):Promise<void>;
   readDb(key: string):Promise<any>;
   clearDb():void;
