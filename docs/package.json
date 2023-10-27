@@ -1,4 +1,4 @@
-{  
+{
   "name": "docs",
   "private": true,
   "version": "0.0.0",
@@ -9,6 +9,8 @@
     "preview": "vitepress preview"
   },
   "devDependencies": {
+    "@algolia/client-search": "^4.20.0",
+    "search-insights": "^2.9.0",
     "vitepress": "1.0.0-rc.7"
   }
 }
