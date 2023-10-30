@@ -17,7 +17,7 @@ const main = ():void => {
       return mul(100, 22);
     }
     if (args.key === 'nativeDiv') {
-      return divide(100, 2);
+      return divide(100, 5);
     }
     if (args.key === 'changeTheme') {
       nativeTheme.themeSource = args.data

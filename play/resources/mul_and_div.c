@@ -15,5 +15,5 @@ EXPORT double divide(int a, int b) {
     // 避免除以零的情况
     return 0.0;
   }
-  return (double)a / b;
+  return a / b;
 }
