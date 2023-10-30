@@ -96,6 +96,10 @@ pnpm run dev
 
 
 
-## 👥 Stargazers
+## 👥 支持者
 
-[![Stargazers repo roster for electron-prokit](https://reporoster.com/stars/Xutaotaotao/electron-prokit)](https://github.com/Xutaotaotao/electron-prokit/stargazers)
+[![Stargazers repo roster for electron-prokit](https://bytecrank.com/nastyox/reporoster/php/stargazersSVG.php?user=Xutaotaotao&repo=electron-prokit)](https://github.com/Xutaotaotao/electron-prokit/stargazers)
+
+[![Forkers repo roster for @Xutaotaotao/electron-prokit](https://bytecrank.com/nastyox/reporoster/php/forkersSVG.php?user=Xutaotaotao&repo=electron-prokit)](https://github.com/Xutaotaotao/electron-prokit/network/members)
+
+
