@@ -28,7 +28,6 @@ const Root: React.FC = () => {
 
 
   const menuOnSelect: MenuProps["onSelect"] = (a) => {
-    console.log(a.key)
     setCurrentMenuKey(a.key);
   };
 
