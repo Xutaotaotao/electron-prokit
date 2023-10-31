@@ -1,7 +1,9 @@
+import type {Logger} from "electron-updater"
 import { useUpdater } from "../hooks";
 
 let autoUpdater = null
 interface UpadateOptions {
+  log?:boolean | Logger
   forceDevUpdateConfig?: boolean;
   autoDownload?: boolean;
   updateUrl: string;
@@ -21,18 +23,20 @@ const logger = {
 };
 
 export const initUpadate = (options: UpadateOptions) => {
+  if (autoUpdater) {
+    autoUpdater.removeAllListeners();
+    autoUpdater = null;
+  }
   autoUpdater = useUpdater()
-  autoUpdater.logger = logger;
+  autoUpdater.logger = options.log && typeof options.log === 'boolean' ? logger : options.log;
   autoUpdater.forceDevUpdateConfig = options.forceDevUpdateConfig;
   autoUpdater.autoDownload = options.autoDownload;
-  console.log(options.updateUrl)
   autoUpdater.setFeedURL(options.updateUrl);
   autoUpdater.checkForUpdates();
   autoUpdater.checkForUpdatesAndNotify();
 
   autoUpdater.on("error", function (error: Error) {
     printUpdaterMessage("error");
-    console.log(error);
   });
 
   autoUpdater.on("checking-for-update", function () {
