@@ -50,7 +50,6 @@ const Home = () => {
     <div style={{ width: "100%", height: "100%" }}>
       <Card style={{ width: "100%", height: "100%",overflow:'auto' }}>
         <Title style={{ marginTop: 0 }} level={3}>
-          {" "}
           👋 {t("Hello")}Prokit
         </Title>
         <Row gutter={6}>

@@ -16,6 +16,7 @@ const Ipc = () => {
 
   useEffect(() => {
     onMsgFromMain((_event: unknown, args: string) => {
+      console.log(args)
       setMsgFromMain(args);
     });
   }, []);

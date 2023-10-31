@@ -1,7 +1,16 @@
 import {nativeTheme} from 'electron'
-import { initIpc,onMsgFromRender } from "electron-prokit";
+import { initIpc,initUpadate,onMsgFromRender, sendMsgToRender } from "electron-prokit";
 import { divide, mul,sum } from "./ffi";
 import { testGetHttp } from "./http";
+
+const option = {
+  forceDevUpdateConfig:true,
+  autoDownload:true,
+  updateUrl: 'http://172.17.194.13:8090',
+  updateDownloadedCallBack: () => {
+    return sendMsgToRender('main','updateDownloaded')
+  }
+}
 
 const main = ():void => {
   initIpc();
@@ -21,6 +30,10 @@ const main = ():void => {
     }
     if (args.key === 'changeTheme') {
       nativeTheme.themeSource = args.data
+    }
+    if (args.key === 'update') {
+      console.log('update')
+      initUpadate(option)
     }
     return `Main have get data is ${args}`;
   });

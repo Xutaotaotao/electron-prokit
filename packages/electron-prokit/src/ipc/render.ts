@@ -10,6 +10,10 @@ export const onMsgFromMain = (callback:Callback):void => {
   return window.electronProkit.onMsgFromMain(callback)
 }
 
+export const offMsgFromMain = (callback:Callback):void => {
+  return window.electronProkit.offMsgFromMain(callback)
+}
+
 export const renderMsgToRender = (windowName:string,msg:any):void => {
   window.electronProkit.renderMsgToRender(windowName,msg)
 }

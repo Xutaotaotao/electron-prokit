@@ -10,9 +10,13 @@ const renderMsgToMain = <T, U>(msg: T): Promise<U> => {
 };
 
 const onMsgFromMain = (callback: Callback): void => {
-  ipcRenderer.on("EPmainMsgToRender", (event: IpcRendererEvent, args: any) => {
+   ipcRenderer.on("EPmainMsgToRender", (event: IpcRendererEvent, args: any) => {
     callback(event, args);
   });
+};
+
+const offMsgFromMain = (callback: Callback): void => {
+  ipcRenderer.removeListener("EPmainMsgToRender", callback);
 };
 
 const renderMsgToRender = (windowName: string, msg: any): void => {
@@ -34,6 +38,7 @@ const onRenderMsgToRender = (callback: Callback): void => {
 export {
   renderMsgToMain,
   onMsgFromMain,
+  offMsgFromMain,
   renderMsgToRender,
   onRenderMsgToRender,
 };

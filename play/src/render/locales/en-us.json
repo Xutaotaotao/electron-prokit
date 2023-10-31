@@ -33,5 +33,8 @@
   "Start": "Start",
   "Stop": "Stop",
   "Read db data": "Read db data",
-  "Write data to db": "Write data to db"
+  "Write data to db": "Write data to db",
+  "update": "Update",
+  "Current version": "Current version",
+  "Check for updates": "Check for updates"
 }

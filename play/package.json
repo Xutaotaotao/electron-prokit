@@ -1,6 +1,7 @@
 {
   "name": "play",
   "private": true,
+  "author": "xutaotaotao",
   "description": "A playground with electron-prokit",
   "version": "1.0.0",
   "type": "module",
@@ -12,6 +13,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
+    "electron-updater": "^6.1.4",
     "koffi": "2.3.20",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

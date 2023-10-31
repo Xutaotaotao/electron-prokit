@@ -1,4 +1,5 @@
 import type { LowSync } from "lowdb/lib";
+import type { AppUpdater } from "electron-updater";
 import { isMain, isPreload  } from "../env";
 
 
@@ -57,4 +58,10 @@ export async function useLowdb (file:string):Promise<LowSync<unknown>> {
     return lowdb
   }
   return Promise.resolve(undefined as unknown as LowSync<unknown>)
+}
+
+export function useUpdater ():AppUpdater {
+  if (isMain) {
+    return require("electron-updater").autoUpdater
+  }
 }

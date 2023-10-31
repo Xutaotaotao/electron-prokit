@@ -9,7 +9,8 @@ import Http from "../pages/http";
 import Ffi from "../pages/ffi";
 import Schedule from "../pages/schedule";
 import Db from "../pages/db";
-
+import Update from "../pages/update";
+ 
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "db",
         element: <Db />,
+      },
+      {
+        path: "update",
+        element: <Update />,
       },
     ],
   },

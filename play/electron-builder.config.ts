@@ -4,7 +4,7 @@ const config: Configuration = {
   productName: "ElectronProkit", // 应用程序名称
   appId: "electron.prokit.com", // 应用程序唯一标识
   copyright: "Copyright © 2023",
-  asar: false, // 是否将应用程序打包为asar文件
+  asar: true, // 是否将应用程序打包为asar文件
   files: ["dist/**", "package.json"], // 将要打包的文件或目录
   directories: {
     output: "release", // 打包输出目录
@@ -65,6 +65,10 @@ const config: Configuration = {
     artifactName: "ElectronProkit@${version}.${ext}", // 生成安装文件时的文件名
     include: "./build/install/installer.nsh", //包含其他脚本文件的路径
   },
+  publish: {
+    provider: 'generic',
+    url: "http://172.17.194.13:8090/"
+  }
 };
 
 export default config;
