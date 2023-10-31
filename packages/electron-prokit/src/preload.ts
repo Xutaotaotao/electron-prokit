@@ -28,6 +28,8 @@ export function initExposeInMainWorld(): void {
     clearDb,
     initDb,
     readDb,
-    writeDb
+    writeDb,
+
+
   });
 }

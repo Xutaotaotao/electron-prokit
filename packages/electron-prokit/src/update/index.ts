@@ -1,7 +1,6 @@
 import { useUpdater } from "../hooks";
 
-let autoUpdater = null;
-
+let autoUpdater = null
 interface UpadateOptions {
   forceDevUpdateConfig?: boolean;
   autoDownload?: boolean;
@@ -22,9 +21,6 @@ const logger = {
 };
 
 export const initUpadate = (options: UpadateOptions) => {
-  if (autoUpdater) {
-    autoUpdater = null
-  }
   autoUpdater = useUpdater()
   autoUpdater.logger = logger;
   autoUpdater.forceDevUpdateConfig = options.forceDevUpdateConfig;
@@ -59,13 +55,12 @@ export const initUpadate = (options: UpadateOptions) => {
   });
 
   autoUpdater.on("update-downloaded", function (info) {
-    console.time()
-    console.log(11111)
     printUpdaterMessage("update-downloaded");
     options.updateDownloadedCallBack();
     logger.info(info);
   });
-  return autoUpdater;
+
+  return autoUpdater
 };
 
 function printUpdaterMessage(key: string) {

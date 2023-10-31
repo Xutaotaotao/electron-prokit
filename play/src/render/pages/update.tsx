@@ -1,6 +1,7 @@
 import { Button,Card, Modal, Space,Typography } from 'antd'
+import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { useTranslation } from "react-i18next";
-import { offMsgFromMain, onMsgFromMain, sendMsgToMain } from "electron-prokit";
+import { onMsgFromMain, sendMsgToMain } from "electron-prokit";
 import { useEffect } from 'react';
 const { Title } = Typography;
 
@@ -8,25 +9,27 @@ const { Title } = Typography;
 const Update = () => {
 
   const { t } = useTranslation();
+  const [modal, contextHolder] = Modal.useModal();
 
   useEffect(() => {
-    const handleMsg = (_event: unknown, args: string) => {
+    onMsgFromMain((_event: unknown, args: string) => {
       if (args === 'updateDownloaded') {
-        Modal.info({
-          'title': '更新提示',
-          'content': '新版本已经下载完成，去更新吧'
-        })
+        modal.confirm({
+          title: t('Hint'),
+          icon: <ExclamationCircleOutlined />,
+          content: t('The latest version has been downloaded. Do you want to update it'),
+          okText: t('Confirm'),
+          cancelText: t('Cancel'),
+          onOk: () => {
+            sendMsgToMain({key:'intsallUpdateApp'})
+          }
+        });
       }
-    };
-  
-    onMsgFromMain(handleMsg);
-    
-    return () => {
-      offMsgFromMain(handleMsg);
-    };
-  }, []);
+    })
+  },[])
 
-  return <Space direction="vertical" style={{width:'100%'}}>
+  return <>
+    <Space direction="vertical" style={{width:'100%'}}>
     <Card title={t('Current version')} bordered={false}>
       <Title style={{ marginTop: 0 }} level={3}>
           1.0.0
@@ -39,6 +42,8 @@ const Update = () => {
       }}>{t('Start')}</Button>
     </Card>
   </Space>
+   {contextHolder}
+  </> 
 }
 
 export default Update

@@ -36,5 +36,9 @@
   "Write data to db": "写入数据到数据库",
   "update": "更新",
   "Current version": "当前版本",
-  "Check for updates": "检测更新"
+  "Check for updates": "检测更新",
+  "Hint": "提示",
+  "Confirm": "确认",
+  "Cancel": "取消",
+  "The latest version has been downloaded. Do you want to update it":"已下载最新版本，是否更新？"
 }

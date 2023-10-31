@@ -1,5 +1,5 @@
 import {nativeTheme} from 'electron'
-import { initIpc,initUpadate,onMsgFromRender, sendMsgToRender } from "electron-prokit";
+import { initIpc,initUpadate,intsallUpdateApp,onMsgFromRender, sendMsgToRender } from "electron-prokit";
 import { divide, mul,sum } from "./ffi";
 import { testGetHttp } from "./http";
 
@@ -34,6 +34,9 @@ const main = ():void => {
     if (args.key === 'update') {
       console.log('update')
       initUpadate(option)
+    }
+    if (args.key === 'sendMsgToMain') {
+      intsallUpdateApp()
     }
     return `Main have get data is ${args}`;
   });
