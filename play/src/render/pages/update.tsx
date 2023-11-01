@@ -2,7 +2,7 @@ import { Button,Card, Modal, Space,Typography } from 'antd'
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { useTranslation } from "react-i18next";
 import { onMsgFromMain, sendMsgToMain } from "electron-prokit";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 const { Title } = Typography;
 
 
@@ -10,6 +10,7 @@ const Update = () => {
 
   const { t } = useTranslation();
   const [modal, contextHolder] = Modal.useModal();
+  const [currentVersion,setCurrentVersion] = useState<string>('');
 
   useEffect(() => {
     onMsgFromMain((_event: unknown, args: string) => {
@@ -26,13 +27,16 @@ const Update = () => {
         });
       }
     })
+    sendMsgToMain<Msg,string>({key:'getAppVersion'}).then((res) => {
+      setCurrentVersion(res)
+    })
   },[])
 
   return <>
     <Space direction="vertical" style={{width:'100%'}}>
     <Card title={t('Current version')} bordered={false}>
       <Title style={{ marginTop: 0 }} level={3}>
-          1.0.0
+          {currentVersion}
       </Title>
     </Card>
 

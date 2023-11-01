@@ -1,4 +1,4 @@
-import {nativeTheme} from 'electron'
+import {app,nativeTheme} from 'electron'
 import { initIpc,initUpadate,intsallUpdateApp,onMsgFromRender, sendMsgToRender } from "electron-prokit";
 import { divide, mul,sum } from "./ffi";
 import { testGetHttp } from "./http";
@@ -6,7 +6,7 @@ import { testGetHttp } from "./http";
 const option = {
   forceDevUpdateConfig:true,
   autoDownload:true,
-  updateUrl: 'http://172.17.194.13:8090',
+  updateUrl: 'http://172.17.194.13:8090', // can use live-server to mock the file server/https://www.npmjs.com/package/live-server
   updateDownloadedCallBack: () => {
     return sendMsgToRender('main','updateDownloaded')
   }
@@ -35,8 +35,11 @@ const main = ():void => {
       console.log('update')
       initUpadate(option)
     }
-    if (args.key === 'sendMsgToMain') {
+    if (args.key === 'intsallUpdateApp') {
       intsallUpdateApp()
+    }
+    if (args.key === 'getAppVersion') {
+      return app.getVersion()
     }
     return `Main have get data is ${args}`;
   });
