@@ -67,7 +67,7 @@ const config: Configuration = {
   },
   publish: {
     provider: 'generic',
-    url: "http://172.17.194.13:8090/"
+    url: "http://172.17.194.13:8090"
   }
 };
 
