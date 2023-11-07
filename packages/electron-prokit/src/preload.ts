@@ -1,9 +1,10 @@
 import { useContextBridge } from "./hooks";
 import {
+  offMsgFromMain,
   onMsgFromMain,
   onRenderMsgToRender,
   renderMsgToMain,
-  renderMsgToRender
+  renderMsgToRender,
 } from './ipc/preload'
 import {
   clearDb,
@@ -19,6 +20,7 @@ export function initExposeInMainWorld(): void {
     // communication
     renderMsgToMain,
     onMsgFromMain,
+    offMsgFromMain,
     renderMsgToRender,
     onRenderMsgToRender,
 
@@ -26,6 +28,8 @@ export function initExposeInMainWorld(): void {
     clearDb,
     initDb,
     readDb,
-    writeDb
+    writeDb,
+
+
   });
 }

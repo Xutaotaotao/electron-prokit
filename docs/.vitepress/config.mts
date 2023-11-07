@@ -57,6 +57,10 @@ const zhThemeConfig: DefaultTheme.Config | undefined = {
             text: "db 数据库管理",
             link: "/zh/api/electron-prokit/db",
           },
+          {
+            text: "update 更新管理",
+            link: "/zh/api/electron-prokit/update",
+          },
         ],
       },
     ],
@@ -160,6 +164,10 @@ const themeConfig: DefaultTheme.Config | undefined = {
           {
             text: "db",
             link: "/api/electron-prokit/db",
+          },
+          {
+            text: "update",
+            link: "/api/electron-prokit/update",
           },
         ],
       },

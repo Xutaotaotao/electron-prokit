@@ -1,4 +1,5 @@
 import { Button, Card, Space } from "antd";
+import { sendMsgToMain } from "electron-prokit";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -11,7 +12,7 @@ const Ffi = () => {
   const [msgFromFfiDiv, setMsgFromFfiDiv] = useState<number>();
 
   const renderMsgToMain = (msg: Msg) => {
-    window.electronProkit.renderMsgToMain<Msg, number>(msg).then((result) => {
+    sendMsgToMain<Msg, number>(msg).then((result) => {
       if (msg.key === "nativeSum") {
         setMsgFromFfiSum(result);
       }

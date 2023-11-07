@@ -18,7 +18,7 @@ interface Config {
   main: UserConfig;
   preload: UserConfig;
   render: UserConfig;
-  work?: UserConfig;
+  work: UserConfig;
   electronPath?: any;
 }
 
@@ -36,7 +36,7 @@ const config: Config = {
         formats: ["cjs"],
       },
       rollupOptions: {
-        external: ["electron","lowdb","koffi",...builtinModules],
+        external: ["electron","lowdb","koffi","electron-updater",...builtinModules],
         output: {
           entryFileNames: "[name].cjs",
         },

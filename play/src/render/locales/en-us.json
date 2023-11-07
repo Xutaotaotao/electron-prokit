@@ -33,5 +33,12 @@
   "Start": "Start",
   "Stop": "Stop",
   "Read db data": "Read db data",
-  "Write data to db": "Write data to db"
+  "Write data to db": "Write data to db",
+  "update": "Update",
+  "Current version": "Current version",
+  "Check for updates": "Check for updates",
+  "Hint": "Hint",
+  "Confirm": "Confirm",
+  "Cancel": "Cancel",
+  "The latest version has been downloaded. Do you want to update it":"The latest version has been downloaded. Do you want to update it?"
 }
