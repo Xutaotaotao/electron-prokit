@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 16.1.0
+
+### Minor Changes
+
+- ecc6ea5: feat: add update
+
 ## 16.0.3
 
 ### Patch Changes
