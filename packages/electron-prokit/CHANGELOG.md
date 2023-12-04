@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 16.1.2
+
+### Patch Changes
+
+- 70bffbb: fix:change types file import path
+
 ## 16.1.1
 
 ### Patch Changes
