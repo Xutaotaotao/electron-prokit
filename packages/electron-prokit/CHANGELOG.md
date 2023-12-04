@@ -1,5 +1,11 @@
 # electron-prokit
 
+## 16.1.1
+
+### Patch Changes
+
+- 6065321: fix:types
+
 ## 16.1.0
 
 ### Minor Changes
