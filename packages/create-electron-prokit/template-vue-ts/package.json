@@ -21,8 +21,8 @@
     "@vitejs/plugin-vue": "^4.2.3",
     "electron": "^26.2.0",
     "electron-builder": "^24.6.4",
-    "electron-prokit": "^16.1.2",
     "ts-node": "^10.9.1",
+    "electron-prokit": "^16.1.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vue-tsc": "^1.8.5"
