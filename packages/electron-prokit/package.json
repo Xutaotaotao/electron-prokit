@@ -6,12 +6,11 @@
   },
   "description": "A desktop app framework based on Electron,develop desktop applications like a pro!",
   "type": "module",
-  "types": "dist/src/index.d.ts",
   "main": "src/index.ts",
   "publishConfig": {
     "main": "dist/index.cjs.js",
     "module": "dist/index.esm.js",
-    "types": "dist/index.d.ts",
+    "types": "dist/src/index.d.ts",
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
