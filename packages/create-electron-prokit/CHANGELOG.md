@@ -1,5 +1,11 @@
 # create-electron-prokit
 
+## 1.0.5
+
+### Patch Changes
+
+- 131e15a: feat:update electron-prokit
+
 ## 1.0.4
 
 ### Patch Changes
