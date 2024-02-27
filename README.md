@@ -40,9 +40,9 @@ English | [简体中文](./README_ZH.md)
 
 |                          Package                           |                                 npm version                                  |                                  npm downloads                                  |
 | :--------------------------------------------------------: | :--------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: |
-|        [electron-prokit](packages/electron-prokit)         |         ![npm version](https://img.shields.io/npm/v/electron-prokit)         |         ![npm downloads](https://img.shields.io/npm/dm/electron-prokit)         |
-| [create-electron-prokit](packages/create-electron-prokit)  |     ![npm version](https://img.shields.io/npm/v/create-electron-prokit)      |     ![npm downloads](https://img.shields.io/npm/dm/create-electron-prokit)      |
-| [@electron-prokit/create-service](packages/create-service) | ![npm version](https://img.shields.io/npm/v/@electron-prokit/create-service) | ![npm downloads](https://img.shields.io/npm/dm/@electron-prokit/create-service) |
+|        [electron-prokit](packages/electron-prokit)         |         ![npm version](https://img.shields.io/npm/v/electron-prokit)         |         ![npm downloads](https://img.shields.io/npm/dt/electron-prokit)         |
+| [create-electron-prokit](packages/create-electron-prokit)  |     ![npm version](https://img.shields.io/npm/v/create-electron-prokit)      |     ![npm downloads](https://img.shields.io/npm/dt/create-electron-prokit)      |
+| [@electron-prokit/create-service](packages/create-service) | ![npm version](https://img.shields.io/npm/v/@electron-prokit/create-service) | ![npm downloads](https://img.shields.io/npm/dt/@electron-prokit/create-service) |
 
 ## 🔧 Using a Scaffold
 
