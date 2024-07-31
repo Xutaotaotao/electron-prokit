@@ -1,5 +1,11 @@
 # create-electron-prokit
 
+## 2.0.0
+
+### Major Changes
+
+- e6e10b7: fix: build action
+
 ## 1.0.5
 
 ### Patch Changes
