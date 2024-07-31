@@ -95,7 +95,7 @@ pnpm run dev
 
 ## 📱 联系作者
 
-微信扫码联系我：
+微信扫码联系我
 
 <img src="https://xutaotaotao.github.io/wx_qr.jpg" />
 

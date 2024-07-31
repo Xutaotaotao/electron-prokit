@@ -91,7 +91,7 @@ pnpm run dev
 
 ## 📱 Contact me
 
-Use WeChat to contact me:
+Use WeChat to contact me
 
 <img src="https://xutaotaotao.github.io/wx_qr.jpg" />
 
