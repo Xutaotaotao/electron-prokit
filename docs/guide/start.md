@@ -23,7 +23,7 @@ You can learn more about the design philosophy of this project in the [Introduct
 
 ## Building Your First electron-prokit Project
 ::: warning Compatibility Note
-electron-prokit requires Node.js version 14.18+, 16+. However, some templates may depend on higher Node versions to function properly. Please watch out for warnings from your package manager and upgrade Node when necessary.
+electron-prokit requires Node.js version 18+. However, some templates may depend on higher Node versions to function properly. Please watch out for warnings from your package manager and upgrade Node when necessary.
 :::
 
 Directly use the scaffolding to quickly create a project. The scaffolding integrates electron-prokit related ecosystems, so it is recommended to use this method.
