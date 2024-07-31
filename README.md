@@ -89,11 +89,11 @@ pnpm run dev
 
 <img src="https://github.com/Xutaotaotao/cloud_img/blob/master/ep-dark.png" alt="dark">
 
-## Contact me
+## 📱 Contact me
 
 Use WeChat to contact me:
 
-<img src="https://taotaoxu.com/wx_qr.jpg" />
+<img src="https://xutaotaotao.github.io/wx_qr.jpg" />
 
 ## 👥 Supporters
 
