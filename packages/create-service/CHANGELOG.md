@@ -1,5 +1,11 @@
 # @electron-prokit/create-service
 
+## 4.0.0
+
+### Major Changes
+
+- e6e10b7: fix: build action
+
 ## 3.0.1
 
 ### Patch Changes
