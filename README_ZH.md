@@ -93,6 +93,11 @@ pnpm run dev
 
 <img src="https://github.com/Xutaotaotao/cloud_img/blob/master/ep-dark.png" alt="dark">
 
+## 联系作者
+
+微信扫码联系我：
+
+<img src="https://taotaoxu.com/wx_qr.jpg" />
 
 
 

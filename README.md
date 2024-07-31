@@ -89,6 +89,12 @@ pnpm run dev
 
 <img src="https://github.com/Xutaotaotao/cloud_img/blob/master/ep-dark.png" alt="dark">
 
+## Contact me
+
+Use WeChat to contact me:
+
+<img src="https://taotaoxu.com/wx_qr.jpg" />
+
 ## 👥 Supporters
 
 [![Stargazers repo roster for electron-prokit](https://bytecrank.com/nastyox/reporoster/php/stargazersSVG.php?user=Xutaotaotao&repo=electron-prokit)](https://github.com/Xutaotaotao/electron-prokit/stargazers)
