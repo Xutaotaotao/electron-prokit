@@ -1,8 +1,7 @@
-import { defineConfig } from "vite";
 import path from "path";
-import react from "@vitejs/plugin-react-swc";
 import { builtinModules } from "module";
 import { fileURLToPath } from "url";
+import { defineConfig } from "vite";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
@@ -13,7 +12,7 @@ const sharedResolve = {
   },
 };
 
-export default defineConfig( {
+export default defineConfig({
   root: path.resolve(__dirname, "../src/work"),
   base: "./",
   resolve: sharedResolve,
@@ -26,16 +25,7 @@ export default defineConfig( {
     chunkSizeWarningLimit: 2048,
     rollupOptions: {
       external: [...builtinModules, "electron", "lowdb"],
-      onwarn(warning, warn) {
-        if (
-          warning.code === "MODULE_LEVEL_DIRECTIVE" &&
-          warning.message.includes(`"use client"`)
-        ) {
-          return;
-        }
-        warn(warning);
-      },
     },
   },
-  plugins: [react()],
 })
+

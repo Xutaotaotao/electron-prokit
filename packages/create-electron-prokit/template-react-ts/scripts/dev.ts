@@ -1,9 +1,14 @@
 import createViteElectronService from '@electron-prokit/create-service';
-import config from "../ep.config";
+import electronPath from "electron";
+import main from "../config/main";
+import render from "../config/render";
+import work from "../config/work";
+import preload from "../config/preload";
+
 createViteElectronService({
-  render: config.render,
-  preload: config.preload,
-  work: config.work,
-  main: config.main,
-  electronPath: config.electronPath
+  render: render,
+  preload: preload,
+  work: work,
+  main: main,
+  electronPath: electronPath
 });

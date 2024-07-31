@@ -44,37 +44,12 @@ Where myapp is your project name. Then follow the prompts to complete!
 
 ## Configuring electron-prokit
 
-Configure `ep.config.ts` in root directory
+Configure `config` in root directory
 
-```ts
-// ep.config.ts
-
-export default {
-
-  main: {
-    // Main process 
-    // vite config options
-  },
-
-  preload: { 
-    // Preload script
-    // vite config options
-  },
-
-  renderer: {
-    // Renderer process 
-    // vite config options
-  },
-
-  work: {
-    // Work process / Optional 
-    // A hidden window process / Can do some tasks
-    // vite config options
-  },
-
-  electronPath: '' // Path to electron
-}
-```
+- main.ts
+- preload.ts
+- render.ts
+- work.ts
 
 ## Playground
 

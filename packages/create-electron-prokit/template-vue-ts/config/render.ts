@@ -1,11 +1,10 @@
-import { defineConfig } from "vite";
 import path from "path";
-import react from "@vitejs/plugin-react-swc";
 import { builtinModules } from "module";
 import { fileURLToPath } from "url";
+import { defineConfig } from "vite";
+import vue from '@vitejs/plugin-vue'
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
-
 
 const sharedResolve = {
   alias: {
@@ -13,29 +12,23 @@ const sharedResolve = {
   },
 };
 
-export default defineConfig( {
-  root: path.resolve(__dirname, "../src/work"),
+export default defineConfig({
+  root: path.resolve(__dirname, "../"),
   base: "./",
   resolve: sharedResolve,
   build: {
     watch: {},
-    outDir: path.resolve(__dirname, "../dist/work"),
+    outDir: path.resolve(__dirname, "../dist/render"),
     minify: true,
     assetsInlineLimit: 1048576,
     emptyOutDir: true,
     chunkSizeWarningLimit: 2048,
     rollupOptions: {
       external: [...builtinModules, "electron", "lowdb"],
-      onwarn(warning, warn) {
-        if (
-          warning.code === "MODULE_LEVEL_DIRECTIVE" &&
-          warning.message.includes(`"use client"`)
-        ) {
-          return;
-        }
-        warn(warning);
-      },
+    },
+    commonjsOptions: {
+      include: [/node_modules/],
     },
   },
-  plugins: [react()],
-})
+  plugins: [vue()],
+});

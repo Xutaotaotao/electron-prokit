@@ -1,60 +1,78 @@
-#!/usr/bin/env node
-import { dirname } from "path";
-import { build } from "vite";
-import type { UserConfig } from "vite";
-import pkgJson from "../package.json" assert { type: "json" };
-import config from "../ep.config";
+#!/usr/bin/node
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+import { build } from 'vite';
+import pkgJson from '../package.json' assert { type: 'json' };
 
-interface PackageConfigs {
-  [key: string]: UserConfig;
-}
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const processArgv = process.argv.splice(2);
-const mode =
-  processArgv && processArgv.length > 0 ? processArgv[0] : "production";
+const mode = processArgv && processArgv.length > 0 ? processArgv[0] : 'production';
 
-const packagesConfigs: PackageConfigs = {
-  main: config.main,
-  preload: config.preload,
-  render: config.render,
-  work: config.work,
-};
+const packagesConfigs = [
+  resolve(__dirname, '../config/render'),
+  resolve(__dirname, '../config/work'),
+  resolve(__dirname, '../config/main'),
+  resolve(__dirname, '../config/preload'),
+];
 
-// set mode
-process.env.VITE_CURRENT_RUN_MODE = "render";
-
-// set version
+// Set environment variables
+process.env.VITE_CURRENT_RUN_MODE = 'render';
 process.env.VITE_CURRENT_VERSION = pkgJson.version;
-
-// set mode
 process.env.MODE = mode;
-
-// current platform
 process.env.VITE_CURRENT_OS = process.platform;
 
-const buildByConfig = (config: UserConfig) => build({ ...config, mode });
-
-(async () => {
+const buildByConfig = async (configFile:string) => {
   try {
-    const totalTimeLabel = "Total bundling time";
-    console.time(totalTimeLabel);
+    await build({ configFile, mode });
+  } catch (error) {
+    console.error(`Error building ${configFile}:`, error);
+    throw error;
+  }
+};
 
-    for (const config in packagesConfigs) {
-      process.env.VITE_CURRENT_RUN_MODE = config;
-      const consoleGroupName = `${dirname(config)}/`;
-      console.group(consoleGroupName);
-      console.log(`Bundling ${config}`)
-      const timeLabel = "Bundling time";
-      console.time(timeLabel);
-      await buildByConfig(packagesConfigs[config]);
-      console.timeEnd(timeLabel);
-      console.groupEnd();
-      console.log("\n"); // Just for pretty print
+const delay = (ms:number) => new Promise(resolve => setTimeout(resolve, ms));
+
+const main = async () => {
+  try {
+    console.time('Total bundling time');
+    for (const config of packagesConfigs) {
+      const modeMap:any = {
+        main: 'main',
+        render: 'render',
+        preload: 'preload',
+        work: 'work',
+      };
+      
+      for (const key in modeMap) {
+        if (config.includes(key)) {
+          process.env.VITE_CURRENT_RUN_MODE = modeMap[key];
+          break;
+        }
+      }
+
+      console.time(`Bundling ${config}`);
+      await buildByConfig(config);
+      console.timeEnd(`Bundling ${config}`);
     }
-    console.timeEnd(totalTimeLabel);
-    process.exit();
-  } catch (e) {
-    console.error(e);
+    console.timeEnd('Total bundling time');
+  } catch (error) {
+    console.error('Build failed:', error);
     process.exit(1);
   }
-})();
+  await delay(3000)
+  process.exit(0);
+};
+
+main();
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+  process.exit(1);
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception thrown:', err);
+  process.exit(1);
+});

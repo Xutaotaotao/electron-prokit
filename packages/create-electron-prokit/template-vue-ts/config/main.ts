@@ -2,8 +2,7 @@ import { cwd } from "process";
 import path from "path";
 import { builtinModules } from "module";
 import { fileURLToPath } from "url";
-import type { UserConfig } from "vite";
-
+import { defineConfig } from "vite";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
@@ -13,7 +12,7 @@ const sharedResolve = {
   },
 };
 
-const config:UserConfig = {
+export default defineConfig({
   root: path.resolve(__dirname, "../src/main"),
   envDir: cwd(),
   resolve: sharedResolve,
@@ -39,6 +38,5 @@ const config:UserConfig = {
     emptyOutDir: true,
     chunkSizeWarningLimit: 2048,
   },
-};
+})
 
-export default config;

@@ -1,7 +1,7 @@
 import { spawn } from 'child_process';
 import type { ChildProcess } from 'child_process';
 import { build, createServer } from 'vite';
-import type { UserConfig, ViteDevServer } from 'vite';
+import type { ViteDevServer } from 'vite';
 
 
 let spawnProcess: ChildProcess | null = null;
@@ -146,11 +146,11 @@ const mainDev = {
   },
 };
 
-interface CreateViteElectronServiceOptions {
-  render: UserConfig;
-  preload: UserConfig;
-  work?: UserConfig;
-  main: UserConfig;
+export interface CreateViteElectronServiceOptions {
+  render: any;
+  preload: any;
+  work?: any;
+  main: any;
   electronPath: any;
   sharedOptions?: {
     mode: 'dev';
