@@ -7,6 +7,13 @@ const zhThemeConfig: DefaultTheme.Config | undefined = {
     { text: "API", link: "/zh/api/", activeMatch: "/api/" },
     { text: "插件", link: "/zh/plugin/", activeMatch: "/plugin/" },
     { text: "教程", link: "/zh/tutorials/", activeMatch: "/tutorials/" },
+    { text: '友情链接', items:[
+      { text: "前端徐徐", link: 'https://taotaoxu.com' },
+      { text: '悟空壁纸', link: 'https://github.com/Xutaotaotao/wukong-wallpaper' },
+      { text: 'FindAll', link: 'https://findallteam.github.io' },
+      { text: 'XTools', link: 'https://taotaoxu.com/XTools' },
+      { text: 'GetInstalledApps', link: 'https://github.com/Xutaotaotao/get-installed-apps' },
+    ]}
   ],
 
   sidebar: {
@@ -115,6 +122,13 @@ const themeConfig: DefaultTheme.Config | undefined = {
     { text: "API", link: "/api/", activeMatch: "/api/" },
     { text: "Plugin", link: "/plugin/", activeMatch: "/plugin/" },
     { text: "Tutorials", link: "/tutorials/", activeMatch: "/tutorials/" },
+    { text: 'Friendly links', items:[
+      { text: "Xuxu's Blog ", link: 'https://taotaoxu.com' },
+      { text: 'FindAll', link: 'https://findallteam.github.io' },
+      { text: 'XTools', link: 'https://taotaoxu.com/XTools' },
+      { text: 'GetInstalledApps', link: 'https://github.com/Xutaotaotao/get-installed-apps' },
+      { text: 'WukongWallpaper', link: 'https://github.com/Xutaotaotao/wukong-wallpaper' },
+    ]}
   ],
 
   sidebar: {
