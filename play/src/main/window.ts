@@ -32,7 +32,6 @@ const initWorkWin = () => {
     },
   });
   workWindow.hide();
-
   if (import.meta.env.MODE === "dev") {
     workWindow.webContents.openDevTools();
   }
@@ -41,7 +40,10 @@ const initWorkWin = () => {
 
 const main = () => {
   initMainWin()
-  initWorkWin()
+  setTimeout(() => {
+    initWorkWin()
+  },3000)
+  
 };
 
 export default main

@@ -16,7 +16,8 @@
     "electron-updater": "^6.1.4",
     "koffi": "2.3.20",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "lowdb": "3.0.0"
   },
   "devDependencies": {
     "@ant-design/icons": "^5.2.6",
@@ -37,7 +38,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "i18next": "^23.6.0",
-    "lowdb": "3.0.0",
     "minimist": "^1.2.8",
     "react-i18next": "^13.3.1",
     "react-router-dom": "^6.15.0",
