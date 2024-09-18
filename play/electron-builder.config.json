@@ -1,0 +1,59 @@
+{
+  "productName": "ElectronProkit",
+  "appId": "electron.prokit.com",
+  "copyright": "Copyright © 2023",
+  "asar": false,
+  "files": ["dist/**", "package.json"],
+  "directories": {
+    "output": "release",
+    "buildResources": "resources"
+  },
+  "extraResources": {
+    "from": "resources",
+    "to": "resources"
+  },
+  "mac": {
+    "hardenedRuntime": true,
+    "gatekeeperAssess": false,
+    "target": ["dmg", "zip"],
+    "entitlements": "./scripts/entitlements.mac.plist",
+    "entitlementsInherit": "./scripts/entitlements.mac.plist",
+    "identity": "",
+    "icon": "./resources/icon/icon.icns",
+    "extendInfo": {
+      "LSUIElement": true,
+      "SUFeedURL": "",
+      "SUPublicEDKey": ""
+    }
+  },
+  "dmg": {
+    "backgroundColor": "#ffffff",
+    "window": { "width": 540, "height": 380 },
+    "icon": "./resources/icon/icon.icns",
+    "iconSize": 128,
+    "contents": [
+      { "x": 410, "y": 190, "type": "link", "path": "/Applications" },
+      { "x": 130, "y": 190, "type": "file" }
+    ],
+    "title": "ElectronProkit"
+  },
+  "win": {
+    "icon": "./resources/icon/icon.ico",
+    "target": "nsis",
+    "verifyUpdateCodeSignature": false
+  },
+  "nsis": {
+    "oneClick": true,
+    "language": "2052",
+    "perMachine": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "guid": "ElectronProkit",
+    "shortcutName": "ElectronProkit",
+    "artifactName": "ElectronProkit@${version}.${ext}"
+  },
+  "publish": {
+    "provider": "generic",
+    "url": "http://172.17.194.13:8090"
+  }
+}
