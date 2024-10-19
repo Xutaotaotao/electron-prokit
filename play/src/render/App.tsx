@@ -1,10 +1,9 @@
-import { RouterProvider } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ConfigProvider, theme } from "antd";
 import { readDb, sendMsgToMain, writeDb } from "electron-prokit";
 import GlobalContext from "./context/global.ts";
 import "./App.css";
-import router from "./router";
+import AppRouter  from "./router";
 
 function App() {
 
@@ -36,7 +35,7 @@ function App() {
       changeTheme,
       themeData
     }}>
-      <RouterProvider router={router} />
+      <AppRouter />
     </GlobalContext.Provider>
   </ConfigProvider>;
 }

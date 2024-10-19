@@ -32,8 +32,6 @@ const buildByConfig = async (configFile:string) => {
   }
 };
 
-const delay = (ms:number) => new Promise(resolve => setTimeout(resolve, ms));
-
 const main = async () => {
   try {
     console.time('Total bundling time');
@@ -61,8 +59,6 @@ const main = async () => {
     console.error('Build failed:', error);
     process.exit(1);
   }
-  await delay(3000)
-  process.exit(0);
 };
 
 main();

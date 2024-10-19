@@ -26,5 +26,5 @@
       "electron-prokit": ["../packages/electron-prokit/src"] 
     }
   },
-  "include": ["src", "vendor.d.ts","scripts","ep.config.ts","electron-builder.config.ts"],
+  "include": ["src", "vendor.d.ts","scripts","ep.config.ts"],
 }

@@ -1,5 +1,7 @@
 import {
-  createBrowserRouter,
+  HashRouter as Router,
+  Route,
+  Routes
 } from "react-router-dom";
 import Root from "../layout";
 import ErrorPage from "../pages/error-page";
@@ -10,40 +12,21 @@ import Ffi from "../pages/ffi";
 import Schedule from "../pages/schedule";
 import Db from "../pages/db";
 import Update from "../pages/update";
- 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    errorElement: <ErrorPage />,
-    children: [
-      { index: true, element: <Home /> },
-      {
-        path: "ipc",
-        element: <Ipc />,
-      },
-      {
-        path: "http",
-        element: <Http />,
-      },
-      {
-        path: "ffi",
-        element: <Ffi />,
-      },
-      {
-        path: "schedule",
-        element: <Schedule />,
-      },
-      {
-        path: "db",
-        element: <Db />,
-      },
-      {
-        path: "update",
-        element: <Update />,
-      },
-    ],
-  },
-]);
 
-export default router
+const AppRouter = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
+        <Route index element={<Home />} />
+        <Route path="ipc" element={<Ipc />} />
+        <Route path="http" element={<Http />} />
+        <Route path="ffi" element={<Ffi />} />
+        <Route path="schedule" element={<Schedule />} />
+        <Route path="db" element={<Db />} />
+        <Route path="update" element={<Update />} />
+      </Route>
+    </Routes>
+  </Router>
+);
+
+export default AppRouter;
