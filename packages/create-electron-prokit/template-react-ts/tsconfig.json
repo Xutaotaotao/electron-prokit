@@ -20,5 +20,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src","scripts","config","electron-builder.config.ts"],
+  "include": ["src","scripts","config"],
 }

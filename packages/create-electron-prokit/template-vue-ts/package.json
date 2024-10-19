@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "node --experimental-specifier-resolution=node --loader ts-node/esm ./scripts/dev.ts",
     "build": "node --experimental-specifier-resolution=node --loader ts-node/esm ./scripts/build.ts",
-    "compile": "electron-builder build --config ./electron-builder.config.ts",
+    "compile": "electron-builder build --config ./electron-builder.config.json",
     "preview": "vite preview"
   },
   "dependencies": {
