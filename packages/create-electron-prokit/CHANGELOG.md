@@ -1,5 +1,11 @@
 # create-electron-prokit
 
+## 3.0.0
+
+### Major Changes
+
+- 358a65f: fix: compile error reslove
+
 ## 2.0.0
 
 ### Major Changes
