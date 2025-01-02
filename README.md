@@ -93,7 +93,7 @@ pnpm run dev
 
 Use WeChat to contact me
 
-<img src="https://xutaotaotao.github.io/wx_qr.jpeg" />
+<img src="https://xutaotaotao.github.io/wx_qr.jpeg" width="200"/>
 
 ## 👥 Supporters
 
